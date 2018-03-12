@@ -1,6 +1,8 @@
 <ul>
-  <li><a routerLink='bomb'>bomb</a></li>
-  <li><a routerLink='cracker'>cracker</a></li>
-  <li><a routerLink='pots'>pots</a></li>
-  <li><a routerLink='rockets'>rockets</a></li>
+  <div class="menuItem" *ngFor='let itemMenu of itemMenus'>
+  <li><a [routerLink]='itemMenu.crackerIconURL'>
+    <div><img [src]="itemMenu.crackerIconImagePath" [alt]="itemMenu.crackerTitleText"></div>
+    <div class="iconText">{{itemMenu.crackerTitleText}}</div>
+  </a></li>
+</div>
 </ul>
