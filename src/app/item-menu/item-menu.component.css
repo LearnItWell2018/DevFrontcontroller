@@ -1,17 +1,41 @@
 ul {
-    list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 20px;
+    list-style-type: none;
+    box-sizing: border-box;
+    background: red; /* For browsers that do not support gradients */
+    background: repeating-linear-gradient(#AA3939,white 10%,white 100%);
 }
 img{
-    width:90px;
-    height:90px;
+    width:80px;
+    height:80px;
 }
 
 .menuItem{
     display:inline-block;
+    margin:0px 10px;
 }
 
+.imageDiv{
+    padding :2px;
+}
 .iconText{
     text-align:center;
+}
+
+a{
+    text-decoration: none;
+    font-weight: bold;
+}
+a:link,a:visited {
+    color: #B25100
+}
+
+a:hover,a:active  {
+    color: #FF7400;
+}
+
+.imageDiv:hover {
+    border-radius:50%;
+    background-color: #FF7400; 
 }
