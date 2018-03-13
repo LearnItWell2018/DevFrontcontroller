@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ItemGridComponent } from './item-grid/item-grid.component';
+import { CustomerComponent } from './customer/customer.component';
 
 const appRoutes: Routes = [
   { path: '', component: ItemGridComponent },
