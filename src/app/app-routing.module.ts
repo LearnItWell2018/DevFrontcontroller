@@ -5,6 +5,7 @@ import { ItemGridComponent } from './item-grid/item-grid.component';
 
 const appRoutes: Routes = [
   { path: '', component: ItemGridComponent },
+  { path: 'signin', component: CustomerComponent},
   { path: ':crackers', component: ItemGridComponent }
 
 ];
