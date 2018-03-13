@@ -26,7 +26,7 @@
     <div ngModelGroup="address">
       <div class="form-group col-lg-5">
         <label>Pin Code</label>
-        <input type="text" #pincodeRef="ngModel" required pattern="^[7][0]{2}[0-9]{3}$" class="form-control" name="postalcode" ngModel><span>Please note we dont serve outside kolkata</span>
+        <input type="text" #pincodeRef="ngModel" required pattern="^[7][0]{2}[0-9]{3}$" class="form-control" name="postalcode" ngModel><span>*Please note we don't serve outside kolkata</span>
         <div [hidden]="pincodeRef.valid || pincodeRef.pristine" class="alert alert-danger">
           Please enter a valid pin code
         </div>
