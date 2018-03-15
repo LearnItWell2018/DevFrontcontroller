@@ -3,10 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ItemGridComponent } from './item-grid/item-grid.component';
 import { CustomerComponent } from './customer/customer.component';
+import { PlaceOrderComponent } from './place-order/place-order.component';
 
 const appRoutes: Routes = [
   { path: '', component: ItemGridComponent },
   { path: 'signin', component: CustomerComponent},
+  { path: 'placeOrder', component: PlaceOrderComponent},
   { path: ':crackers', component: ItemGridComponent }
 
 ];

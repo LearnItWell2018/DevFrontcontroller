@@ -1,0 +1,34 @@
+<div class="container">
+  <h2>Claim Your Order</h2>
+  <form #customerFrom="ngForm" (ngSubmit)="onSubmit(customerFrom.value)">
+    <div class="form-group col-lg-4">
+      <label>Mobile</label>
+      <input type="text" #mobileRef="ngModel" class="form-control" required name="mobile" pattern="[789][0-9]{9}" ngModel>
+      <div [hidden]="mobileRef.valid || mobileRef.pristine" class="alert alert-danger">
+        Please enter a valid Mobile No
+      </div>
+    </div>
+    <div ngModelGroup="address">
+      <div class="form-group col-lg-5">
+        <label>Pin Code</label>
+        <input type="text" #pincodeRef="ngModel" required pattern="^[7][0]{2}[0-9]{3}$" class="form-control" name="postalcode" ngModel><span>*Please note we don't serve outside kolkata</span>
+        <div [hidden]="pincodeRef.valid || pincodeRef.pristine" class="alert alert-danger">
+          Please enter a valid pin code
+        </div>
+      </div>
+      <div class="form-group col-lg-10">
+        <label>Street</label>
+        <input type="text" class="form-control" required name="street" ngModel>
+      </div>
+      <div class="form-group col-lg-2">
+        <label>Room/Flat No</label>
+        <input type="text" class="form-control" required name="flatno" ngModel>
+      </div>
+      <div class="form-group col-lg-6">
+        <label>Land Mark</label>
+        <input type="text" class="form-control" name="nearestLandMark" ngModel>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary col-lg-4">Submit</button>
+  </form>
+</div>
