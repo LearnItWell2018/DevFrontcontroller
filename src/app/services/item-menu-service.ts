@@ -11,7 +11,7 @@ export class ItemMenuService{
         this.getIcons().subscribe(
             (response)=>{console.log(response);
              let JSONdata=response.json();
-             JSONdata.items.array.forEach(element => {
+             JSONdata.items.forEach(element => {
                 let icon=new ItemMenu(element.itemIMGPath,element.itemName,element.itemURL);
                 this.crackersArray.push(icon);
              });
@@ -42,7 +42,7 @@ export class ItemMenuService{
     }
 
     public getIcons(){
-        return this.http.get('https://localhost:8080/kundalini/rs/itemCategories/');
+        return this.http.get('https://kundalini.cfapps.io/rs/itemCategories/');
     }
 }
 
