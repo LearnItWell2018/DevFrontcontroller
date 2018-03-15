@@ -1,14 +1,18 @@
 ul {
     margin: 0;
+    font-family: 'Mina', sans-serif;
+    font-size: 12px;
     padding: 20px;
+    display:flex;
+    justify-content: space-around;
     list-style-type: none;
     box-sizing: border-box;
     background: red; /* For browsers that do not support gradients */
     background: repeating-linear-gradient(#AA3939,white 10%,white 100%);
 }
 img{
-    width:80px;
-    height:80px;
+    width:70px;
+    height:70px;
 }
 
 .menuItem{
@@ -25,7 +29,6 @@ img{
 
 a{
     text-decoration: none;
-    font-weight: bold;
 }
 a:link,a:visited {
     color: #B25100
