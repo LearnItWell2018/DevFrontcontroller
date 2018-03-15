@@ -5,8 +5,7 @@ import { ItemMenu } from '../model/item-menu-model';
 @Component({
   selector: 'app-item-menu',
   templateUrl: './item-menu.component.html',
-  styleUrls: ['./item-menu.component.css'],
-  providers:[ItemMenuService]
+  styleUrls: ['./item-menu.component.css']
 })
 export class ItemMenuComponent implements OnInit {
   itemMenus:ItemMenu[];

@@ -12,6 +12,7 @@ import { ItemsCartComponent } from './items-cart/items-cart.component';
 import { ItemsCartListComponent } from './header/items-cart-list/items-cart-list.component';
 import { AppRoutingModule } from "./app-routing.module"
 import { FormsModule } from "@angular/forms"
+import { ItemMenuService } from './services/item-menu-service';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { FormsModule } from "@angular/forms"
   imports: [
     BrowserModule, AppRoutingModule, FormsModule,HttpModule
   ],
-  providers: [],
+  providers: [ItemMenuService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -42,3 +42,13 @@ a:hover,a:active  {
     border-radius:50%;
     background-color: #FF7400; 
 }
+
+
+
+@media only screen and (max-width: 721px) {
+    ul {
+        flex-wrap: wrap;
+        display:none;
+    }
+    
+}
