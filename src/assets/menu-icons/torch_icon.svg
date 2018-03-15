@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="300mm"
+   height="300mm"
+   viewBox="0 0 300 300"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="353.59979"
-     inkscape:cy="534.27739"
+     inkscape:zoom="0.5"
+     inkscape:cx="-134.7149"
+     inkscape:cy="548.46667"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -51,19 +51,20 @@
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(0,3)">
     <path
-       style="opacity:1;fill:#ff6600;fill-opacity:1;fill-rule:evenodd;stroke-width:0.26458332"
+       style="opacity:1;fill:#ff6600;fill-opacity:1;fill-rule:evenodd;stroke-width:0.57970756"
        id="path815"
        sodipodi:type="arc"
-       sodipodi:cx="114.9259"
-       sodipodi:cy="152.40718"
-       sodipodi:rx="68.420998"
-       sodipodi:ry="66.55011"
+       sodipodi:cx="150.59895"
+       sodipodi:cy="147.60747"
+       sodipodi:rx="147.61749"
+       sodipodi:ry="148.07899"
        sodipodi:start="5.0426925"
        sodipodi:end="4.7522523"
        sodipodi:open="true"
-       d="M 137.1169,89.454507 A 68.420998,66.55011 0 0 1 181.08766,169.36753 68.420998,66.55011 0 0 1 102.33449,217.82067 68.420998,66.55011 0 0 1 46.937221,144.93784 68.420998,66.55011 0 0 1 117.65267,85.909941" />
+       d="M 198.47576,7.533039 A 147.61749,148.07899 0 0 1 293.34217,185.34553 147.61749,148.07899 0 0 1 123.43312,293.15741 147.61749,148.07899 0 0 1 3.9141764,130.98762 147.61749,148.07899 0 0 1 156.48192,-0.35388768" />
     <path
        style="opacity:1;fill:#00ff00;fill-opacity:1;fill-rule:evenodd"
        d=""
@@ -90,7 +91,7 @@
        transform="scale(0.26458333)" />
     <g
        id="g998"
-       transform="matrix(0.90898641,0,0,0.90898641,29.469339,108.88692)">
+       transform="matrix(1.9611272,0,0,2.0225628,-33.772545,50.771636)">
       <g
          transform="translate(-3.96875,-15.497024)"
          id="g845">
