@@ -1,0 +1,11 @@
+.container-grid{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.displayInline{
+    display:inline-block;
+    border-radius:0;
+    width:50px;
+}
