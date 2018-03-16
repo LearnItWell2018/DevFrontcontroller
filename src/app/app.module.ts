@@ -14,6 +14,7 @@ import { AppRoutingModule } from "./app-routing.module"
 import { FormsModule } from "@angular/forms"
 import { ItemMenuService } from './services/item-menu-service';
 import { PlaceOrderComponent } from './place-order/place-order.component';
+import { FooterComponent } from './footer/footer.component';
 import { WhyusComponent } from './whyus/whyus.component';
 
 
@@ -28,6 +29,7 @@ import { WhyusComponent } from './whyus/whyus.component';
     ItemsCartListComponent,
     CustomerComponent,
     PlaceOrderComponent,
+    FooterComponent,
     WhyusComponent
   ],
   imports: [

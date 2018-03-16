@@ -2,17 +2,17 @@ ul {
     margin: 0;
     font-family: 'Mina', sans-serif;
     font-size: 12px;
-    padding: 20px;
+    padding: 10px;
     display:flex;
     justify-content: space-around;
     list-style-type: none;
     box-sizing: border-box;
-    background: red; /* For browsers that do not support gradients */
-    background: repeating-linear-gradient(#AA3939,white 10%,white 100%);
+    /*background-color: rgba(255, 208, 0, 0.85) ; /* For browsers that do not support gradients */
+    background: repeating-linear-gradient(rgb(83, 72, 33),rgba(255, 208, 0, 0.85) 10%,rgb(233, 255, 10) 10%,rgb(233, 225, 10) 90%,rgba(255, 208, 0, 0.85) 90%,rgb(83, 72, 33)100%);
 }
 img{
-    width:70px;
-    height:70px;
+    width:60px;
+    height:60px;
 }
 
 .menuItem{
@@ -31,7 +31,8 @@ a{
     text-decoration: none;
 }
 a:link,a:visited {
-    color: #B25100
+    color: black;
+    font-weight: bold;
 }
 
 a:hover,a:active  {
