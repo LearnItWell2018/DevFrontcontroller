@@ -14,6 +14,7 @@ import { AppRoutingModule } from "./app-routing.module"
 import { FormsModule } from "@angular/forms"
 import { ItemMenuService } from './services/item-menu-service';
 import { PlaceOrderComponent } from './place-order/place-order.component';
+import { WhyusComponent } from './whyus/whyus.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { PlaceOrderComponent } from './place-order/place-order.component';
     ItemsCartComponent,
     ItemsCartListComponent,
     CustomerComponent,
-    PlaceOrderComponent
+    PlaceOrderComponent,
+    WhyusComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, FormsModule,HttpModule
