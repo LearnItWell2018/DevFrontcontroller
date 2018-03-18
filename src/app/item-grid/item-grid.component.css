@@ -28,7 +28,7 @@
 .fullwidh{
     width:100%;
     padding: 20px;
-    background-image: url('../../assets/image/background.jpg');
+    background-image: url('../../assets/animation/background.svg');
     background-size: cover;
 }
 
