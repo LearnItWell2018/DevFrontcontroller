@@ -17,6 +17,7 @@ export class GridItem{
 						this.itemName=itemName;
 						this.itemPrice=itemPrice;
 						this.itemStock=itemStock;
-                        this.itemActive=itemActive;
+						this.itemActive=itemActive;
+						this.itemDetails=itemDetails;
                         }
                     }                        
