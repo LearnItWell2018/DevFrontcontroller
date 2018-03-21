@@ -13,6 +13,7 @@ import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 export class ItemGridComponent implements OnInit ,OnDestroy{
   itemtype:string; 
   subscription:Subscription;
+
   public gridItemArray:GridItem[]=[];
   constructor(private router:ActivatedRoute,private itemGridService:ItemGridService) { }
 
@@ -42,5 +43,57 @@ export class ItemGridComponent implements OnInit ,OnDestroy{
   }
 ngOnDestroy(){
    this.subscription.unsubscribe();
+}
+
+reduceQuantity(index){
+   if(this.gridItemArray[index].itemQuantity===0){
+     return false;
+   }else{
+    this.gridItemArray[index].itemQuantity=this.gridItemArray[index].itemQuantity-1;
+   }
+}
+
+increaseQuantity(index){
+  if(this.gridItemArray[index].itemQuantity===1000){
+    return false;
+  }else{
+   this.gridItemArray[index].itemQuantity=this.gridItemArray[index].itemQuantity+1;
+  }
+}
+
+addProductToWebStore(index:number,inputElem:HTMLFormElement){
+  if(this.gridItemArray[index].itemQuantity===0){
+    alert('Error');
+  }else{
+    if(!localStorage.getItem('myKart')){
+      localStorage.setItem('myKart',JSON.stringify(this.gridItemArray[index]));
+    }else{
+      let myKart=localStorage.getItem('myKart');
+      let presentItem=this.gridItemArray[index];
+      if(myKart.indexOf(this.gridItemArray[index].productId)>=0){
+        let myObject=JSON.parse('['+myKart+']');
+        myObject.forEach(function(item){
+          if(item.productId===presentItem.productId){
+            item.itemQuantity=item.itemQuantity+presentItem.itemQuantity;
+            let stripObj=JSON.stringify(myObject).split('[')[1].split(']')[0];
+            localStorage.setItem('myKart',stripObj);
+            return;
+          }
+        });
+      }
+      else{
+      myKart=myKart+","+JSON.stringify(this.gridItemArray[index]);
+      localStorage.setItem('myKart',myKart);
+      }
+    }
+  }
+}
+
+quantityGtOne(index:number){
+  if(this.gridItemArray[index].itemQuantity===0){
+  return true;
+  }else{
+    return false;
+  }
 }
 }

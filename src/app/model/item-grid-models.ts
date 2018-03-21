@@ -7,7 +7,8 @@ export class GridItem{
 						itemStock: string;
                         itemActive: boolean;
                         itemDetails:string;
-
+						itemAdded:boolean;
+						itemQuantity: number;
 
                         constructor(  productId : string,productImgPath : string,brand : string,itemName: string,
 						itemPrice: number,itemStock: string,itemActive: boolean,itemDetails:string){
@@ -19,5 +20,7 @@ export class GridItem{
 						this.itemStock=itemStock;
 						this.itemActive=itemActive;
 						this.itemDetails=itemDetails;
+						this.itemAdded=false;
+                        this.itemQuantity=0;
                         }
                     }                        

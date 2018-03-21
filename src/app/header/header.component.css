@@ -1,6 +1,9 @@
 .navbox{
     display:flex;
-    background-color: rgb(43, 41, 41);
+    /*background-color: rgb(43, 41, 41);*/
+    background-image: url('../../assets/image/matt_black.jpg');
+    background-repeat-x: repeat;
+    
     font-family: 'Mina', sans-serif;
 }
 

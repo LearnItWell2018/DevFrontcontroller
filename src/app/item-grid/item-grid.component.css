@@ -28,11 +28,16 @@
 .fullwidh{
     width:100%;
     padding: 20px;
-    background-image: url('../../assets/image/backgroundAll.jpg');
-    background-size: cover;
+    background-image: url('../../assets/image/matt_black.jpg');
+    background-repeat-x: repeat;
 }
 
 
 .padder-margine{
     margin-top:70px 
+}
+
+
+.alertError{
+    border:1px red solid;
 }
