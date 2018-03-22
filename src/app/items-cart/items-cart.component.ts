@@ -58,8 +58,12 @@ export class ItemsCartComponent implements OnInit {
  }
 
 calculateTotal(){
+  let totalVal=0;
   this.myKartList.forEach(function(item){
-    this.totalValue=this.totalValue+item.totalFinalVal;
-  })
+   
+    totalVal=totalVal + item.totalFinalVal;
+  });
+  console.log(totalVal);
+  this.totalValue=totalVal;
  }
 }
