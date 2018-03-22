@@ -197,13 +197,13 @@ Side note: I know that this style of nesting in SASS doesn't result in the most 
     .product-quantity {
       width: 100px;
     }
-    .product-quantity input {
+    /* .product-quantity input {
       margin-left: 20px;
     }
   
     .product-quantity:before {
       content: 'x';
-    }
+    } */
   
     .product-removal {
       width: auto;
@@ -241,3 +241,14 @@ Side note: I know that this style of nesting in SASS doesn't result in the most 
 .navbar-brand{
          padding-top: 0;
 }  
+
+.displayInline{
+  display:inline-block;
+  border-radius:0;
+  width:20px;
+}
+
+.flex-box{
+  display:flex;
+  justify-content: flex-start;
+}
