@@ -67,6 +67,7 @@ addProductToWebStore(index:number,inputElem:HTMLFormElement){
   }else{
     if(!localStorage.getItem('myKart')){
       localStorage.setItem('myKart',JSON.stringify(this.gridItemArray[index]));
+      this.gridItemArray[index].itemQuantity=0;
     }else{
       let myKart=localStorage.getItem('myKart');
       let presentItem=this.gridItemArray[index];
@@ -77,6 +78,7 @@ addProductToWebStore(index:number,inputElem:HTMLFormElement){
             item.itemQuantity=item.itemQuantity+presentItem.itemQuantity;
             let stripObj=JSON.stringify(myObject).split('[')[1].split(']')[0];
             localStorage.setItem('myKart',stripObj);
+            presentItem.itemQuantity=0;
             return;
           }
         });
@@ -84,6 +86,7 @@ addProductToWebStore(index:number,inputElem:HTMLFormElement){
       else{
       myKart=myKart+","+JSON.stringify(this.gridItemArray[index]);
       localStorage.setItem('myKart',myKart);
+      this.gridItemArray[index].itemQuantity=0;
       }
     }
   }
