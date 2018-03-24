@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth-service';
+
 
 @Component({
   selector: 'app-customer',
@@ -8,13 +10,18 @@ import { Component, OnInit } from '@angular/core';
 
 export class CustomerComponent implements OnInit {
 
-   constructor() { }
+   constructor(private authService:AuthService) { }
 
   ngOnInit() {
   }
 
   onSubmit(value: any) {
     console.log(value);
+  }
+
+  callOAuth () {
+    console.log("callOAuth");
+    this.authService.login();
   }
 
 }
