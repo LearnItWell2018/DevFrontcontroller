@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import * as auth0 from 'auth0-js';
+import { UserProfile } from '../model/user-profile-model';
 
 @Injectable()
 export class AuthService {
@@ -16,6 +17,7 @@ export class AuthService {
   });
 
   userProfile: any;
+  userProfileDetails: UserProfile;
 
   constructor(public router: Router) {}
 
@@ -63,7 +65,7 @@ export class AuthService {
     return new Date().getTime() < expiresAt;
   }
 
-  public getProfile(cb): void {
+  public getProfile(): UserProfile {
     const accessToken = localStorage.getItem('access_token');
     if (!accessToken) {
       throw new Error('Access Token must exist to fetch profile');
@@ -73,9 +75,11 @@ export class AuthService {
     this.auth0.client.userInfo(accessToken, (err, profile) => {
       if (profile) {
         self.userProfile = profile;
-      }
-      cb(err, profile);
+        this.userProfileDetails = new UserProfile(profile.picture,profile.gender,profile.name,profile.nickname);
+      } 
     });
+
+    return this.userProfileDetails;
   }
 
 }

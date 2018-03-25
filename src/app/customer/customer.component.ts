@@ -15,13 +15,7 @@ export class CustomerComponent implements OnInit {
    constructor(private authService:AuthService) { }
 
   ngOnInit() {
-    if (this.authService.userProfile) {
-      this.profile = this.authService.userProfile;
-    } else {
-      this.authService.getProfile((err, profile) => {
-        this.profile = profile;
-      });
-    }
+    
   }
 
   onSubmit(value: any) {

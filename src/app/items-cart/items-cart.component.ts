@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GridItem } from '../model/item-grid-models';
+import { ActivatedRoute,Router} from '@angular/router';
 
 @Component({
   selector: 'app-items-cart',
@@ -9,7 +10,7 @@ import { GridItem } from '../model/item-grid-models';
 export class ItemsCartComponent implements OnInit {
   private myKartList:GridItem[];
   private totalValue:number=0;
-  constructor() { }
+  constructor(private route:Router, private activated:ActivatedRoute) { }
 
   ngOnInit() {
     let myKart=localStorage.getItem('myKart');
@@ -66,4 +67,9 @@ calculateTotal(){
   console.log(totalVal);
   this.totalValue=totalVal;
  }
+
+ gotoPlaceOrder() {
+  this.route.navigate(['../placeorder']);
+ }
+
 }
