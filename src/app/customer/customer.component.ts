@@ -10,13 +10,22 @@ import { AuthService } from '../services/auth-service';
 
 export class CustomerComponent implements OnInit {
 
+  profile: any;
+
    constructor(private authService:AuthService) { }
 
   ngOnInit() {
+    if (this.authService.userProfile) {
+      this.profile = this.authService.userProfile;
+    } else {
+      this.authService.getProfile((err, profile) => {
+        this.profile = profile;
+      });
+    }
   }
 
   onSubmit(value: any) {
-    console.log(value);
+    console.log(this.profile);
   }
 
   callOAuth () {
