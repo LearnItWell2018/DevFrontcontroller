@@ -20,7 +20,6 @@ export class CustomerComponent implements OnInit {
   }
 
   callOAuth () {
-    console.log("callOAuth");
     this.authService.login();
   }
 

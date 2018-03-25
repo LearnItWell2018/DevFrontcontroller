@@ -21,7 +21,11 @@ export class ItemGridComponent implements OnInit ,OnDestroy{
     this.itemtype=this.router.snapshot.params['crackers'];
     this.router.params.subscribe((params:Params)=>{
       this.itemtype=params['crackers'];
-      this.itemGridService.setUrl(this.itemtype);
+      if (this.itemtype != null) {
+        this.itemGridService.setUrl(this.itemtype);
+      } else {
+        this.itemGridService.setUrl("SHELL");
+      }
       //console.log('After Setting the URL');
       this.subscription=this.itemGridService.getData().subscribe(
         (response)=>{

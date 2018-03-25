@@ -28,4 +28,9 @@ export class HeaderComponent implements OnInit {
   routeToKart(){
     this.route.navigate(['../kart']);
   }
+
+  routeToHome(){
+    this.route.navigate(['../']);
+  }
+  
 }
