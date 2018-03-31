@@ -18,6 +18,7 @@ import { FooterComponent } from './footer/footer.component';
 import { WhyusComponent } from './whyus/whyus.component';
 import { ItemGridService } from './services/item-grid-service';
 import { AuthService } from './services/auth-service';
+import { PlaceOredrService } from './services/placeorder-service';
 
 
 @NgModule({
@@ -37,7 +38,7 @@ import { AuthService } from './services/auth-service';
   imports: [
     BrowserModule, AppRoutingModule, FormsModule,HttpModule
   ],
-  providers: [ItemMenuService,ItemGridService, AuthService],
+  providers: [ItemMenuService,ItemGridService, AuthService, PlaceOredrService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

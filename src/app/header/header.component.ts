@@ -18,6 +18,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.itemMenus=this.itemMenuService.getCrarckerIconsArray();
+    this.userProfile = this.auth.getProfile();
     console.log(this.auth.getProfile());
   }
 

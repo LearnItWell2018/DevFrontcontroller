@@ -23,6 +23,7 @@ export class CustomerComponent implements OnInit {
   }
 
   callOAuth () {
+    this.authService.logout();
     this.authService.login();
   }
 

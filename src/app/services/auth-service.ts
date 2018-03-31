@@ -17,7 +17,7 @@ export class AuthService {
   });
 
   userProfile: any;
-  userProfileDetails: UserProfile;
+  public userProfileDetails: UserProfile;
 
   constructor(public router: Router) {}
 
@@ -32,9 +32,9 @@ export class AuthService {
       if (authResult && authResult.accessToken && authResult.idToken) {
         window.location.hash = '';
         this.setSession(authResult);
-        //this.router.navigate(['/home']);
+        this.router.navigate(['/']);
       } else if (err) {
-        //this.router.navigate(['/home']);
+        this.router.navigate(['/']);
         console.log(err);
       }
     });
@@ -45,7 +45,7 @@ export class AuthService {
     const expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
     localStorage.setItem('access_token', authResult.accessToken);
     localStorage.setItem('id_token', authResult.idToken);
-    localStorage.setItem('user_info', JSON.stringify(authResult));
+    localStorage.setItem('user_info', JSON.stringify(authResult.idTokenPayload));
     localStorage.setItem('expires_at', expiresAt);
   }
 
@@ -54,6 +54,7 @@ export class AuthService {
     localStorage.removeItem('access_token');
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');
+    localStorage.removeItem('user_info');
     // Go back to the home route
     this.router.navigate(['/']);
   }
@@ -66,19 +67,7 @@ export class AuthService {
   }
 
   public getProfile(): UserProfile {
-    const accessToken = localStorage.getItem('access_token');
-    if (!accessToken) {
-      throw new Error('Access Token must exist to fetch profile');
-    }
-  
-    const self = this;
-    this.auth0.client.userInfo(accessToken, (err, profile) => {
-      if (profile) {
-        self.userProfile = profile;
-        this.userProfileDetails = new UserProfile(profile.picture,profile.gender,profile.name,profile.nickname);
-      } 
-    });
-
+    this.userProfileDetails = JSON.parse(localStorage.getItem("user_info"));
     return this.userProfileDetails;
   }
 

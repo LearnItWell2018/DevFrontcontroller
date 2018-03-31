@@ -1,14 +1,19 @@
 export class UserProfile{
-    public userName:string;   
-    public gender:string;
-    public userImagePath:string;
-    public userNickName:string;
-   
-    constructor(imagePath:string,gender:string,userFullName:string,userNickName:string){
-        this.userName=userFullName;
-        this.gender=gender;
-        this.userImagePath=imagePath;
-        this.userNickName=userNickName;
-    }
+
+    public given_name:String;
+    public family_name:String;
+    public nickname:String;
+    public name:String;
+    public picture:String;
+    public gender:String;
+    public locale:String;
+    public updated_at:String;
+    public iss:String;
+    public sub:String;
+    public aud:String;
+    public iat:String;
+    public exp:String;
+    public at_hash:String;
+    public nonce:String;
 
 }

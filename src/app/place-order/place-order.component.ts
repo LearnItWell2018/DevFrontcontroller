@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlaceOredrService } from '../services/placeorder-service';
 
 @Component({
   selector: 'app-place-order',
@@ -8,13 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlaceOrderComponent implements OnInit {
 
-  constructor() { }
+  placeOredrService:PlaceOredrService;
+
+  constructor(placeOredrService:PlaceOredrService) {
+    localStorage.setItem("customerOrder", "");
+   }
 
   ngOnInit() {
+    this.placeOredrService = new PlaceOredrService();
+    this.placeOredrService.fillCustomerOrderFromCart();
   }
 
   onSubmit(value: any) {
     console.log(value);
+    
   }
 
 }
