@@ -51,6 +51,7 @@ export class HeaderComponent implements OnInit {
   
   logOut() {
     this.auth.logout();
+    this.activeUserName = "Anyone Home";
   }
   logIn() {
     this.auth.login();
