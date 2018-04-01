@@ -20,11 +20,13 @@
   </div>
   <div class="dropdown navbox-item fifth-item">
     <div class="dropmenu push-right-large push-right-medium"> 
-    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-        {{userProfile.name}}
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+        {{activeUserName}}
       </button>
       <div class="dropdown-menu">
-        <a class="dropdown-item" [routerLink]="'signin'">Sign In</a>
+        <a *ngIf="auth.isAuthenticated()" class="dropdown-item" (click)="logOut()">Log Out</a>
+        <a *ngIf="!auth.isAuthenticated()" class="dropdown-item" [routerLink]="'signin'">Sign In</a>
+        <a *ngIf="!auth.isAuthenticated()" class="dropdown-item" (click)="logIn()">Log In</a>
         <a class="dropdown-item" [routerLink]="'whyus'">Why Us</a>
       </div>
     </div>

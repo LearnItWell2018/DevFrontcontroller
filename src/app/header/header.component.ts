@@ -13,12 +13,22 @@ import { UserProfile } from '../model/user-profile-model';
 export class HeaderComponent implements OnInit {
   itemMenus:ItemMenu[];
   userProfile:UserProfile;
+  activeUserPresent:Boolean;
+  activeUserName:String;
+
 
   constructor(private itemMenuService:ItemMenuService,private route:Router,private activated:ActivatedRoute, private auth:AuthService) { }
 
   ngOnInit() {
     this.itemMenus=this.itemMenuService.getCrarckerIconsArray();
     this.userProfile = this.auth.getProfile();
+    if (this.userProfile) {
+       this.activeUserPresent = true;
+       this.activeUserName = this.userProfile.name;
+    } else {
+      this.activeUserPresent = false;
+      this.activeUserName = "Anyone Home";
+    }
     console.log(this.auth.getProfile());
   }
 
@@ -39,4 +49,12 @@ export class HeaderComponent implements OnInit {
     this.route.navigate(['../']);
   }
   
+  logOut() {
+    this.auth.logout();
+  }
+  logIn() {
+    this.auth.login();
+  }
+  
+
 }

@@ -55,8 +55,6 @@ export class AuthService {
     localStorage.removeItem('id_token');
     localStorage.removeItem('expires_at');
     localStorage.removeItem('user_info');
-    // Go back to the home route
-    this.router.navigate(['/']);
   }
 
   public isAuthenticated(): boolean {
