@@ -1,6 +1,6 @@
 export class GridItem{
                         productId : string;
-						productImgPath : string;
+						itemImage : string;
 						brand : string;
 						itemName: string;
 						itemPrice: number;
@@ -14,7 +14,7 @@ export class GridItem{
                         constructor(  productId : string,productImgPath : string,brand : string,itemName: string,
 						itemPrice: number,itemStock: string,itemActive: boolean,itemDetails:string){
                         this.productId =productId;
-						this.productImgPath =productImgPath;
+						this.itemImage =productImgPath;
 						this.brand =brand;
 						this.itemName=itemName;
 						this.itemPrice=itemPrice;

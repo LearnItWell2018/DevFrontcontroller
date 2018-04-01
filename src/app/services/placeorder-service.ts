@@ -3,18 +3,29 @@ import { Injectable } from '@angular/core';
 import { CustomerOrder } from '../model/customer-order-model';
 import { OrderDetails } from '../model/OrderDetails';
 import { OrderList } from '../model/OrderList';
+import { UserProfile } from '../model/user-profile-model';
+import { CustomerAddress } from '../model/CustomerAddress';
 
 @Injectable()
 export class PlaceOredrService {
 
-    http:Http;
     body:CustomerOrder;
     orderDetails:OrderDetails;
     orderList:OrderList[];
 
+    constructor(private http:Http) {}
 
     placeOrder() {
-        this.http.post('https://kundalini.cfapps.io/rs/order/', this.body);
+        this.body = JSON.parse(localStorage.getItem("customerOrder"));
+        console.log(this.body);
+        this.http.post('http://localhost:8080/kundalini/rs/order/', this.body).subscribe(
+            res => {
+                console.log(res);
+            },
+            err => {
+                console.log("Error occured");
+            }
+        );
     }
 
     fillCustomerOrderFromCart () {
@@ -25,8 +36,24 @@ export class PlaceOredrService {
         localStorage.setItem("customerOrder", JSON.stringify(this.body));
     }
 
-    fillCustomerDetails () {
-        
+    fillCustomerDetails (userProfile:UserProfile, mobile:String) {
+        this.body = JSON.parse(localStorage.getItem("customerOrder"));
+        this.body.customerMail = userProfile.nickname + "@gmail.com";
+        this.body.customerMail = mobile;
+        localStorage.setItem("customerOrder", JSON.stringify(this.body));
+    }
+
+    fillCustomerDetailsNew (name:String, mail:String, mobile:String) {
+        this.body = JSON.parse(localStorage.getItem("customerOrder"));
+        this.body.customerMail = mail;
+        this.body.customerMail = mobile;
+        localStorage.setItem("customerOrder", JSON.stringify(this.body));
+    }
+
+    fillCustomerAddress (address:CustomerAddress) {
+        this.body = JSON.parse(localStorage.getItem("customerOrder"));
+        this.body.customerAddress = address;
+        localStorage.setItem("customerOrder", JSON.stringify(this.body));
     }
 
 

@@ -1,6 +1,20 @@
 <div class="container">
-  <h2>Claim Your Order</h2>
+  <h2>Claim Your Order </h2>
   <form #customerFrom="ngForm" (ngSubmit)="onSubmit(customerFrom.value)">
+    <div *ngIf="!auth.isAuthenticated()" class="form-group col-lg-4">
+      <label>Name</label>
+      <input type="text" #fullNameRef="ngModel" class="form-control" required name="fullName" ngModel>
+      <div [hidden]="fullNameRef.valid || fullNameRef.pristine" class="alert alert-danger">
+        Please enter Your name
+      </div>
+    </div>
+    <div *ngIf="!auth.isAuthenticated()" class="form-group col-lg-4">
+        <label>Email</label>
+        <input type="text" #emailRef="ngModel" required class="form-control" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"  ngModel>
+        <div [hidden]="emailRef.valid || emailRef.pristine" class="alert alert-danger">
+          Please enter a valid email id
+        </div>
+    </div>
     <div class="form-group col-lg-4">
       <label>Mobile</label>
       <input type="text" #mobileRef="ngModel" class="form-control" required name="mobile" pattern="[789][0-9]{9}" ngModel>

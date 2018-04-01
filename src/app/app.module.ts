@@ -36,7 +36,7 @@ import { PlaceOredrService } from './services/placeorder-service';
     WhyusComponent
   ],
   imports: [
-    BrowserModule, AppRoutingModule, FormsModule,HttpModule
+    BrowserModule, AppRoutingModule, FormsModule, HttpModule
   ],
   providers: [ItemMenuService,ItemGridService, AuthService, PlaceOredrService],
   bootstrap: [AppComponent]
