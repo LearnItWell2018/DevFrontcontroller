@@ -21,7 +21,7 @@
   <div class="dropdown navbox-item fifth-item">
     <div class="dropmenu push-right-large push-right-medium"> 
       <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-        {{activeUserName}}
+        {{getactiveUserName()}}
       </button>
       <div class="dropdown-menu">
         <a *ngIf="auth.isAuthenticated()" class="dropdown-item" (click)="logOut()">Log Out</a>

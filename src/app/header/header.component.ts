@@ -57,5 +57,15 @@ export class HeaderComponent implements OnInit {
     this.auth.login();
   }
   
+  getactiveUserName():String{
+    this.userProfile = this.auth.getProfile();
+    if (this.userProfile) {
+       this.activeUserPresent = true;
+       return this.userProfile.name;
+    } else {
+      this.activeUserPresent = false;
+      return "Anyone Home";
+    }
+  }
 
 }
