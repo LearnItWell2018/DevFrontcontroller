@@ -112,7 +112,7 @@ input[type="submit"]:active {
   display: block;
   margin-bottom: 40px;
   font-size: 28px;
-  color: #FFF;
+  color: rgb(27, 167, 192);
   text-align: center;
 }
 
@@ -140,14 +140,7 @@ button.social-signin:active {
   transition: 0.2s ease;
 }
 
-button.social-signin.facebook {
-  background: #32508E;
-}
-
-button.social-signin.twitter {
-  background: #55ACEE;
-}
-
 button.social-signin.google {
   background: #DD4B39;
+  position: absolute;
 }
