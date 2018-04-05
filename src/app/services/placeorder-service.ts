@@ -32,7 +32,24 @@ export class PlaceOredrService {
         this.body = new CustomerOrder();
         this.orderDetails  = new OrderDetails();
         this.body.orderDetails = this.orderDetails;
-        this.body.orderDetails.orderList = JSON.parse('['+ localStorage.getItem('myKart') +']');
+        //this.body.orderDetails.orderList = JSON.parse('['+ localStorage.getItem('myKart') +']');
+
+        let myObject=JSON.parse('['+ localStorage.getItem('myKart') +']');
+
+        let other:OrderList[] = [];
+
+        myObject.map(item => {
+            return {
+                productId: item.productId,
+                itemCount: item.itemQuantity,
+                itemPrice: item.itemPrice,
+                itemImage: item.itemImage,
+                itemDesc: item.productId
+            }
+        }).forEach(item => other.push(item));
+
+        this.body.orderDetails.orderList = other;
+
         localStorage.setItem("customerOrder", JSON.stringify(this.body));
     }
 
@@ -49,10 +66,10 @@ export class PlaceOredrService {
         this.body.customerMail = mobile;
         localStorage.setItem("customerOrder", JSON.stringify(this.body));
     }
-
+    
     fillCustomerAddress (address:CustomerAddress) {
         this.body = JSON.parse(localStorage.getItem("customerOrder"));
-        this.body.customerAddress = address;
+        //this.body.customerAddress.push(address);
         localStorage.setItem("customerOrder", JSON.stringify(this.body));
     }
 
