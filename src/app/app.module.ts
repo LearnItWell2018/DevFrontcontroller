@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { CustomerComponent } from './customer/customer.component';
@@ -19,6 +19,7 @@ import { WhyusComponent } from './whyus/whyus.component';
 import { ItemGridService } from './services/item-grid-service';
 import { AuthService } from './services/auth-service';
 import { PlaceOredrService } from './services/placeorder-service';
+import { TypeaheadTemplateComponent } from './header/typeahead-template/typeahead-template.component';
 
 
 @NgModule({
@@ -33,10 +34,11 @@ import { PlaceOredrService } from './services/placeorder-service';
     CustomerComponent,
     PlaceOrderComponent,
     FooterComponent,
-    WhyusComponent
+    WhyusComponent,
+    TypeaheadTemplateComponent
   ],
   imports: [
-    BrowserModule, AppRoutingModule, FormsModule, HttpModule
+    BrowserModule, AppRoutingModule, FormsModule, HttpModule,NgbModule.forRoot()
   ],
   providers: [ItemMenuService,ItemGridService, AuthService, PlaceOredrService],
   bootstrap: [AppComponent]
