@@ -18,7 +18,7 @@ export class PlaceOredrService {
     placeOrder() {
         this.body = JSON.parse(localStorage.getItem("customerOrder"));
         console.log(this.body);
-        this.http.post('http://localhost:8080/kundalini/rs/order/', this.body).subscribe(
+        this.http.post('http://kundalini.cfapps.io/rs/order/', this.body).subscribe(
             res => {
                 console.log(res);
             },
