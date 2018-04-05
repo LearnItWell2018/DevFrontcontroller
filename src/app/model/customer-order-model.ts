@@ -9,7 +9,7 @@ export class CustomerOrder{
   
     public orderDetails:OrderDetails;
   
-    public customerAddress:CustomerAddress;
+    public customerAddress:CustomerAddress[] = [];
    
 
 }
