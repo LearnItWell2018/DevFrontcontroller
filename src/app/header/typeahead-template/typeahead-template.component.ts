@@ -2,8 +2,10 @@ import {Component} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/map';
+import { OnInit } from '@angular/core';
+import { Http,Headers } from '@angular/http';
 
-const statesWithFlags = [
+/* const statesWithFlags = [
   {'name': 'Alabama', 'flag': '5/5c/Flag_of_Alabama.svg/45px-Flag_of_Alabama.svg.png'},
   {'name': 'Alaska', 'flag': 'e/e6/Flag_of_Alaska.svg/43px-Flag_of_Alaska.svg.png'},
   {'name': 'Arizona', 'flag': '9/9d/Flag_of_Arizona.svg/45px-Flag_of_Arizona.svg.png'},
@@ -57,22 +59,34 @@ const statesWithFlags = [
   {'name': 'West Virginia', 'flag': '2/22/Flag_of_West_Virginia.svg/46px-Flag_of_West_Virginia.svg.png'},
   {'name': 'Wisconsin', 'flag': '2/22/Flag_of_Wisconsin.svg/45px-Flag_of_Wisconsin.svg.png'},
   {'name': 'Wyoming', 'flag': 'b/bc/Flag_of_Wyoming.svg/43px-Flag_of_Wyoming.svg.png'}
-];
+]; */
+
+let itemsWithImage;
 
 @Component({
   selector: 'ngbd-typeahead-template',
   templateUrl: './typeahead-template.component.html',
-  styles: [`.form-control { width: 280px; }`]
+  styleUrls: ['./typeahead-template.component.css']
 })
-export class TypeaheadTemplateComponent {
+export class TypeaheadTemplateComponent  implements OnInit {
   public model: any;
+  
+  constructor(private http:Http){ }
+  ngOnInit(){
+    this.http.get('https://kundalini.cfapps.io/rs/items/list').subscribe(
+       (response)=>{
+        itemsWithImage=response.json();
+        console.log(itemsWithImage);
+      },
+       (error)=>{console.log(error)})
+  }
 
   search = (text$: Observable<string>) =>
     text$
       .debounceTime(200)
       .map(term => term === '' ? []
-        : statesWithFlags.filter(v => v.name.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10));
+        : itemsWithImage.filter(v => v.itemName.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10));
 
-  formatter = (x: {name: string}) => x.name;
+  formatter = (x: {itemName: string}) => x.itemName;
 
 }
