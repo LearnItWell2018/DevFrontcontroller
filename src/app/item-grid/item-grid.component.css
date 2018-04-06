@@ -2,6 +2,7 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
+    background: rgb(56, 51, 51);
 }
 
 .displayInline{
@@ -42,7 +43,28 @@
     border:1px red solid;
 }
 
+.flexbox-design {
+    display: flex;
+    justify-content: space-between;
+}
 
+.card-body{
+    background: linear-gradient( #ffecd2 , #fcb69f);
+}
+
+.price-box{
+
+    font-weight: bold;
+    color: darkgreen;
+
+}
+
+.brand-box{
+  
+    font-weight: bold;
+    color: rgba(102, 62, 13, 0.932);
+
+}
 @media only screen and (max-width: 1420px) {
     .fullwidh{
         background: url('../../assets/image/matt_black.jpg') repeat;

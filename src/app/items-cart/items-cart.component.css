@@ -252,3 +252,10 @@ Side note: I know that this style of nesting in SASS doesn't result in the most 
   display:flex;
   justify-content: flex-start;
 }
+
+.container{
+  background: #e2deab;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+}
