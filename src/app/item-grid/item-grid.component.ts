@@ -35,7 +35,7 @@ export class ItemGridComponent implements OnInit ,OnDestroy{
          //console.log(JSONdata);
         JSONdata.forEach(element => {
   
-            let crakerItm=new GridItem( element.productId,element.productImgPath,element.brand,element.itemName,
+            let crakerItm=new GridItem( element.productId,element.productImgPath,element.brand,element.itemName, element.itemDesc,
                 element.itemPrice,element.itemStock,element.itemActive,element.itemDetails);
             this.itemGridService.gridItemArray.push(crakerItm);
          });

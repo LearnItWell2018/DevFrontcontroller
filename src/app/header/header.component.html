@@ -26,8 +26,7 @@
       </button>
       <div class="dropdown-menu">
         <a *ngIf="auth.isAuthenticated()" class="dropdown-item" (click)="logOut()">Log Out</a>
-        <a *ngIf="!auth.isAuthenticated()" class="dropdown-item" [routerLink]="'signin'">Sign In</a>
-        <a *ngIf="!auth.isAuthenticated()" class="dropdown-item" (click)="logIn()">Log In</a>
+        <a *ngIf="!auth.isAuthenticated()" class="dropdown-item" (click)="logIn()">Sign In | Log In</a>
         <a class="dropdown-item" [routerLink]="'whyus'">Why Us</a>
       </div>
     </div>
