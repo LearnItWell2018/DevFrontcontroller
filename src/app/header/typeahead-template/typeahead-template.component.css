@@ -4,3 +4,19 @@
     width:24px;
     height:24px;
 }
+
+.price{
+    font-weight: bold;
+    color: darkgreen;
+}
+
+.Row
+{
+    display: table;
+    table-layout: fixed; 
+    border-spacing: 10px;
+}
+.Column
+{
+    display: table-cell;
+}

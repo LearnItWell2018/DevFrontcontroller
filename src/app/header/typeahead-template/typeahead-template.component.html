@@ -1,10 +1,13 @@
 
 
 <ng-template #rt let-r="result" let-t="term">
- <img [src]="r['productImgPath']" width="16"> 
-  {{ r.itemName}}
-  <a class="btn btn-success product "> <img src="/assets/brand/shop.svg"  class="d-inline-block" alt="kundalini" [id]="r['productId']" ></a>
- </ng-template>
+  <div class="Row">
+    <img [src]="r['productImgPath']" width="45" class="Column"> 
+    <div class="Column">{{ r.itemName}}</div>
+    <div class="Column price">Rs {{ r.itemPrice}}</div>
+    <a class="btn btn-success product"> <img src="/assets/brand/shop.svg"  class="d-inline-block" alt="kundalini" [id]="r['productId']" ></a>
+  </div>
+</ng-template>
 
 <input id="typeahead-template"  type="text" class="form-control mr-sm-2" [(ngModel)]="model" [ngbTypeahead]="search" [resultTemplate]="rt"
   [inputFormatter]="formatter" />
