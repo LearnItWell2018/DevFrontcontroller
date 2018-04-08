@@ -1,0 +1,22 @@
+.Row
+{
+    display: table;
+    table-layout: fixed; 
+    border-spacing: 10px;
+}
+.Column
+{
+    display: table-cell;
+}
+
+.text {
+    color: yellow;
+    font: bold;
+    font-size: 20px;
+}
+
+.textplain {
+    color: yellowgreen;
+    font: bold;
+    font-size: 20px;
+}

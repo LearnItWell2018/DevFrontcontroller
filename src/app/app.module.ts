@@ -20,6 +20,7 @@ import { ItemGridService } from './services/item-grid-service';
 import { AuthService } from './services/auth-service';
 import { PlaceOredrService } from './services/placeorder-service';
 import { TypeaheadTemplateComponent } from './header/typeahead-template/typeahead-template.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { TypeaheadTemplateComponent } from './header/typeahead-template/typeahea
     PlaceOrderComponent,
     FooterComponent,
     WhyusComponent,
-    TypeaheadTemplateComponent
+    TypeaheadTemplateComponent,
+    AboutusComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, FormsModule, HttpModule,NgbModule.forRoot()
