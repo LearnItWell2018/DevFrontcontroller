@@ -7,8 +7,7 @@ import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-place-order',
   templateUrl: './place-order.component.html',
-  styleUrls: ['./place-order.component.css'],
-  styles: ['input.ng-invalid{border-left:5px solid red;} input.ng-valid{border-left:5px solid green;}']
+  styleUrls: ['./place-order.component.css']
 })
 export class PlaceOrderComponent implements OnInit {
 
