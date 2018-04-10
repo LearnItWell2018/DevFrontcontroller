@@ -1,2 +1,32 @@
 input.ng-invalid{border-left:5px solid red;}
 input.ng-valid{border-left:5px solid green;}
+
+.displayCenter{
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.containerHide{
+  display:none;
+}
+
+.container{
+    padding:20px;
+    margin-top:20px;
+    background-image: url('../../assets/image/matt_black.jpg');
+    border-radius: 1%;
+}
+
+label{
+font-weight: bold;
+color:white;
+}
+
+h2{
+    color:white;
+}
+
+span{
+    color:white;
+}
