@@ -1,6 +1,6 @@
 <ul>
   <div class="menuItem" *ngFor='let itemMenu of itemMenus'>
-  <li><a [routerLink]='["../",itemMenu.crackerIconURL]'>
+  <li><a (click)="navigate()" [routerLink]='["../",itemMenu.crackerIconURL]'>
     <div class="imageDiv"><img [src]="itemMenu.crackerIconImagePath" [alt]="itemMenu.crackerTitleText"></div>
     <div class="iconText">{{itemMenu.crackerTitleText}}</div>
   </a></li>

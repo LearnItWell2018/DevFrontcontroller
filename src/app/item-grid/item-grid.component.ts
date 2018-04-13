@@ -4,7 +4,7 @@ import { ItemGridService } from '../services/item-grid-service';
 import { GridItem } from '../model/item-grid-models';
 import { Subscription } from 'rxjs/Subscription';
 import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
-
+import * as $ from 'jquery';
 @Component({
   selector: 'app-item-grid',
   templateUrl: './item-grid.component.html',
@@ -102,5 +102,13 @@ quantityGtOne(index:number){
   }else{
     return false;
   }
+}
+
+navigateAfterClicked(){
+  //alert(document.getElementById('kartForView'));
+  document.getElementById('kartForView').scrollIntoView({
+    behavior: 'smooth'
+});
+  //$('#kartForView').animate({ scrollTop: $(this.hash).offset().top}, 1000)
 }
 }
