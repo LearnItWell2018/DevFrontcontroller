@@ -6,7 +6,7 @@ import { ElementRef } from '@angular/core';
   styleUrls: ['./whyus.component.css']
 })
 export class WhyusComponent {
-  @ViewChild("myObject") myObject:any;
+  @ViewChild("myObject") myObject:ElementRef;
   public allQuotes: string[] = ['700 minimum order', 'fast delivery', 'quality of delivery'];
   public elems: number = 0;
   public intervals: any;
@@ -17,8 +17,8 @@ export class WhyusComponent {
     this.intervals = setInterval(() => {
       this.quotesVal = this.allQuotes[this.elems]
       if (this.elems === 2) { this.elems = 0; } else { this.elems++; }
-      console.log(this.myObject.classList);
-      //this.myObject..classList.add("animated", "infinite", "bounce");
+      console.log(this.myObject.nativeElement);
+      this.myObject.nativeElement.classList.add("animated", "infinite", "bounce");
     }, 1999);
   };
 
@@ -27,7 +27,7 @@ export class WhyusComponent {
 
   public stopRoll(event) {
     clearInterval(this.intervals);
-    //this.myObject.classList.remove("animated", "infinite", "bounce");
+    this.myObject.nativeElement.classList.remove("animated", "infinite", "bounce");
   };
 
 
