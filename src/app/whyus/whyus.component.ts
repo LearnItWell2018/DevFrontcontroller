@@ -18,7 +18,7 @@ export class WhyusComponent {
       this.quotesVal = this.allQuotes[this.elems]
       if (this.elems === 2) { this.elems = 0; } else { this.elems++; }
       console.log(this.myObject.nativeElement);
-      this.myObject.nativeElement.classList.add("animated", "infinite", "bounce");
+      this.myObject.nativeElement.classList.add("animated", "infinite", "swing");
     }, 1999);
   };
 
@@ -27,7 +27,7 @@ export class WhyusComponent {
 
   public stopRoll(event) {
     clearInterval(this.intervals);
-    this.myObject.nativeElement.classList.remove("animated", "infinite", "bounce");
+    this.myObject.nativeElement.classList.remove("animated", "infinite", "swing");
   };
 
 
