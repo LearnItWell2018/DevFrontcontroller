@@ -34,7 +34,7 @@
 					Holy crap. Your dog will be begging for these things! I got curious
 					once and ate one myself. I'm a fan.</p>
 			</div>
-			<div class="product-price">{{listItem.itemPrice}}</div>
+			<div class="product-price"><i class="fa fa-rupee"></i>{{listItem.itemPrice}}</div>
 		<div class="product-quantity">
 			<div class="flex-box" >
 			<a  class="btn-sm btn-success displayInline" (click)="reduceQuantity(i)">-</a>
@@ -50,16 +50,16 @@
 			<div class="product-removal">
 				<button class="remove-product" (click)="removeThisProduct(i)">Remove</button>
 			</div>
-			<div class="product-line-price">{{listItem.totalFinalVal}}</div>
+			<div class="product-line-price"><i class="fa fa-rupee"></i>{{listItem.totalFinalVal}}</div>
 		</div>
 
 
 		<div class="totals">
 			<div class="totals-item">
 				<label>Subtotal</label>
-				<div class="totals-value" id="cart-subtotal">{{totalValue}}</div>
+				<div class="totals-value" id="cart-subtotal"><i class="fa fa-rupee"></i>{{totalValue}}</div>
 			</div>
-			<div class="totals-item">
+			<!-- <div class="totals-item">
 				<label>Tax (5%)</label>
 				<div class="totals-value" id="cart-tax">3.60</div>
 			</div>
@@ -70,7 +70,7 @@
 			<div class="totals-item totals-item-total">
 				<label>Grand Total</label>
 				<div class="totals-value" id="cart-total">90.57</div>
-			</div>
+			</div> -->
 		</div>
 		<button class="checkout" (click)="gotoPlaceOrder()">Checkout</button>
 	</div>

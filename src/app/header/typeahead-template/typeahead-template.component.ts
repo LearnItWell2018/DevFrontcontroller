@@ -20,7 +20,7 @@ export class TypeaheadTemplateComponent  implements OnInit {
     this.http.get('https://kundalini.cfapps.io/rs/items/list').subscribe(
        (response)=>{
         itemsWithImage=response.json();
-        console.log(itemsWithImage);
+        console.log('itemsWithImage:'+itemsWithImage);
       },
        (error)=>{console.log(error)})
   }
@@ -33,6 +33,38 @@ export class TypeaheadTemplateComponent  implements OnInit {
 
   formatter = (x: {itemName: string}) => x.itemName;
 
-  
+  addItemOnClicked(object){
+    console.log(object.target);
+  }
 
+  addProductToWebStore(index:number,inputElem:HTMLFormElement){
+    if(itemsWithImage[index].itemQuantity===0){
+      alert('Error');
+    }else{
+      if(!localStorage.getItem('myKart')){
+        localStorage.setItem('myKart',JSON.stringify(itemsWithImage[index]));
+        itemsWithImage[index].itemQuantity=0;
+      }else{
+        let myKart=localStorage.getItem('myKart');
+        let presentItem=itemsWithImage[index];
+        if(myKart.indexOf(itemsWithImage.productId)>=0){
+          let myObject=JSON.parse('['+myKart+']');
+          myObject.forEach(function(item){
+            if(item.productId===presentItem.productId){
+              item.itemQuantity=item.itemQuantity+presentItem.itemQuantity;
+              let stripObj=JSON.stringify(myObject).split('[')[1].split(']')[0];
+              localStorage.setItem('myKart',stripObj);
+              presentItem.itemQuantity=0;
+              return;
+            }
+          });
+        }
+        else{
+        myKart=myKart+","+JSON.stringify(itemsWithImage[index]);
+        localStorage.setItem('myKart',myKart);
+        itemsWithImage[index].itemQuantity=0;
+        }
+      }
+    }
+  }
 }
