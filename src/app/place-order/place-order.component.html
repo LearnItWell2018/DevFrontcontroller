@@ -1,119 +1,67 @@
-<div class="container containerHide">
-    <div class="row displayCenter">
-      <h2>Claim Your Order </h2>
-    </div>
-  <form #customerFrom="ngForm" (ngSubmit)="onSubmit(customerFrom.value)">
-    <div *ngIf="!auth.isAuthenticated()" class="form-group col-lg-4">
-      <label>Name</label>
-      <input type="text" #fullNameRef="ngModel" class="form-control" required name="fullName" ngModel>
-      <div [hidden]="fullNameRef.valid || fullNameRef.pristine" class="alert alert-danger">
-        Please enter Your name
-      </div>
-    </div>
-    <div *ngIf="!auth.isAuthenticated()" class="form-group col-lg-4">
-        <label>Email</label>
-        <input type="text" #emailRef="ngModel" required class="form-control" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"  ngModel>
-        <div [hidden]="emailRef.valid || emailRef.pristine" class="alert alert-danger">
-          Please enter a valid email id
-        </div>
-    </div>
-    <div class="form-group col-lg-4">
-      <label>Mobile</label>
-      <input type="text" #mobileRef="ngModel" class="form-control" required name="mobile" pattern="[789][0-9]{9}" ngModel>
-      <div [hidden]="mobileRef.valid || mobileRef.pristine" class="alert alert-danger">
-        Please enter a valid Mobile No
-      </div>
-    </div>
-    <div ngModelGroup="address">
-      <div class="form-group col-lg-5">
-        <label>Pin Code</label>
-        <input type="text" #pincodeRef="ngModel" required pattern="^[7][0]{2}[0-9]{3}$" class="form-control" name="postalcode" ngModel><span>*Please note we don't serve outside kolkata</span>
-        <div [hidden]="pincodeRef.valid || pincodeRef.pristine" class="alert alert-danger">
-          Please enter a valid pin code
-        </div>
-      </div>
-      <div class="form-group col-lg-10">
-        <label>Street</label>
-        <input type="text" class="form-control" required name="street" ngModel>
-      </div>
-      <div class="form-group col-lg-2">
-        <label>Room/Flat No</label>
-        <input type="text" class="form-control" required name="flatno" ngModel>
-      </div>
-      <div class="form-group col-lg-6">
-        <label>Land Mark</label>
-        <input type="text" class="form-control" name="nearestLandMark" ngModel>
-      </div>
-    </div>
-    <button type="submit" class="btn btn-primary col-lg-4">Submit</button>
-  </form>
-</div>
 <div class="container">
-    <div class="row displayCenter">
-  <h2>Claim Your Order </h2>
+  <div class="row displayCenter">
+    <h2>Claim Your Order </h2>
   </div>
   <form #customerFrom="ngForm" (ngSubmit)="onSubmit(customerFrom.value)">
-  <div class="row">  
-  <div class="col-md-6">
-      <div *ngIf="!auth.isAuthenticated()" class="form-group">
+    <div class="row">
+      <div class="col-md-6">
+        <div *ngIf="!auth.isAuthenticated()" class="form-group">
           <label>Name</label>
           <input type="text" #fullNameRef="ngModel" class="form-control" required name="fullName" ngModel>
           <div [hidden]="fullNameRef.valid || fullNameRef.pristine" class="alert alert-danger">
             Please enter Your name
           </div>
         </div>
-  </div>
-  <div class="col-md-6">
-      <div *ngIf="!auth.isAuthenticated()" class="form-group">
+      </div>
+      <div class="col-md-6">
+        <div *ngIf="!auth.isAuthenticated()" class="form-group">
           <label>Email</label>
-          <input type="text" #emailRef="ngModel" required class="form-control" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"  ngModel>
+          <input type="text" #emailRef="ngModel" required class="form-control" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+            ngModel>
           <div [hidden]="emailRef.valid || emailRef.pristine" class="alert alert-danger">
             Please enter a valid email id
           </div>
+        </div>
       </div>
-  </div>
-</div>
+    </div>
 
-<div class="row">  
-    <div class="col-md-6">
+    <div class="row">
+      <div class="col-md-6">
         <label>Mobile</label>
         <input type="text" #mobileRef="ngModel" class="form-control" required name="mobile" pattern="[789][0-9]{9}" ngModel>
         <div [hidden]="mobileRef.valid || mobileRef.pristine" class="alert alert-danger">
           Please enter a valid Mobile No
         </div>
-    </div>
-    <div class="col-md-6">
-        <div class="form-group">
-            <label>Pin Code</label>
-            <input type="text" #pincodeRef="ngModel" required pattern="^[7][0]{2}[0-9]{3}$" class="form-control" name="postalcode" ngModel><span>*Please note we don't serve outside kolkata</span>
-            <div [hidden]="pincodeRef.valid || pincodeRef.pristine" class="alert alert-danger">
-              Please enter a valid pin code
-            </div>
+      </div>
+      <div class="col-md-6">
+          <label>Pin Code</label>
+          <input type="text" #pincodeRef="ngModel" required pattern="^[7][0]{2}[0-9]{3}$" class="form-control" name="postalcode" ngModel>
+          <span>*Please note we don't serve outside kolkata</span>
+          <div [hidden]="pincodeRef.valid || pincodeRef.pristine" class="alert alert-danger">
+            Please enter a valid pin code
           </div>
+      </div>
     </div>
-  </div>
-  <div class="row">  
+    <div ngModelGroup="address">
+    <div class="row">
       <div class="col-md-6">
-          <div class="form-group">
-              <label>Room/Flat No</label>
-              <input type="text" class="form-control" required name="flatno" ngModel>
-            </div>
-      </div>
-      <div class="col-md-6">
-          <div class="form-group">
-              <label>Land Mark</label>
-              <input type="text" class="form-control" name="nearestLandMark" ngModel>
-            </div>
-      </div>
-    </div> 
-    <div class="row"> 
-        <div class="col-md-12">
-          <label>Street</label>
+          <label>Room/Flat No</label>
           <input type="text" class="form-control" required name="flatno" ngModel>
-        </div>
-    </div> 
-    <div class="row displayCenter"> 
-    <button type="submit" class="btn btn-success col-md-6">Submit</button>
+      </div>
+      <div class="col-md-6">
+          <label>Land Mark</label>
+          <input type="text" class="form-control" name="nearestLandMark" ngModel>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <label>Street</label>
+        <input type="text" class="form-control" required name="street" ngModel>
+      </div>
+    </div>
+    </div>
+    <div class="row displayCenter">
+      <button type="submit" class="btn btn-success col-md-6">Submit</button>
     </div>
   </form>
 </div>
