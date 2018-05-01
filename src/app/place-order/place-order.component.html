@@ -33,7 +33,7 @@
           Please enter a valid Mobile No
         </div>
       </div>
-      <div class="col-md-6">
+      <div ngModelGroup="address" class="col-md-6">
           <label>Pin Code</label>
           <input type="text" #pincodeRef="ngModel" required pattern="^[7][0]{2}[0-9]{3}$" class="form-control" name="postalcode" ngModel>
           <span>*Please note we don't serve outside kolkata</span>

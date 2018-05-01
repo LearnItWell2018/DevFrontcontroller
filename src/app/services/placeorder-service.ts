@@ -55,14 +55,14 @@ export class PlaceOredrService {
     fillCustomerDetails (userProfile:UserProfile, mobile:String) {
         this.body = JSON.parse(localStorage.getItem("customerOrder"));
         this.body.customerMail = userProfile.nickname + "@gmail.com";
-        this.body.customerMail = mobile;
+        this.body.customerMobile = mobile;
         localStorage.setItem("customerOrder", JSON.stringify(this.body));
     }
 
     fillCustomerDetailsNew (name:String, mail:String, mobile:String) {
         this.body = JSON.parse(localStorage.getItem("customerOrder"));
         this.body.customerMail = mail;
-        this.body.customerMail = mobile;
+        this.body.customerMobile = mobile;
         localStorage.setItem("customerOrder", JSON.stringify(this.body));
     }
     
