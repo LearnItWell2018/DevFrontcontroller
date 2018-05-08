@@ -12,9 +12,9 @@ import { NgForm } from '@angular/forms';
 export class PlaceOrderComponent implements OnInit {
 
 
-  customerAddress:CustomerAddress;
+  customerAddress: CustomerAddress;
 
-  constructor(private placeOredrService:PlaceOredrService,private auth:AuthService) {
+  constructor(private placeOredrService: PlaceOredrService, private auth: AuthService) {
     localStorage.setItem("customerOrder", "");
   }
 
@@ -30,8 +30,8 @@ export class PlaceOrderComponent implements OnInit {
       this.placeOredrService.fillCustomerDetailsNew(customerFrom.fullName, customerFrom.email, customerFrom.mobile);
     }
 
-    this.customerAddress = new CustomerAddress("1", customerFrom.address.postalcode, 
-    customerFrom.address.street, customerFrom.address.flatno, customerFrom.address.nearestLandMark);
+    this.customerAddress = new CustomerAddress("1", customerFrom.address.postalcode,
+      customerFrom.address.street, customerFrom.address.flatno, customerFrom.address.nearestLandMark);
     this.placeOredrService.fillCustomerAddress(this.customerAddress);
 
     this.placeOredrService.placeOrder();
