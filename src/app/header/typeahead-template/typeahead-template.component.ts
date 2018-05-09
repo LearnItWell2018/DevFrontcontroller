@@ -38,19 +38,19 @@ export class TypeaheadTemplateComponent implements OnInit {
 
   addItemOnClicked(object) {
     console.log(object.target.id);
-    console.log(this.findItemDetails(object.target.id));
+    this.findItemDetails(object.target.id);
   }
 
-  findItemDetails(itemID: String) : GridItem {
+  findItemDetails(itemID: String) {
     this.http.get('https://kundalini.cfapps.io/rs/items/' + itemID.split("-")[0] + '/' + itemID).subscribe(
       (response) => {
         itemSelected = response.json();
-        console.log(itemSelected.productImgPath); 
-        return new GridItem(itemSelected.productId,itemSelected.productImgPath,itemSelected.brand,itemSelected.itemName, itemSelected.itemDesc,
+        this.gridItem  = new GridItem(itemSelected.productId,itemSelected.productImgPath,itemSelected.brand,itemSelected.itemName, itemSelected.itemDesc,
           itemSelected.itemPrice,itemSelected.itemStock,itemSelected.itemActive,itemSelected.itemDetails);
+          this.gridItem.itemQuantity = 1;
+          this.addProductToWebStore(this.gridItem);
       },
       (error) => { console.log(error) })
-    return this.gridItem;
   }
 
   addProductToWebStore(presentItem: GridItem) {
@@ -59,7 +59,7 @@ export class TypeaheadTemplateComponent implements OnInit {
       localStorage.setItem('myKart', JSON.stringify(presentItem));
     } else {
       let myKart = localStorage.getItem('myKart');
-      if (myKart.indexOf(itemsInList.productId) >= 0) {
+      if (myKart.indexOf(presentItem.productId) >= 0) {
         let myObject = JSON.parse('[' + myKart + ']');
         myObject.forEach(function (item) {
           if (item.productId === presentItem.productId) {
@@ -77,3 +77,4 @@ export class TypeaheadTemplateComponent implements OnInit {
     }
   }
 }
+
