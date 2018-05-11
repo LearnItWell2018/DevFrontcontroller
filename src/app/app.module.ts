@@ -21,6 +21,7 @@ import { AuthService } from './services/auth-service';
 import { PlaceOredrService } from './services/placeorder-service';
 import { TypeaheadTemplateComponent } from './header/typeahead-template/typeahead-template.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { MyOrderComponent } from './my-order/my-order.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { AboutusComponent } from './aboutus/aboutus.component';
     FooterComponent,
     WhyusComponent,
     TypeaheadTemplateComponent,
-    AboutusComponent
+    AboutusComponent,
+    MyOrderComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, FormsModule, HttpModule,NgbModule.forRoot()

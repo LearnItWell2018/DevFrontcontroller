@@ -7,6 +7,7 @@ import { PlaceOrderComponent } from './place-order/place-order.component';
 import { WhyusComponent } from './whyus/whyus.component';
 import { ItemsCartComponent } from './items-cart/items-cart.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { MyOrderComponent } from './my-order/my-order.component';
 
 const appRoutes: Routes = [
   { path: '', component: ItemGridComponent },
@@ -15,6 +16,7 @@ const appRoutes: Routes = [
   { path: 'whyus', component: WhyusComponent},
   { path: 'aboutus', component: AboutusComponent},
   { path: 'kart', component: ItemsCartComponent},
+  { path: 'myorder', component: MyOrderComponent},
   { path: ':crackers', component: ItemGridComponent }
 
 ];

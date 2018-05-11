@@ -28,6 +28,7 @@
         <a *ngIf="auth.isAuthenticated()" class="dropdown-item" (click)="logOut()">Log Out</a>
         <a *ngIf="!auth.isAuthenticated()" class="dropdown-item" (click)="logIn()">Sign In | Log In</a>
         <a class="dropdown-item" [routerLink]="'whyus'">Why Us</a>
+        <a *ngIf="auth.isAuthenticated()" class="dropdown-item" [routerLink]="'myorder'">My Order</a>
       </div>
     </div>
     <div class="menu-border">
@@ -50,4 +51,3 @@
       <div class="iconText">{{itemMenu.crackerTitleText}}</div>
     </a>
 </div>
-<!-- <span style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776; open</span> -->
