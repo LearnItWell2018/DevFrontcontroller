@@ -1,10 +1,11 @@
 <div class="container">
-  <div *ngFor="let orderItem of orderListAll">
+  <div *ngFor="let orderItem of orderListAll; let i = index" class="orderrow">
     <div class="flex-row">
-      <div class="orderid">OD211857209000753000</div>
+      <div class="orderid" data-toggle="collapse" [attr.data-target]="'#' + i"  >OD211857209000753000</div>
+      <div class="orderdate">Order Date : {{orderItem.orderDetails.orderDate}}</div>
       <div class="resend">Resend <i class="fa fa-envelope"></i></div>
     </div>
-    <div class="content-order">
+    <div [attr.id]="i" class="content-order collapse">
       <div *ngFor="let productItem of orderItem.orderDetails.orderList">
         <div class="flex-row">
           <div><img class="product-image" [src]="productItem.itemImage"></div>
@@ -18,7 +19,7 @@
       <div class="total">
         <div class="flex-row">
           <div>Total Amount :</div>
-          <div>{{orderItem.orderTotal}} <i class="fa fa-rupee"></i></div>
+          <div>{{orderItem.orderDetails.orderTotal}} <i class="fa fa-rupee"></i></div>
         </div>
       </div>
     </div>

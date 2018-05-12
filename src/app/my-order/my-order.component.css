@@ -72,3 +72,11 @@
     border-color: #d41212;
     border-width: 5px;
 }
+
+.orderrow {
+    padding-bottom: 10px;
+}
+
+.orderdate {
+    color: #fff;
+}
