@@ -1,15 +1,15 @@
 export class OrderList {
 
 
-    private  productId:String;
+    public  productId:String;
 
-    private itemCount:String ;
+    public itemCount:String ;
 
-    private itemPrice:String ;
+    public itemPrice:String ;
 
-    private itemImage:String ;
+    public itemImage:String ;
  
-    private itemDesc:String ;
+    public itemDesc:String ;
 
     constructor (productId:String, itemCount:String, itemPrice:String, itemImage:String, itemDesc:String) {
         this.productId = productId;

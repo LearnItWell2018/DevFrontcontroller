@@ -17,6 +17,7 @@ export class PlaceOredrService {
 
     placeOrder() {
         this.body = JSON.parse(localStorage.getItem("customerOrder"));
+        this.body.orderDetails.orderDate =   new Date().toDateString();
         console.log(this.body);
         this.http.post('http://localhost:8088/kundalini/rs/order', this.body).subscribe(
             res => {
@@ -48,6 +49,7 @@ export class PlaceOredrService {
         }).forEach(item => listOrder.push(item));
 
         this.body.orderDetails.orderList = listOrder;
+        this.body.orderDetails.orderTotal = this.calculateTotal(listOrder);
 
         localStorage.setItem("customerOrder", JSON.stringify(this.body));
     }
@@ -72,6 +74,14 @@ export class PlaceOredrService {
         this.body = JSON.parse(localStorage.getItem("customerOrder"));
         this.body.customerAddress.push(address);
         localStorage.setItem("customerOrder", JSON.stringify(this.body));
+    }
+
+    calculateTotal (listOrder:OrderList[]) : any {
+        let totalVal = 0;
+        listOrder.forEach(function(item) {
+            totalVal = totalVal + (Number.parseInt(item.itemCount.toString()) * Number.parseInt(item.itemPrice.toString()));
+        });
+        return totalVal;
     }
 
 
