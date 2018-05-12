@@ -18,7 +18,7 @@ export class PlaceOredrService {
     placeOrder() {
         this.body = JSON.parse(localStorage.getItem("customerOrder"));
         console.log(this.body);
-        this.http.post('http://kundalini.cfapps.io/rs/order/', this.body).subscribe(
+        this.http.post('http://localhost:8088/kundalini/rs/order', this.body).subscribe(
             res => {
                 console.log(res);
             },
@@ -56,6 +56,7 @@ export class PlaceOredrService {
         this.body = JSON.parse(localStorage.getItem("customerOrder"));
         this.body.customerMail = userProfile.nickname + "@gmail.com";
         this.body.customerMobile = mobile;
+        this.body.orderStatus = "TRIGGER_MAIL";
         localStorage.setItem("customerOrder", JSON.stringify(this.body));
     }
 
@@ -63,6 +64,7 @@ export class PlaceOredrService {
         this.body = JSON.parse(localStorage.getItem("customerOrder"));
         this.body.customerMail = mail;
         this.body.customerMobile = mobile;
+        this.body.orderStatus = "TRIGGER_MAIL";
         localStorage.setItem("customerOrder", JSON.stringify(this.body));
     }
     

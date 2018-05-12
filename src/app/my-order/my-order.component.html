@@ -1,43 +1,25 @@
 <div class="container">
-  <div class="flex-row">
-    <div class="orderid">OD211857209000753000</div>
-    <div class="resend">Resend <i class="fa fa-envelope"></i></div>
-  </div>
-  <div class="content-order">
-    <div>
-      <div class="flex-row">
-        <div><img class="product-image" src="assets/items/caps.jpg"></div>
-        <div class="details">Based on your current project assignment, you have been assigned and are required to complete the course “Data Privacy and Protection: A European Perspective” on or before May 17, 2018.</div>
-        <div class="quantity">2 items</div>
-        <div class="price">2 * 50 = 100 <i class="fa fa-rupee"></i></div>
-        <div class="return"><button>Return <i class="fa fa-undo"></i></button></div>
-      </div>
-      <hr color="red">
+  <div *ngFor="let orderItem of orderListAll">
+    <div class="flex-row">
+      <div class="orderid">OD211857209000753000</div>
+      <div class="resend">Resend <i class="fa fa-envelope"></i></div>
     </div>
-    <div>
-      <div class="flex-row">
-        <div><img class="product-image" src="assets/items/caps.jpg"></div>
-        <div class="details">Based on your current project assignment, you have been assigned and are required to complete the course “Data Privacy and Protection: A European Perspective” on or before May 17, 2018.</div>
-        <div class="quantity">2 items</div>
-        <div class="price">2 * 50 = 100 <i class="fa fa-rupee"></i></div>
-        <div class="return"><button>Return <i class="fa fa-undo"></i></button></div>
+    <div class="content-order">
+      <div *ngFor="let productItem of orderItem.orderDetails.orderList">
+        <div class="flex-row">
+          <div><img class="product-image" [src]="productItem.itemImage"></div>
+          <div class="details">{{productItem.itemDesc}}</div>
+          <div class="quantity">{{productItem.itemCount}} items</div>
+          <div class="price">{{productItem.itemCount}} * {{productItem.itemPrice}} = {{productItem.itemCount * productItem.itemPrice}} <i class="fa fa-rupee"></i></div>
+          <div class="return"><button>Return <i class="fa fa-undo"></i></button></div>
+        </div>
+        <hr color="red">
       </div>
-      <hr color="red">
-    </div>
-    <div>
-      <div class="flex-row">
-        <div><img class="product-image" src="assets/items/caps.jpg"></div>
-        <div class="details">Based on your current project assignment, you have been assigned and are required to complete the course “Data Privacy and Protection: A European Perspective” on or before May 17, 2018.</div>
-        <div class="quantity">2 items</div>
-        <div class="price">2 * 50 = 100 <i class="fa fa-rupee"></i></div>
-        <div class="return"><button>Return <i class="fa fa-undo"></i></button></div>
-      </div>
-      <hr color="red">
-    </div>
-    <div class="total">
-      <div class="flex-row">
-        <div>Total Amount :</div>
-        <div>200 <i class="fa fa-rupee"></i></div>
+      <div class="total">
+        <div class="flex-row">
+          <div>Total Amount :</div>
+          <div>{{orderItem.orderTotal}} <i class="fa fa-rupee"></i></div>
+        </div>
       </div>
     </div>
   </div>
