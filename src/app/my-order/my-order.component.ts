@@ -17,7 +17,7 @@ export class MyOrderComponent implements OnInit {
   constructor(public http:Http, public authService:AuthService) { }
 
   ngOnInit() {
-    this.http.get('http://localhost:8088/kundalini/rs/order/' + this.getUserEmail()).subscribe(
+    this.http.get('http://kundalini.mj.milesweb.cloud/kundalini/rs/order/' + this.getUserEmail()).subscribe(
       (response) => {
         this.orderListAll = response.json();
         console.log('orderList : ' + JSON.stringify(this.orderListAll));

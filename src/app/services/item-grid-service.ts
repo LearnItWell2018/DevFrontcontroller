@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ItemGridService{
     public gridItemArray:GridItem[]=[];
-    private base='https://kundalini.cfapps.io/rs/items/'; 
+    private base='http://kundalini.mj.milesweb.cloud/kundalini/rs/items/'; 
     private URL:string;
     constructor(private http:Http){    
     }

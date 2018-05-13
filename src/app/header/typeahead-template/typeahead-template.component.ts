@@ -20,7 +20,7 @@ export class TypeaheadTemplateComponent implements OnInit {
 
   constructor(private http: Http) { }
   ngOnInit() {
-    this.http.get('https://kundalini.cfapps.io/rs/items/list').subscribe(
+    this.http.get('http://kundalini.mj.milesweb.cloud/kundalini/rs/items/list').subscribe(
       (response) => {
         itemsInList = response.json();
         console.log('itemsWithImage:' + itemsInList);
@@ -42,7 +42,7 @@ export class TypeaheadTemplateComponent implements OnInit {
   }
 
   findItemDetails(itemID: String) {
-    this.http.get('https://kundalini.cfapps.io/rs/items/' + itemID.split("-")[0] + '/' + itemID).subscribe(
+    this.http.get('http://kundalini.mj.milesweb.cloud/kundalini/rs/items/' + itemID.split("-")[0] + '/' + itemID).subscribe(
       (response) => {
         itemSelected = response.json();
         this.gridItem  = new GridItem(itemSelected.productId,itemSelected.productImgPath,itemSelected.brand,itemSelected.itemName, itemSelected.itemDesc,

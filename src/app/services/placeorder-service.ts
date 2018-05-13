@@ -19,7 +19,7 @@ export class PlaceOredrService {
         this.body = JSON.parse(localStorage.getItem("customerOrder"));
         this.body.orderDetails.orderDate =   new Date().toDateString();
         console.log(this.body);
-        this.http.post('http://localhost:8088/kundalini/rs/order', this.body).subscribe(
+        this.http.post('http://kundalini.mj.milesweb.cloud/kundalini/rs/order', this.body).subscribe(
             res => {
                 console.log(res);
             },

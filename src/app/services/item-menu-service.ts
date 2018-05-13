@@ -32,7 +32,7 @@ export class ItemMenuService{
     }
 
     public getIcons(){
-        return this.http.get('https://kundalini.cfapps.io/rs/itemCategories/');
+        return this.http.get('http://kundalini.mj.milesweb.cloud/kundalini/rs/itemCategories/');
     }
 }
 
