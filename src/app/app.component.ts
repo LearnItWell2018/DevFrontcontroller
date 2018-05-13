@@ -13,6 +13,9 @@ export class AppComponent {
 
   constructor(public auth: AuthService) {
     auth.handleAuthentication();
+    if(!auth.isAuthenticated()) {
+      localStorage.removeItem("user_info");
+    }
   }
 
   loginOwner(e) {

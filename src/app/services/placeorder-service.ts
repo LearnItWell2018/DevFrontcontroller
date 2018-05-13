@@ -22,6 +22,8 @@ export class PlaceOredrService {
         this.http.post('http://kundalini.mj.milesweb.cloud/kundalini/rs/order', this.body).subscribe(
             res => {
                 console.log(res);
+                localStorage.removeItem("customerOrder");
+                localStorage.removeItem("myKart");
             },
             err => {
                 console.log("Error occured");

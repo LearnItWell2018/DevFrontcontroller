@@ -14,12 +14,14 @@ export class ItemsCartComponent implements OnInit {
 
   ngOnInit() {
     let myKart=localStorage.getItem('myKart');
-    this.myKartList=JSON.parse('['+myKart+']');
-    this.myKartList.forEach(function(item){
-      item["totalFinalVal"]=item.itemQuantity*item.itemPrice;
-    });
-    this.syncWithKart();
-    this.calculateTotal();
+    if (myKart!= null) {
+      this.myKartList=JSON.parse('['+myKart+']');
+      this.myKartList.forEach(function(item){
+        item["totalFinalVal"]=item.itemQuantity*item.itemPrice;
+      });
+      this.syncWithKart();
+      this.calculateTotal();
+    }
     //let myKartModify=localStorage.setItem('myKartModify');
   }
 
