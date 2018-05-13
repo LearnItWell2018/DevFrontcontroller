@@ -9,8 +9,18 @@ import { AuthService } from './services/auth-service';
 export class AppComponent {
   title = 'app';
 
+ public edited = false;
+
   constructor(public auth: AuthService) {
     auth.handleAuthentication();
   }
+
+  loginOwner(e) {
+    let pass = e.target.elements[0].value;
+    if ("vishudhi" === pass) {
+      this.edited = true;
+    }
+  }
+
 }
 
