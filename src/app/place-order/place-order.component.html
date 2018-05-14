@@ -1,4 +1,5 @@
 <div class="container">
+  <div *ngIf="!orderConfirmed">
   <div class="row displayCenter">
     <h2>Claim Your Order </h2>
   </div>
@@ -64,4 +65,14 @@
       <button type="submit" class="btn btn-success col-md-6">Submit</button>
     </div>
   </form>
+  </div>
+  <div *ngIf="orderConfirmed" class="flex-row">
+    <div>
+      <img class="congo" src="assets/animation/shells.svg">
+    </div>
+    <div class="congotext">Congratulation ! Your Order has been placed. You will receive a confirmation mail shortly.</div>
+    <div>
+      <img class="congo" src="assets/animation/rocket.svg">
+    </div>
+  </div>
 </div>
