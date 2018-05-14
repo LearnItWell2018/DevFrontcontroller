@@ -62,7 +62,7 @@
     </div>
     </div>
     <div class="row displayCenter">
-      <button type="submit" class="btn btn-success col-md-6">Submit</button>
+      <button type="submit" [disabled]="!customerFrom.valid" class="btn btn-success col-md-6">Submit</button>
     </div>
   </form>
   </div>
