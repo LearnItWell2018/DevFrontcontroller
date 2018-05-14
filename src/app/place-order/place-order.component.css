@@ -30,3 +30,23 @@ h2{
 span{
     color:white;
 }
+
+.congo {
+    height: 400px;
+    width: 260px;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+
+.congotext {
+    color: yellow;
+    text-align: center;
+    word-wrap: normal;
+    font-size: 30px;
+    width: 40%;
+}
