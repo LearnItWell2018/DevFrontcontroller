@@ -22,7 +22,7 @@ import { PlaceOredrService } from './services/placeorder-service';
 import { TypeaheadTemplateComponent } from './header/typeahead-template/typeahead-template.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { MyOrderComponent } from './my-order/my-order.component';
-
+import { UtilityService } from './services/utility-service';
 
 @NgModule({
   declarations: [
@@ -44,7 +44,7 @@ import { MyOrderComponent } from './my-order/my-order.component';
   imports: [
     BrowserModule, AppRoutingModule, FormsModule, HttpModule,NgbModule.forRoot()
   ],
-  providers: [ItemMenuService,ItemGridService, AuthService, PlaceOredrService],
+  providers: [ItemMenuService,ItemGridService, AuthService, PlaceOredrService,UtilityService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

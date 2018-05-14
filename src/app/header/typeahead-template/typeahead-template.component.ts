@@ -5,6 +5,8 @@ import 'rxjs/add/operator/map';
 import { OnInit } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { GridItem } from '../../model/item-grid-models';
+import { Subject } from 'rxjs/Subject';
+import { UtilityService } from '../../services/utility-service';									   
 
 let itemsInList;
 let itemSelected;
@@ -18,12 +20,12 @@ export class TypeaheadTemplateComponent implements OnInit {
   public model: any;
   public gridItem: GridItem;
 
-  constructor(private http: Http) { }
+  constructor(private http: Http,private utility:UtilityService) { }
   ngOnInit() {
     this.http.get('http://kundalini.mj.milesweb.cloud/kundalini/rs/items/list').subscribe(
       (response) => {
         itemsInList = response.json();
-        console.log('itemsWithImage:' + itemsInList);
+        //console.log('itemsWithImage:' + itemsInList);
       },
       (error) => { console.log(error) })
   }
@@ -66,7 +68,7 @@ export class TypeaheadTemplateComponent implements OnInit {
             item.itemQuantity = item.itemQuantity + presentItem.itemQuantity;
             let stripObj = JSON.stringify(myObject).split('[')[1].split(']')[0];
             localStorage.setItem('myKart', stripObj);
-            return;
+       
           }
         });
       }
@@ -75,6 +77,7 @@ export class TypeaheadTemplateComponent implements OnInit {
         localStorage.setItem('myKart', myKart);
       }
     }
+	 this.utility.notyifyAll();						  
   }
 }
 

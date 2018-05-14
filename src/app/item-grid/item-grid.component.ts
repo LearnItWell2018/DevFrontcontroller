@@ -107,7 +107,8 @@ quantityGtOne(index:number){
 navigateAfterClicked(){
   //alert(document.getElementById('kartForView'));
   document.getElementById('kartForView').scrollIntoView({
-    behavior: 'smooth'
+    behavior: 'smooth',
+    block: "end"
 });
   //$('#kartForView').animate({ scrollTop: $(this.hash).offset().top}, 1000)
 }
