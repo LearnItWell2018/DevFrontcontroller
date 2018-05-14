@@ -11,7 +11,7 @@ import { NgForm } from '@angular/forms';
 })
 export class PlaceOrderComponent implements OnInit {
 
-
+  private orderConfirmed = false;
   customerAddress: CustomerAddress;
 
   constructor(private placeOredrService: PlaceOredrService, private auth: AuthService) {
@@ -35,6 +35,7 @@ export class PlaceOrderComponent implements OnInit {
     this.placeOredrService.fillCustomerAddress(this.customerAddress);
 
     this.placeOredrService.placeOrder();
+    this.orderConfirmed = true;
 
   }
 
