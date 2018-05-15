@@ -5,6 +5,7 @@ import { OrderDetails } from '../model/OrderDetails';
 import { OrderList } from '../model/OrderList';
 import { UserProfile } from '../model/user-profile-model';
 import { CustomerAddress } from '../model/CustomerAddress';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class PlaceOredrService {
@@ -12,14 +13,14 @@ export class PlaceOredrService {
     body:CustomerOrder;
     orderDetails:OrderDetails;
     orderList:OrderList[];
-
+    private serviceProp = environment.serviceURL;
     constructor(private http:Http) {}
 
     placeOrder() {
         this.body = JSON.parse(localStorage.getItem("customerOrder"));
         this.body.orderDetails.orderDate =   new Date().toDateString();
         console.log(this.body);
-        this.http.post('http://kundalini.mj.milesweb.cloud/kundalini/rs/order', this.body).subscribe(
+        this.http.post(this.serviceProp + '/rs/order', this.body).subscribe(
             res => {
                 console.log(res);
                 localStorage.removeItem("customerOrder");

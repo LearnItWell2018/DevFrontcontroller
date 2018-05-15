@@ -1,10 +1,13 @@
 import { ItemMenu } from '../model/item-menu-model';
 import { Http,Headers } from '@angular/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class ItemMenuService{
     private crackersArray:ItemMenu[]=[];
+
+    private serviceProp = environment.serviceURL;
 
     constructor(private http:Http){
 
@@ -32,7 +35,7 @@ export class ItemMenuService{
     }
 
     public getIcons(){
-        return this.http.get('http://kundalini.mj.milesweb.cloud/kundalini/rs/itemCategories/');
+        return this.http.get(this.serviceProp + '/rs/itemCategories/');
     }
 }
 

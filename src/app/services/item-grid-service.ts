@@ -1,11 +1,12 @@
 import { GridItem } from '../model/item-grid-models';
 import { Http,Headers } from '@angular/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class ItemGridService{
     public gridItemArray:GridItem[]=[];
-    private base='http://kundalini.mj.milesweb.cloud/kundalini/rs/items/'; 
+    private base= environment.serviceURL + '/rs/items/'; 
     private URL:string;
     constructor(private http:Http){    
     }

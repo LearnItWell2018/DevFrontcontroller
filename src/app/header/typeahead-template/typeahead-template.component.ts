@@ -7,6 +7,7 @@ import { Http, Headers } from '@angular/http';
 import { GridItem } from '../../model/item-grid-models';
 import { Subject } from 'rxjs/Subject';
 import { UtilityService } from '../../services/utility-service';									   
+import { environment } from '../../../environments/environment';
 
 let itemsInList;
 let itemSelected;
@@ -19,10 +20,11 @@ let itemSelected;
 export class TypeaheadTemplateComponent implements OnInit {
   public model: any;
   public gridItem: GridItem;
+  private serviceProp = environment.serviceURL;
 
   constructor(private http: Http,private utility:UtilityService) { }
   ngOnInit() {
-    this.http.get('http://kundalini.mj.milesweb.cloud/kundalini/rs/items/list').subscribe(
+    this.http.get(this.serviceProp + '/rs/items/list').subscribe(
       (response) => {
         itemsInList = response.json();
         //console.log('itemsWithImage:' + itemsInList);
@@ -44,7 +46,7 @@ export class TypeaheadTemplateComponent implements OnInit {
   }
 
   findItemDetails(itemID: String) {
-    this.http.get('http://kundalini.mj.milesweb.cloud/kundalini/rs/items/' + itemID.split("-")[0] + '/' + itemID).subscribe(
+    this.http.get(this.serviceProp + '/rs/items/' + itemID.split("-")[0] + '/' + itemID).subscribe(
       (response) => {
         itemSelected = response.json();
         this.gridItem  = new GridItem(itemSelected.productId,itemSelected.productImgPath,itemSelected.brand,itemSelected.itemName, itemSelected.itemDesc,

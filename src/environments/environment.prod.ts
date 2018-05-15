@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  serviceURL: 'http://kundalini.mj.milesweb.cloud/kundalini'
 };
