@@ -31,10 +31,18 @@
         <a *ngIf="auth.isAuthenticated()" class="dropdown-item" [routerLink]="'myorder'">My Order</a>
       </div>
     </div>
-    <div class="menu-border">
+    <div class="dropdown show menu-border">
+      <a class="btn btn-secondary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="menu"></div>
         <div class="menu"></div>
         <div class="menu"></div>
+      </a>
+    <div id="smalldiv" class="dropdown-menu dropdown-menu-right">
+      <a *ngIf="auth.isAuthenticated()" class="dropdown-item" (click)="logOut()">Log Out</a>
+      <a *ngIf="!auth.isAuthenticated()" class="dropdown-item" (click)="logIn()">Sign In | Log In</a>
+      <a class="dropdown-item" [routerLink]="'whyus'">Why Us</a>
+      <a *ngIf="auth.isAuthenticated()" class="dropdown-item" [routerLink]="'myorder'">My Order</a>
+    </div>
     </div>
    </div> 
    <div class="navbox-item space-around last-item">
