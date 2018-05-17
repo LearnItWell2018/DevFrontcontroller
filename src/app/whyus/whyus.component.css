@@ -24,4 +24,8 @@
   .imagewhyus {
     content: none;
   }
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+  }
 }
