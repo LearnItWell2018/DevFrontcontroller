@@ -12,6 +12,7 @@
   font-size:2em;
   font-weight:bold;
   animation-duration: 2s;
+  color: white;
 }
 .imagewhyus {
   content: url("../../assets/brand/whyus_border.svg");
@@ -19,7 +20,16 @@
 
 @media only screen and (max-width: 650px) {
   .chakra {
-    width: 100%;
+    width: 44%;
+  }
+  .quotes{
+    width: 350px;
+    margin: 0;
+    top: 90%;
+    font-size:2em;
+    font-weight:bold;
+    animation-duration: 2s;
+    color: white;
   }
   .imagewhyus {
     content: none;
@@ -27,5 +37,9 @@
   .flex-container {
     display: flex;
     flex-direction: column;
+  }
+  .back-ground{
+    background-size: 0%;
+    background-repeat: no-repeat;
   }
 }
