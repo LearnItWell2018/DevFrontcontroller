@@ -162,9 +162,19 @@ Side note: I know that this style of nesting in SASS doesn't result in the most 
   .checkout:hover {
     background-color: #494;
   }
+
+  .imagecart {
+    content: url('../../assets/image/back3.jpg');
+    width: 100%;
+  }
   
   /* Make adjustments for tablet */
   @media screen and (max-width: 650px) {
+    .imagecart {
+      content: url('../../assets/image/back3_mob.jpg');
+      width: 100%;
+    }
+
     .shopping-cart {
       margin: 0;
       padding-top: 20px;
