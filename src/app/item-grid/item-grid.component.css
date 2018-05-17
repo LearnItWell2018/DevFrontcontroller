@@ -1,3 +1,11 @@
+
+.smallscreen {
+    display: none;
+}
+.largescreen {
+    display: inherit;
+}
+
 .container-grid{
     display: flex;
     flex-flow: row wrap;
@@ -65,9 +73,26 @@
     color: rgba(102, 62, 13, 0.932);
 
 }
+
 @media only screen and (max-width: 1420px) {
     .fullwidh{
         background: url('../../assets/image/matt_black.jpg') repeat;
         background-size: auto;
     }
+}
+
+@media screen and (max-width: 650px) {
+    .smallscreen {
+        display: inherit;
+    }
+    .largescreen {
+        display: none;
+    }
+    .fullwidh {
+        margin-top: 20px;
+    }
+    .padder-margine{
+        margin-top:20px; 
+    }
+
 }
