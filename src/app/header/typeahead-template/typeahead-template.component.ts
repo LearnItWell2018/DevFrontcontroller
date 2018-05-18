@@ -50,7 +50,7 @@ export class TypeaheadTemplateComponent implements OnInit {
       (response) => {
         itemSelected = response.json();
         this.gridItem  = new GridItem(itemSelected.productId,itemSelected.productImgPath,itemSelected.brand,itemSelected.itemName, itemSelected.itemDesc,
-          itemSelected.itemPrice,itemSelected.itemStock,itemSelected.itemActive,itemSelected.itemDetails);
+          itemSelected.itemPrice,itemSelected.itemStock,itemSelected.itemActive,itemSelected.itemDetails, itemSelected.offer);
           this.gridItem.itemQuantity = 1;
           this.addProductToWebStore(this.gridItem);
       },

@@ -63,8 +63,13 @@
 .price-box{
 
     font-weight: bold;
-    color: darkgreen;
+    color: rgb(7, 30, 95);
 
+}
+
+.offered-box {
+    font-weight: bold;
+    color: darkgreen;
 }
 
 .brand-box{

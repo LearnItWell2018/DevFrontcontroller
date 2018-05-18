@@ -4,7 +4,7 @@
   <div class="Row">
     <img [src]="r['productImgPath']" width="45" class="Column"> 
     <div class="Column">{{ r.itemName}}</div>
-    <div class="Column price">Rs {{ r.itemPrice}}</div>
+    <div class="Column price">Rs {{ r.itemPrice * (100 - r.offer)/100}}</div>
     <a class="btn btn-success product" (click)="addItemOnClicked($event)"> <img src="/assets/brand/shop.svg"  class="d-inline-block" alt="kundalini" [id]="r['productId']" ></a>
   </div>
 </ng-template>
