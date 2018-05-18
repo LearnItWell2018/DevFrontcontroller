@@ -9,7 +9,7 @@ import { AuthService } from './services/auth-service';
 export class AppComponent {
   title = 'app';
 
- public edited = false;
+ public edited = true;
 
   constructor(public auth: AuthService) {
     auth.handleAuthentication();

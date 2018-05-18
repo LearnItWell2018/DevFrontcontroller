@@ -53,9 +53,13 @@
 </nav>
 
 <div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
- <a *ngFor='let itemMenu of itemMenus'(click)="closeNav()" [routerLink]='itemMenu.crackerIconURL'>
-      <div class="imageDiv"><img [src]="itemMenu.crackerIconImagePath" [alt]="itemMenu.crackerTitleText"></div>
-      <div class="iconText">{{itemMenu.crackerTitleText}}</div>
-    </a>
+    <div href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</div>
+    <div id="listmenuall">
+      <div class="menudesign">
+        <a *ngFor='let itemMenu of itemMenus'(click)="closeNav()" [routerLink]='itemMenu.crackerIconURL'>
+          <div class="imageDiv"><img [src]="itemMenu.crackerIconImagePath" [alt]="itemMenu.crackerTitleText"></div>
+          <div class="iconText">{{itemMenu.crackerTitleText}}</div>
+        </a>
+      </div>
+    </div>
 </div>
