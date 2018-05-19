@@ -153,14 +153,14 @@ Side note: I know that this style of nesting in SASS doesn't result in the most 
     border: 0;
     margin-top: 20px;
     padding: 6px 25px;
-    background-color: #6b6;
+    background-color: rgb(102, 162, 137);
     color: #fff;
     font-size: 25px;
-    border-radius: 3px;
+    border-radius: 20px;
   }
   
   .checkout:hover {
-    background-color: #494;
+    background-color: green;
   }
 
   .imagecart {
