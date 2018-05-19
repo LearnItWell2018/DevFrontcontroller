@@ -98,7 +98,7 @@
           <input class="displayInline form-control" type="text" [value]='item.itemQuantity' readonly/>
           <a class="btn btn-success displayInline" (click)="increaseQuantity(i)">+</a>
           <a class="btn btn-success product " [ngClass]="{'disabled':quantityGtOne(i)}">
-            <img src="/assets/brand/shop.svg" class="d-inline-block" alt="kundalini" [id]='item.productId' (click)='addProductToWebStore(i,input)'>
+            <img src="assets/brand/shop.svg" class="d-inline-block" alt="kundalini" [id]='item.productId' (click)='addProductToWebStore(i,input)'>
           </a>
         </form>
       </div>
