@@ -47,7 +47,7 @@ export class PlaceOredrService {
                 itemCount: item.itemQuantity,
                 itemPrice: item.itemPrice,
                 itemImage: item.itemImage,
-                itemDesc: item.productId
+                itemDesc: item.itemDesc
             }
         }).forEach(item => listOrder.push(item));
 
