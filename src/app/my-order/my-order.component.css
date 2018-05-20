@@ -14,13 +14,13 @@
     text-transform: uppercase;
     cursor: pointer;
     text-align: center;
-    width: 196px;
+    width: 240px;
 }
 .resend {
     background: #29a1be;
     white-space: nowrap;
     padding: 6px 0;
-    width: 100px;
+    width: 260px;
     text-align: center;
     color: #e0d420;
     border-radius: 5px;

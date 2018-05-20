@@ -1,9 +1,9 @@
 <div class="container">
   <div *ngFor="let orderItem of orderListAll; let i = index" class="orderrow">
     <div class="flex-row">
-      <div class="orderid" data-toggle="collapse" [attr.data-target]="'#' + i"  >OD211857209000753000</div>
+      <div class="orderid" data-toggle="collapse" [attr.data-target]="'#' + i"  >{{orderItem.id}}</div>
+      <div class="resend">Order Status : {{orderItem.orderStatus}}</div>
       <div class="orderdate">Order Date : {{orderItem.orderDetails.orderDate}}</div>
-      <div class="resend">Resend <i class="fa fa-envelope"></i></div>
     </div>
     <div [attr.id]="i" class="content-order collapse">
       <div *ngFor="let productItem of orderItem.orderDetails.orderList">
