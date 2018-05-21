@@ -1,15 +1,17 @@
-
-
 <ng-template #rt let-r="result" let-t="term">
   <div class="Row">
-    <img [src]="r['productImgPath']" width="45" class="Column"> 
-    <div class="Column">{{ r.itemName}}</div>
-    <div class="Column price">Rs {{ r.itemPrice * (100 - r.offer)/100}}</div>
-    <a class="btn btn-success product" (click)="addItemOnClicked($event)"> <img src="assets/brand/shop.svg"  class="d-inline-block" alt="kundalini" [id]="r['productId']" ></a>
+    <img [src]="r['productImgPath']" width="45" class="Column">
+    <div class="Column"><p class="textcontent">{{ r.itemName}}</p></div>
+    <div class="Column price"><i class="fa fa-rupee"></i>{{ r.itemPrice * (100 - r.offer)/100}}</div>
+    <a class="btn btn-success product" (click)="addItemOnClicked($event)">
+      <img src="assets/brand/shop.svg" class="d-inline-block" alt="kundalini" [id]="r['productId']">
+    </a>
   </div>
 </ng-template>
-
-<input id="typeahead-template"  type="text" class="form-control mr-sm-2" [(ngModel)]="model" [ngbTypeahead]="search" [resultTemplate]="rt"
-  [inputFormatter]="formatter" />
-
-
+<div class="searchbox">
+  <div>
+    <input id="typeahead-template" type="text" class="form-control mr-sm-2" [(ngModel)]="model" [ngbTypeahead]="search" [resultTemplate]="rt"
+      placeholder="Search Item & Add to Cart" [inputFormatter]="formatter" />
+  </div>
+  <h2 style="color: yellow;font-size: 15px">Quick Buy</h2>
+</div>

@@ -20,3 +20,16 @@
 {
     display: table-cell;
 }
+
+.searchbox {
+    display: flex;
+    direction: row;
+    align-items: baseline;
+}
+
+.textcontent {
+    width: 50%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+}

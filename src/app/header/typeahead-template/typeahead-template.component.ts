@@ -27,7 +27,6 @@ export class TypeaheadTemplateComponent implements OnInit {
     this.http.get(this.serviceProp + '/rs/items/list').subscribe(
       (response) => {
         itemsInList = response.json();
-        //console.log('itemsWithImage:' + itemsInList);
       },
       (error) => { console.log(error) })
   }
