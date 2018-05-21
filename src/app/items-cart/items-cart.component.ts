@@ -85,7 +85,9 @@ calculateTotal(){
  }
 
  gotoPlaceOrder() {
-  this.route.navigate(['../placeorder']);
+   if (this.totalValue > 0 ) {
+    this.route.navigate(['../placeorder']);
+   }
  }
 
  ngOnDestroy(){
