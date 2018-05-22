@@ -1,0 +1,26 @@
+<div class="padder-margine">
+    <div class="container-grid" id="kartForView">
+      <div class="card" *ngFor="let item of gridItemArray;let i=index" style="max-width: 260px;margin:20px">
+        <img class="card-img-top" [src]="item.itemImage" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{item.itemName}}</h5>
+          <p class="card-text">{{item.itemDesc}}</p>
+          <div class="flexbox-design">
+            <div class="price-box"><i class="fa fa-rupee"></i>{{item.originalPrice}}</div>
+            <div *ngIf="item.offer > 0" > - {{item.offer}}%</div>
+            <div *ngIf="item.offer > 0" class="offered-box"> = <i class="fa fa-rupee"></i>{{item.itemPrice}}</div>
+            <div class="brand-box">{{item.brand}}</div>
+          </div>
+          <hr>
+          <form class="form-inline">
+            <a class="btn btn-success displayInline" (click)="reduceQuantity(i)">-</a>
+            <input class="displayInline form-control" type="text" [value]='item.itemQuantity' readonly/>
+            <a class="btn btn-success displayInline" (click)="increaseQuantity(i)">+</a>
+            <a class="btn btn-success product " [ngClass]="{'disabled':quantityGtOne(i)}">
+              <img src="assets/brand/shop.svg" class="d-inline-block" alt="kundalini" [id]='item.productId' (click)='addProductToWebStore(i,input)'>
+            </a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

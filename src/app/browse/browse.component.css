@@ -1,0 +1,109 @@
+.container {
+    padding:20px;
+    margin-top:20px;
+    background-image: url('../../assets/image/matt_black.jpg');
+    border-radius: 1%;
+}
+
+.smallscreen {
+    display: none;
+}
+.largescreen {
+    display: inherit;
+}
+
+.container-grid{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    background: rgb(56, 51, 51);
+}
+
+.displayInline{
+    display:inline-block;
+    border-radius:0;
+    width:50px;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+
+.product{
+    margin-left:15px; 
+    display:inline-block;
+}
+
+.product>img{
+    width:24px;
+    height:24px;
+}
+
+.fullwidh{
+    width:100%;
+    padding: 20px;
+    background: url('../../assets/animation/background.svg')center no-repeat,url('../../assets/image/matt_black.jpg') repeat;
+    background-size: 100%,auto;
+}
+
+
+.padder-margine{
+    margin-top:70px 
+}
+
+
+.alertError{
+    border:1px red solid;
+}
+
+.flexbox-design {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-body{
+    background: linear-gradient( #ffecd2 , #fcb69f);
+}
+
+.price-box{
+
+    font-weight: bold;
+    color: rgb(7, 30, 95);
+
+}
+
+.offered-box {
+    font-weight: bold;
+    color: darkgreen;
+}
+
+.brand-box{
+  
+    font-weight: bold;
+    color: rgba(102, 62, 13, 0.932);
+
+}
+
+@media only screen and (max-width: 1420px) {
+    .fullwidh{
+        background: url('../../assets/image/matt_black.jpg') repeat;
+        background-size: auto;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .smallscreen {
+        display: inherit;
+    }
+    .largescreen {
+        display: none;
+    }
+    .fullwidh {
+        margin-top: 20px;
+    }
+    .padder-margine{
+        margin-top:20px; 
+    }
+
+}

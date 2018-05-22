@@ -23,6 +23,7 @@ import { TypeaheadTemplateComponent } from './header/typeahead-template/typeahea
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { MyOrderComponent } from './my-order/my-order.component';
 import { UtilityService } from './services/utility-service';
+import { BrowseComponent } from './browse/browse.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { UtilityService } from './services/utility-service';
     WhyusComponent,
     TypeaheadTemplateComponent,
     AboutusComponent,
-    MyOrderComponent
+    MyOrderComponent,
+    BrowseComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, FormsModule, HttpModule,NgbModule.forRoot()

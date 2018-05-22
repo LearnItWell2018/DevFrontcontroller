@@ -8,6 +8,7 @@ import { WhyusComponent } from './whyus/whyus.component';
 import { ItemsCartComponent } from './items-cart/items-cart.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { MyOrderComponent } from './my-order/my-order.component';
+import { BrowseComponent } from './browse/browse.component';
 
 const appRoutes: Routes = [
   { path: '', component: ItemGridComponent },
@@ -17,6 +18,7 @@ const appRoutes: Routes = [
   { path: 'aboutus', component: AboutusComponent},
   { path: 'kart', component: ItemsCartComponent},
   { path: 'myorder', component: MyOrderComponent},
+  { path: 'browse', component: BrowseComponent},
   { path: ':crackers', component: ItemGridComponent }
 
 ];
