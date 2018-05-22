@@ -1,9 +1,60 @@
 .container {
-    padding:20px;
-    margin-top:20px;
-    background-image: url('../../assets/image/matt_black.jpg');
-    border-radius: 1%;
+    display: flex;
+    flex-direction : row; 
 }
+.filterAll {
+    background-image: url('../../assets/image/matt_black.jpg');
+    margin-top: 70px;
+    color: white;
+}
+
+.checkbox-container1 label {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: no-wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .checkbox-container1 input.checkbox {
+    display: none;
+  }
+  .checkbox-container1 .checkbox-indicator {
+    width: 5.9rem;
+    height: 3rem;
+    border: 0.2rem solid white;
+    position: relative;
+    transition: all 0.3s;
+  }
+  .checkbox-container1 .checkbox-indicator::before {
+    content: "";
+    position: absolute;
+    width: 2.6rem;
+    height: 2.2rem;
+    top: 0.2rem;
+    left: 0.2rem;
+    background: white;
+    transition: 0.3s;
+  }
+  .checkbox-container1 input.checkbox:checked + .checkbox-indicator::before {
+    top: 0.2rem;
+    left: 2.7rem;
+    background: #07b75f;
+  }
+  .checkbox-container1 input.checkbox:checked + .checkbox-indicator {
+    border-color: #07b75f;
+    box-shadow: 0 0 3rem rgba(7, 183, 95, 0.3);
+  }
+  .checkbox-container1 input.checkbox:checked + .checkbox-indicator + span {
+    color: #07b75f;
+    text-shadow: 0 0 3rem rgba(7, 183, 95, 0.5);
+  }
+  .checkbox-container1 span {
+    margin-left: 1rem;
+    font-size: 3.8rem;
+    transition: all 0.3s;
+  }
 
 .smallscreen {
     display: none;
