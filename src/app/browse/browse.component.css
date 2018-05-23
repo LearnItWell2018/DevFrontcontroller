@@ -1,15 +1,21 @@
-.container {
+.mainbody {
     display: flex;
     flex-direction : row; 
 }
 .filterAll {
     background-image: url('../../assets/image/matt_black.jpg');
     margin-top: 70px;
+    padding-left: 20px;
+    padding-right: 10px;
     color: white;
 }
 
+hr {
+    border-top: 5px solid #f20119;
+}
+
 .headers {
-    font-size: 45px;
+    font-size: 40px;
     color: red;
 }
 
@@ -44,7 +50,7 @@
   }
   .checkbox-container1 input.checkbox:checked + .checkbox-indicator::before {
     top: 0.2rem;
-    left: 2.7rem;
+    left: 21px;
     background: #07b75f;
   }
   .checkbox-container1 input.checkbox:checked + .checkbox-indicator {
@@ -96,13 +102,6 @@
     height:24px;
 }
 
-.fullwidh{
-    width:100%;
-    padding: 20px;
-    background: url('../../assets/animation/background.svg')center no-repeat,url('../../assets/image/matt_black.jpg') repeat;
-    background-size: 100%,auto;
-}
-
 
 .padder-margine{
     margin-top:70px 
@@ -141,12 +140,6 @@
 
 }
 
-@media only screen and (max-width: 1420px) {
-    .fullwidh{
-        background: url('../../assets/image/matt_black.jpg') repeat;
-        background-size: auto;
-    }
-}
 
 @media screen and (max-width: 650px) {
     .smallscreen {
@@ -162,4 +155,8 @@
         margin-top:20px; 
     }
 
+    .filterAll {
+        background-image: url('../../assets/image/matt_black.jpg');
+        margin-top: 20px;
+    }
 }

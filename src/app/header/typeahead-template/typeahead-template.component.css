@@ -1,4 +1,8 @@
-.form-control { width: 280px; }
+.form-control { 
+    width: 270px;
+    margin-right: 3px;
+    margin-left: 3px;
+}
 
 .product>img{
     width:24px;
