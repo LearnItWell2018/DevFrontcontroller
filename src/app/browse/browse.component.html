@@ -1,11 +1,19 @@
 <div class="container">
   <div class="filterAll">Brands
-    <div class="checkbox-container1 checkbox-container">
+    <div class="checkbox-container1 checkbox-container" *ngFor="let brand of brands;let i=index">
       <label>
         <div class="checkbox-overlay"></div>
-        <input class="checkbox" type="checkbox" />
+        <input class="checkbox" type="checkbox" (click)="detectFilterCriteria($event)" [id]="brand"/>
         <div class="checkbox-indicator"></div>
-        <span>Standerd</span>
+        <span>{{brand}}</span>
+      </label>
+    </div>
+    <div class="checkbox-container1 checkbox-container" *ngFor="let menu of itemMenus;let i=index">
+      <label>
+        <div class="checkbox-overlay"></div>
+        <input class="checkbox" type="checkbox" (click)="detectFilterCriteria($event)" [id]="menu.crackerTitleText"/>
+        <div class="checkbox-indicator"></div>
+        <span>{{menu.crackerTitleText}}</span>
       </label>
     </div>
   </div>

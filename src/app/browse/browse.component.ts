@@ -4,6 +4,8 @@ import { ItemGridService } from '../services/item-grid-service';
 import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 import { Subscription } from 'rxjs/Subscription';
 import { element } from 'protractor';
+import { ItemMenu } from '../model/item-menu-model';
+import { ItemMenuService } from '../services/item-menu-service';
 
 @Component({
   selector: 'app-browse',
@@ -20,8 +22,9 @@ export class BrowseComponent implements OnInit, OnDestroy {
   public types:String[] = [];
   public maxPrice:Number = 0;
   public minPrice:Number = 1000;
+  itemMenus:ItemMenu[];
 
-  constructor(private itemGridService: ItemGridService) { }
+  constructor(private itemGridService: ItemGridService, private itemMenuService:ItemMenuService) { }
 
   ngOnInit() {
     this.itemGridService.getAllData().subscribe(
@@ -50,6 +53,7 @@ export class BrowseComponent implements OnInit, OnDestroy {
       },
       (error) => { console.log(error) });
 
+      this.itemMenus=this.itemMenuService.getCrarckerIconsArray();
   }
   ngOnDestroy() {
     this.subscription.unsubscribe();
@@ -129,6 +133,10 @@ export class BrowseComponent implements OnInit, OnDestroy {
         this.resultGridItemArray.push(element);
       }
     });
+  }
+
+  detectFilterCriteria(object) {
+    console.log(object.target.id);
   }
 
 
