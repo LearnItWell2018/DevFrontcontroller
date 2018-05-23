@@ -48,6 +48,10 @@ export class HeaderComponent implements OnInit {
   routeToHome(){
     this.route.navigate(['../']);
   }
+
+  routeToBrowse() {
+    this.route.navigate(['../browse']);
+  }
   
   logOut() {
     this.auth.logout();

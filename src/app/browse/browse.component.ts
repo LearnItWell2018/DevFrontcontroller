@@ -12,19 +12,21 @@ import { ItemMenuService } from '../services/item-menu-service';
   templateUrl: './browse.component.html',
   styleUrls: ['./browse.component.css']
 })
-export class BrowseComponent implements OnInit, OnDestroy {
+export class BrowseComponent implements OnInit {
 
   subscription: Subscription;
 
   public gridItemArray: GridItem[] = [];
   public resultGridItemArray: GridItem[] = [];
-  public brands:String[] = [];
-  public types:String[] = [];
-  public maxPrice:Number = 0;
-  public minPrice:Number = 1000;
-  itemMenus:ItemMenu[];
+  public brands: String[] = [];
+  public filteredBrand: String[] = [];
+  public types: String[] = [];
+  public maxPrice: Number = 0;
+  public minPrice: Number = 1000;
+  public itemMenus: ItemMenu[];
+  public filtereditemMenus: String[] = [];
 
-  constructor(private itemGridService: ItemGridService, private itemMenuService:ItemMenuService) { }
+  constructor(private itemGridService: ItemGridService, private itemMenuService: ItemMenuService) { }
 
   ngOnInit() {
     this.itemGridService.getAllData().subscribe(
@@ -35,9 +37,10 @@ export class BrowseComponent implements OnInit, OnDestroy {
 
           let filteredItem = new GridItem(element.productId, element.productImgPath, element.brand, element.itemName, element.itemDesc,
             element.itemPrice, element.itemStock, element.itemActive, element.itemDetails, element.offer);
-          
+
           if (this.brands.lastIndexOf(element.brand) < 0) {
             this.brands.push(element.brand);
+            this.filteredBrand.push(element.brand);
           }
           if (element.itemPrice > this.maxPrice) {
             this.maxPrice = element.itemPrice;
@@ -49,14 +52,21 @@ export class BrowseComponent implements OnInit, OnDestroy {
           this.itemGridService.gridItemArray.push(filteredItem);
         });
         this.gridItemArray = this.itemGridService.getCrarckerIconsArray();
-        console.log(this.gridItemArray);
+        this.resultGridItemArray = this.gridItemArray;
       },
       (error) => { console.log(error) });
 
-      this.itemMenus=this.itemMenuService.getCrarckerIconsArray();
-  }
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
+    this.itemMenus = this.itemMenuService.getCrarckerIconsArray();
+
+    this.itemMenuService.getIcons().subscribe(
+      (response) => {
+        let JSONdata = response.json();
+        JSONdata.items.forEach(element => {
+          this.filtereditemMenus.push(element.itemName);
+        });
+      },
+      (error) => { console.log(error) });
+
   }
 
   reduceQuantity(index) {
@@ -73,11 +83,6 @@ export class BrowseComponent implements OnInit, OnDestroy {
     } else {
       this.gridItemArray[index].itemQuantity = this.gridItemArray[index].itemQuantity + 1;
     }
-
-    console.log(this.brands);
-    console.log(this.maxPrice);
-    console.log(this.minPrice);
-
   }
 
   addProductToWebStore(index: number, inputElem: HTMLFormElement) {
@@ -126,20 +131,37 @@ export class BrowseComponent implements OnInit, OnDestroy {
     });
   }
 
-  applyFilter(brand:String[], type:String[], maxPrice:Number, minPrice:Number) {
-
+  applyFilter(brand: String[], itemType: String[]) {
+    this.resultGridItemArray = [];
     this.gridItemArray.forEach(element => {
-      if(brand.indexOf(element.brand) > -1 && type.indexOf(element.productId.split("_")[0]) > -1){
+      if (brand.indexOf(element.brand) > -1 && itemType.indexOf(element.productId.split('-')[0]) > -1) {
         this.resultGridItemArray.push(element);
       }
     });
   }
 
-  detectFilterCriteria(object) {
-    console.log(object.target.id);
+  detectFilterCriteria(object, filterType: String) {
+    if (filterType === 'B') {
+      if (object.target.checked) {
+        this.filteredBrand.push(object.target.id);
+      } else {
+        const index: number = this.filteredBrand.indexOf(object.target.id);
+        if (index !== -1) {
+          this.filteredBrand.splice(index, 1);
+        }
+      }
+    }
+    if (filterType === 'T') {
+      if (object.target.checked) {
+        this.filtereditemMenus.push(object.target.id);
+      } else {
+        const index: number = this.filtereditemMenus.indexOf(object.target.id);
+        if (index !== -1) {
+          this.filtereditemMenus.splice(index, 1);
+        }
+      }
+    }
+    this.applyFilter(this.filteredBrand, this.filtereditemMenus);
   }
-
-
-
 
 }

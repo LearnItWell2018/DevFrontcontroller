@@ -8,21 +8,26 @@
     color: white;
 }
 
+.headers {
+    font-size: 45px;
+    color: red;
+}
+
 .checkbox-container1 label {
     cursor: pointer;
     display: flex;
     flex-direction: row;
     flex-wrap: no-wrap;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     position: relative;
   }
   .checkbox-container1 input.checkbox {
     display: none;
   }
   .checkbox-container1 .checkbox-indicator {
-    width: 5.9rem;
-    height: 3rem;
+    width: 40px;
+    height: 40px;
     border: 0.2rem solid white;
     position: relative;
     transition: all 0.3s;
@@ -30,8 +35,8 @@
   .checkbox-container1 .checkbox-indicator::before {
     content: "";
     position: absolute;
-    width: 2.6rem;
-    height: 2.2rem;
+    width: 10px;
+    height: 28px;
     top: 0.2rem;
     left: 0.2rem;
     background: white;
@@ -52,7 +57,7 @@
   }
   .checkbox-container1 span {
     margin-left: 1rem;
-    font-size: 3.8rem;
+    font-size: 25px;
     transition: all 0.3s;
   }
 
