@@ -1,7 +1,8 @@
 <div class="mainbody">
-  <div class="filterAll">
+  <div *ngIf="mobileFilterFlag" class="filterAll overlay">
     <div>
       <span class="headers">Brands</span>
+      <i class="fa fa-close mobile" style="font-size:40px;color:red" (click)="displayFilter('close')"></i>
       <hr>
       <div class="checkbox-container1 checkbox-container" *ngFor="let brand of brands;let i=index">
         <label>
@@ -26,6 +27,7 @@
     </div>
   </div>
   <div class="padder-margine">
+    <i class="fa fa-filter mobile" style="font-size:40px;color:white" (click)="displayFilter('open')"></i>
     <div class="container-grid" id="kartForView">
       <div class="card" *ngFor="let item of resultGridItemArray;let i=index" style="max-width: 260px;margin:20px">
         <img class="card-img-top" [src]="item.itemImage" alt="Card image cap">

@@ -26,6 +26,8 @@ export class BrowseComponent implements OnInit {
   public itemMenus: ItemMenu[];
   public filtereditemMenus: String[] = [];
 
+  public mobileFilterFlag = true;
+
   constructor(private itemGridService: ItemGridService, private itemMenuService: ItemMenuService) { }
 
   ngOnInit() {
@@ -70,32 +72,32 @@ export class BrowseComponent implements OnInit {
   }
 
   reduceQuantity(index) {
-    if (this.gridItemArray[index].itemQuantity === 0) {
+    if (this.resultGridItemArray[index].itemQuantity === 0) {
       return false;
     } else {
-      this.gridItemArray[index].itemQuantity = this.gridItemArray[index].itemQuantity - 1;
+      this.resultGridItemArray[index].itemQuantity = this.resultGridItemArray[index].itemQuantity - 1;
     }
   }
 
   increaseQuantity(index) {
-    if (this.gridItemArray[index].itemQuantity === 1000) {
+    if (this.resultGridItemArray[index].itemQuantity === 1000) {
       return false;
     } else {
-      this.gridItemArray[index].itemQuantity = this.gridItemArray[index].itemQuantity + 1;
+      this.resultGridItemArray[index].itemQuantity = this.resultGridItemArray[index].itemQuantity + 1;
     }
   }
 
   addProductToWebStore(index: number, inputElem: HTMLFormElement) {
-    if (this.gridItemArray[index].itemQuantity === 0) {
+    if (this.resultGridItemArray[index].itemQuantity === 0) {
       alert('Error');
     } else {
       if (!localStorage.getItem('myKart')) {
-        localStorage.setItem('myKart', JSON.stringify(this.gridItemArray[index]));
-        this.gridItemArray[index].itemQuantity = 0;
+        localStorage.setItem('myKart', JSON.stringify(this.resultGridItemArray[index]));
+        this.resultGridItemArray[index].itemQuantity = 0;
       } else {
         let myKart = localStorage.getItem('myKart');
-        let presentItem = this.gridItemArray[index];
-        if (myKart.indexOf(this.gridItemArray[index].productId) >= 0) {
+        let presentItem = this.resultGridItemArray[index];
+        if (myKart.indexOf(this.resultGridItemArray[index].productId) >= 0) {
           let myObject = JSON.parse('[' + myKart + ']');
           myObject.forEach(function (item) {
             if (item.productId === presentItem.productId) {
@@ -108,16 +110,16 @@ export class BrowseComponent implements OnInit {
           });
         }
         else {
-          myKart = myKart + "," + JSON.stringify(this.gridItemArray[index]);
+          myKart = myKart + "," + JSON.stringify(this.resultGridItemArray[index]);
           localStorage.setItem('myKart', myKart);
-          this.gridItemArray[index].itemQuantity = 0;
+          this.resultGridItemArray[index].itemQuantity = 0;
         }
       }
     }
   }
 
   quantityGtOne(index: number) {
-    if (this.gridItemArray[index].itemQuantity === 0) {
+    if (this.resultGridItemArray[index].itemQuantity === 0) {
       return true;
     } else {
       return false;
@@ -162,6 +164,15 @@ export class BrowseComponent implements OnInit {
       }
     }
     this.applyFilter(this.filteredBrand, this.filtereditemMenus);
+  }
+
+  displayFilter(flag:String) {
+    if (flag === 'close') {
+      this.mobileFilterFlag = false;
+    } else if (flag === 'open') {
+      this.mobileFilterFlag = true;
+    }
+    console.log(flag);
   }
 
 }
