@@ -27,7 +27,7 @@ export class HeaderComponent implements OnInit {
        this.activeUserName = this.userProfile.name;
     } else {
       this.activeUserPresent = false;
-      this.activeUserName = "Anyone Home";
+      this.activeUserName = "Anyone Home ?";
     }
     console.log(this.auth.getProfile());
   }
@@ -55,7 +55,7 @@ export class HeaderComponent implements OnInit {
   
   logOut() {
     this.auth.logout();
-    this.activeUserName = "Anyone Home";
+    this.activeUserName = "Anyone Home ?";
   }
   logIn() {
     this.auth.login();
@@ -68,7 +68,7 @@ export class HeaderComponent implements OnInit {
        return this.userProfile.name;
     } else {
       this.activeUserPresent = false;
-      return "Anyone Home";
+      return "Anyone Home ?";
     }
   }
 

@@ -96,8 +96,10 @@
     .fullwidh {
         margin-top: 20px;
     }
-    .padder-margine{
+    .padder-margine {
         margin-top:20px; 
     }
-
+    .carousel-caption h3{
+        font-size: 20px;
+    }
 }
