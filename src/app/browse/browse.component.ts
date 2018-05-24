@@ -26,6 +26,9 @@ export class BrowseComponent implements OnInit {
   public itemMenus: ItemMenu[];
   public filtereditemMenus: String[] = [];
 
+  public filteredBrandValue: Boolean[] = [];
+  public filtereditemMenusValue: Boolean[] = [];
+
   public mobileFilterFlag = true;
 
   constructor(private itemGridService: ItemGridService, private itemMenuService: ItemMenuService) { }
@@ -43,6 +46,7 @@ export class BrowseComponent implements OnInit {
           if (this.brands.lastIndexOf(element.brand) < 0) {
             this.brands.push(element.brand);
             this.filteredBrand.push(element.brand);
+            this.filteredBrandValue.push(true);
           }
           if (element.itemPrice > this.maxPrice) {
             this.maxPrice = element.itemPrice;
@@ -65,6 +69,7 @@ export class BrowseComponent implements OnInit {
         let JSONdata = response.json();
         JSONdata.items.forEach(element => {
           this.filtereditemMenus.push(element.itemName);
+          this.filtereditemMenusValue.push(true);
         });
       },
       (error) => { console.log(error) });
@@ -142,24 +147,28 @@ export class BrowseComponent implements OnInit {
     });
   }
 
-  detectFilterCriteria(object, filterType: String) {
+  detectFilterCriteria(object, filterType: String, i:number) {
     if (filterType === 'B') {
       if (object.target.checked) {
         this.filteredBrand.push(object.target.id);
+        this.filteredBrandValue[i] = true;
       } else {
         const index: number = this.filteredBrand.indexOf(object.target.id);
         if (index !== -1) {
           this.filteredBrand.splice(index, 1);
+          this.filteredBrandValue[i] = false;
         }
       }
     }
     if (filterType === 'T') {
       if (object.target.checked) {
         this.filtereditemMenus.push(object.target.id);
+        this.filtereditemMenusValue[i] = true;
       } else {
         const index: number = this.filtereditemMenus.indexOf(object.target.id);
         if (index !== -1) {
           this.filtereditemMenus.splice(index, 1);
+          this.filtereditemMenusValue[i] = false;
         }
       }
     }
