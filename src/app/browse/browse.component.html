@@ -7,7 +7,8 @@
       <div class="checkbox-container1 checkbox-container" *ngFor="let brand of brands;let i=index">
         <label>
           <div class="checkbox-overlay"></div>
-          <input class="checkbox" type="checkbox" (click)="detectFilterCriteria($event, 'B', i)" [id]="brand" [checked]="filteredBrandValue[i]"/>
+          <input class="checkbox" type="checkbox" (click)="detectFilterCriteria($event, 'B', i)" [id]="brand" [checked]="filteredBrandValue[i]"
+          />
           <div class="checkbox-indicator"></div>
           <span>{{brand}}</span>
         </label>
@@ -19,15 +20,29 @@
       <div class="checkbox-container1 checkbox-container" *ngFor="let menu of itemMenus;let i=index">
         <label>
           <div class="checkbox-overlay"></div>
-          <input class="checkbox" type="checkbox" (click)="detectFilterCriteria($event, 'T', i)" [id]="menu.crackerTitleText" [checked]="filtereditemMenusValue[i]"/>
+          <input class="checkbox" type="checkbox" (click)="detectFilterCriteria($event, 'T', i)" [id]="menu.crackerTitleText" [checked]="filtereditemMenusValue[i]"
+          />
           <div class="checkbox-indicator"></div>
           <span>{{menu.crackerTitleText}}</span>
         </label>
       </div>
     </div>
+    <div>
+      <span class="headers">Price </span>
+      <hr>
+      <div>
+        <div class="range-slider">
+          <input class="range-slider__range" type="range" value="400" min="minPrice" max="maxPrice" [(ngModel)]="mymodel" (ngModelChange)="changedVal(mymodel)">
+          <span class="range-slider__value">{{maxPrice}}</span>
+        </div>
+        <div>
+          <span>{{maxPrice * mymodel / 100}}</span>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="padder-margine">
-    <i class="fa fa-filter mobile" style="font-size:40px;color:white" (click)="displayFilter('open')"></i>
+    <i class="fa fa-filter mobile" style="font-size:30px;color:#007bff" (click)="displayFilter('open')"></i>
     <div class="container-grid" id="kartForView">
       <div class="card" *ngFor="let item of resultGridItemArray;let i=index" style="max-width: 260px;margin:20px">
         <img class="card-img-top" [src]="item.itemImage" alt="Card image cap">

@@ -31,6 +31,8 @@ export class BrowseComponent implements OnInit {
 
   public mobileFilterFlag = true;
 
+  public currentElementVal:Number = 0;
+
   constructor(private itemGridService: ItemGridService, private itemMenuService: ItemMenuService) { }
 
   ngOnInit() {
@@ -48,10 +50,11 @@ export class BrowseComponent implements OnInit {
             this.filteredBrand.push(element.brand);
             this.filteredBrandValue.push(true);
           }
-          if (element.itemPrice > this.maxPrice) {
-            this.maxPrice = element.itemPrice;
+          this.currentElementVal =  new Number(element.itemPrice);
+          if (this.currentElementVal > this.maxPrice) {
+            this.maxPrice = this.currentElementVal;
           }
-          if (element.itemPrice < this.minPrice) {
+          if (this.currentElementVal < this.minPrice) {
             this.minPrice = element.itemPrice;
           }
 
@@ -138,10 +141,10 @@ export class BrowseComponent implements OnInit {
     });
   }
 
-  applyFilter(brand: String[], itemType: String[]) {
+  applyFilter(brand: String[], itemType: String[], range:Number) {
     this.resultGridItemArray = [];
     this.gridItemArray.forEach(element => {
-      if (brand.indexOf(element.brand) > -1 && itemType.indexOf(element.productId.split('-')[0]) > -1) {
+      if (brand.indexOf(element.brand) > -1 && itemType.indexOf(element.productId.split('-')[0]) > -1 && element.itemPrice <= range) {
         this.resultGridItemArray.push(element);
       }
     });
@@ -172,7 +175,7 @@ export class BrowseComponent implements OnInit {
         }
       }
     }
-    this.applyFilter(this.filteredBrand, this.filtereditemMenus);
+    this.applyFilter(this.filteredBrand, this.filtereditemMenus, this.currentElementVal);
   }
 
   displayFilter(flag:String) {
@@ -184,4 +187,9 @@ export class BrowseComponent implements OnInit {
     console.log(flag);
   }
 
+  changedVal(object) {
+    this.currentElementVal = object * this.maxPrice.valueOf() / 100;
+    console.log(this.currentElementVal);
+    this.applyFilter(this.filteredBrand, this.filtereditemMenus, this.currentElementVal);
+  }
 }
