@@ -12,8 +12,8 @@ export class AuthService {
     domain: 'kalishiva.auth0.com',
     responseType: 'token id_token',
     audience: 'https://kalishiva.auth0.com/userinfo',
-    redirectUri: 'http://localhost:4200',
-    //redirectUri: 'http://kundalini.mj.milesweb.cloud/kundalinifireworks',
+    //redirectUri: 'http://localhost:4200',
+    redirectUri: 'http://kundalini.mj.milesweb.cloud/kundalinifireworks',
     scope: 'openid profile'
   });
 

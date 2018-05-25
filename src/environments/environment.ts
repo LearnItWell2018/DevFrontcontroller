@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  serviceURL: 'http://kundalini.cfapps.io'
+  serviceURL: 'http://kundalini.mj.milesweb.cloud/kundalini'
 };

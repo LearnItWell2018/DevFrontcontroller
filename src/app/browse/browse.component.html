@@ -33,10 +33,10 @@
       <div>
         <div class="range-slider">
           <input class="range-slider__range" type="range" value="400" min="minPrice" max="maxPrice" [(ngModel)]="mymodel" (ngModelChange)="changedVal(mymodel)">
-          <span class="range-slider__value">{{maxPrice}}</span>
+          <span class="range-slider__value"><i class="fa fa-rupee"></i> {{maxPrice}}</span>
         </div>
         <div>
-          <span>{{maxPrice * mymodel / 100}}</span>
+          <span><i class="fa fa-rupee"></i> {{currentElementVal}}</span>
         </div>
       </div>
     </div>
