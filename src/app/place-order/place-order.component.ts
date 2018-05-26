@@ -11,7 +11,7 @@ import { NgForm } from '@angular/forms';
 })
 export class PlaceOrderComponent implements OnInit {
 
-  private orderConfirmed = false;
+  public orderConfirmed = false;
   customerAddress: CustomerAddress;
 
   constructor(private placeOredrService: PlaceOredrService, private auth: AuthService) {

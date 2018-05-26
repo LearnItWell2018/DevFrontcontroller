@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
 import { AuthService } from '../services/auth-service';
 import { CustomerOrder } from '../model/customer-order-model';
 import { environment } from '../../environments/environment';
+
+import { OnInit, Component } from '@angular/core';
+import { Http } from '@angular/http';
 
 let orderList;
 
@@ -13,7 +14,7 @@ let orderList;
 })
 export class MyOrderComponent implements OnInit {
 
-  private orderListAll:CustomerOrder[];
+  public orderListAll:CustomerOrder[];
   private serviceProp = environment.serviceURL;
 
   constructor(public http:Http, public authService:AuthService) { }

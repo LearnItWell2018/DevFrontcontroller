@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
   activeUserName:String;
 
 
-  constructor(private itemMenuService:ItemMenuService,private route:Router,private activated:ActivatedRoute, private auth:AuthService) { }
+  constructor(private itemMenuService:ItemMenuService,private route:Router,private activated:ActivatedRoute, public auth:AuthService) { }
 
   ngOnInit() {
     this.itemMenus=this.itemMenuService.getCrarckerIconsArray();

@@ -10,8 +10,8 @@ import { Subscription } from 'rxjs/Subscription';
   styleUrls: ['./items-cart.component.css']
 })
 export class ItemsCartComponent implements OnInit,OnDestroy {
-  private myKartList:GridItem[];
-  private totalValue:number=0;
+  public myKartList:GridItem[];
+  public totalValue:number=0;
   private subscription:Subscription;
   constructor(private route:Router, private activated:ActivatedRoute,private utility:UtilityService) { }
 
