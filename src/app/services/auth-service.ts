@@ -8,12 +8,12 @@ import { UserProfile } from '../model/user-profile-model';
 export class AuthService {
 
   auth0 = new auth0.WebAuth({
-    clientID: '6rWP2FHwbDR9wT9gqFDiMA7VHD7C7QFT',
+    clientID: 'rBpiA8U0J1B09QjYEYH7kZbC4tyanXq7',
     domain: 'kalishiva.auth0.com',
     responseType: 'token id_token',
     audience: 'https://kalishiva.auth0.com/userinfo',
-    redirectUri: 'http://localhost:4200',
-    //redirectUri: 'http://kundalini.mj.milesweb.cloud/kundalinifireworks',
+    //redirectUri: 'http://localhost:4200',
+    redirectUri: 'http://kundalini.mj.milesweb.cloud/kundalinifireworks',
     scope: 'openid profile'
   });
 
