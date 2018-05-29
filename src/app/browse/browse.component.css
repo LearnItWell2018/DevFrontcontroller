@@ -121,6 +121,20 @@ hr {
     background: linear-gradient( #ffecd2 , #fcb69f);
 }
 
+.card-img-top {
+    position: relative;
+	top: 0;
+	left: 0;
+}
+
+.card-img-sinature {
+    position: absolute;
+	top: 0px;
+    right: 0px;
+    width: 70px;
+}
+
+
 .price-box{
 
     font-weight: bold;
