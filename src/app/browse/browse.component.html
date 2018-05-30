@@ -46,7 +46,8 @@
     <div class="container-grid" id="kartForView">
       <div class="card" *ngFor="let item of resultGridItemArray;let i=index" style="max-width: 260px;margin:20px">
         <img class="card-img-top" [src]="item.itemImage" alt="Card image cap">
-        <img class="card-img-sinature" src="assets/menu-icons/signature_item_icon.svg" >
+        <img *ngIf="'SIGNATURE_P'===item.itemActive" class="card-img-sinature" src="assets/menu-icons/signature_item_icon.svg" >
+        <img *ngIf="'SIGNATURE_D'===item.itemActive" class="card-img-sinature" src="assets/brand/dragon_color.svg" >
         <div class="card-body">
           <h5 class="card-title">{{item.itemName}}</h5>
           <p class="card-text">{{item.itemDesc}}</p>
