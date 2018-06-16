@@ -9,6 +9,7 @@ import { ItemsCartComponent } from './items-cart/items-cart.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { MyOrderComponent } from './my-order/my-order.component';
 import { BrowseComponent } from './browse/browse.component';
+import { OffersComponent } from './offers/offers.component';
 
 const appRoutes: Routes = [
   { path: '', component: ItemGridComponent },
@@ -19,13 +20,13 @@ const appRoutes: Routes = [
   { path: 'kart', component: ItemsCartComponent},
   { path: 'myorder', component: MyOrderComponent},
   { path: 'browse', component: BrowseComponent},
+  { path: 'offers', component: OffersComponent},
   { path: ':crackers', component: ItemGridComponent }
 
 ];
 
 @NgModule({
   imports: [
-    // RouterModule.forRoot(appRoutes, {useHash: true})
     RouterModule.forRoot(appRoutes)
   ],
   exports: [RouterModule]

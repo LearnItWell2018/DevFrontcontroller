@@ -1,0 +1,51 @@
+.container {
+    padding:20px;
+    margin-top:20px;
+    background-image: url('../../assets/image/matt_black.jpg');
+    border-radius: 1%;
+    display: flex;
+    flex-flow: row;
+}
+.bomb {
+    width: 400px;
+}
+
+.hexagon {
+    position: relative;
+    width: 150px; 
+    height: 86.60px;
+    background-color: rgb(248, 3, 3);
+  }
+  
+  .hexagon:before,
+  .hexagon:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+  }
+  
+  .hexagon:before {
+    bottom: 100%;
+    border-bottom: 43.30px solid rgb(248, 3, 3);
+  }
+  
+  .hexagon:after {
+    top: 100%;
+    width: 0;
+    border-top: 43.30px solid rgb(248, 3, 3);
+  }
+
+  .cuddle {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .single {
+    height: 200px;
+    width: 200px;
+    background-color: blue;
+    border-style: solid;
+    border-width: 10px;
+  }

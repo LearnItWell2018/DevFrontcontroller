@@ -24,6 +24,7 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { MyOrderComponent } from './my-order/my-order.component';
 import { UtilityService } from './services/utility-service';
 import { BrowseComponent } from './browse/browse.component';
+import { OffersComponent } from './offers/offers.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { BrowseComponent } from './browse/browse.component';
     TypeaheadTemplateComponent,
     AboutusComponent,
     MyOrderComponent,
-    BrowseComponent
+    BrowseComponent,
+    OffersComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, FormsModule, HttpModule,NgbModule.forRoot()
