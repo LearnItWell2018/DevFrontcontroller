@@ -25,6 +25,7 @@ import { MyOrderComponent } from './my-order/my-order.component';
 import { UtilityService } from './services/utility-service';
 import { BrowseComponent } from './browse/browse.component';
 import { OffersComponent } from './offers/offers.component';
+import { CountDown } from 'ng4-date-countdown-timer';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { OffersComponent } from './offers/offers.component';
     AboutusComponent,
     MyOrderComponent,
     BrowseComponent,
-    OffersComponent
+    OffersComponent,
+    CountDown
   ],
   imports: [
     BrowserModule, AppRoutingModule, FormsModule, HttpModule,NgbModule.forRoot()

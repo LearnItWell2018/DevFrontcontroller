@@ -7,9 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OffersComponent implements OnInit {
 
-  constructor() { }
+
+  text:any = {
+    Year: 'Year',
+    Month: 'M',
+    Weeks: "W",
+    Days: "D",
+    Hours: "HH",
+    Minutes: "MM",
+    Seconds: "SS",
+    MilliSeconds: "MilliSeconds"
+  };
+
+  constructor() {
+
+   }
 
   ngOnInit() {
+
   }
 
+
+  
 }
