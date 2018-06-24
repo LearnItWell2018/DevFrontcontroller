@@ -3,12 +3,9 @@
     <countdown [text]="text" units="Month | Days | Hours | Minutes | Seconds" end="August 22, 2018"></countdown>
   </div>
   <div class="cuddle">
-    <div class="offer">
+    <div *ngFor="let offer of offers; let i = index" class="offer">
       <img src="assets/image/flag.jpg">
-      <p class="para">Hurray it is Independence Day</p>
-    </div>
-    <div class="offer">
-      <img src="assets/image/flag.jpg">
+      <p class="para">{{offer.description}}</p>
     </div>
     <div class="offer">
       <img src="assets/image/flag.jpg">
