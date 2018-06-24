@@ -20,7 +20,7 @@ const appRoutes: Routes = [
   { path: 'kart', component: ItemsCartComponent},
   { path: 'myorder', component: MyOrderComponent},
   { path: 'browse', component: BrowseComponent},
-  { path: 'offers', component: OffersComponent},
+  { path: 'OFFERS', component: OffersComponent},
   { path: ':crackers', component: ItemGridComponent }
 
 ];

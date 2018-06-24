@@ -20,6 +20,8 @@ export class OffersComponent implements OnInit {
     Seconds: "ss",
   };
 
+  public enddate:String = "7/15/2018";
+
   public offers: Offer[] = [];
 
   private serviceProp = environment.serviceURL;
@@ -51,6 +53,9 @@ export class OffersComponent implements OnInit {
       (error) => { console.log(error) })
   }
 
-
+  public setTimer (endTime:any) {
+    console.log(endTime);
+    this.enddate = endTime;
+  }
 
 }

@@ -1,11 +1,12 @@
 <div class="container">
   <div class="bomb">
-    <countdown [text]="text" units="Month | Days | Hours | Minutes | Seconds" end="August 22, 2018"></countdown>
+    <countdown [text]="text" units="Month | Days | Hours | Minutes | Seconds" end={{enddate}}></countdown>
   </div>
   <div class="cuddle">
     <div *ngFor="let offer of offers; let i = index" class="offer">
       <img src="assets/image/flag.jpg">
       <p class="para">{{offer.description}}</p>
+      <i class="fa fa-clock-o" style="font-size:48px;color:red" (click)="setTimer(offer.offerEndTime)"></i>
     </div>
     <div class="offer">
       <img src="assets/image/flag.jpg">
