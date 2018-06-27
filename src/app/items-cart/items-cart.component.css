@@ -5,6 +5,35 @@ Side note: I know that this style of nesting in SASS doesn't result in the most 
 */
 /* Global settings */
 /* Global "table" column settings */
+
+.applyoffer {
+  background: linear-gradient(to right, red, orange, yellow, green, #2e2eff, indigo, violet);
+  border-radius: 5px;
+  font-style: oblique;
+  font-family: sans-serif;
+  font-weight: bolder;
+  color: black;
+  padding: 6px;
+}
+
+.selectoffer {
+  border-width: 2px;
+  border-color: darkslategray;
+  color: mediumblue;
+}
+
+.selectdeliverydates {
+  border-width: 2px;
+  border-color: skyblue;
+  color: black;
+}
+
+.offerDesc {
+  padding-top: 10px;
+  font-size: 23px;
+}
+
+
 .product-image {
     float: left;
     width: 20%;

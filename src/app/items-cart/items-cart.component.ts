@@ -21,6 +21,7 @@ export class ItemsCartComponent implements OnInit, OnDestroy {
   public deliveryDates: String[] = [];
   public selectedOption: String;
   public offerDetails: String;
+  public applyOfferFlag: Boolean = false;
 
   constructor(private route: Router, private activated: ActivatedRoute, private utility: UtilityService, private http: Http) { }
 
@@ -135,4 +136,13 @@ export class ItemsCartComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
+
+  applyOffer() {
+    this.applyOfferFlag = true;
+  }
+
+  removeOffer() {
+    this.applyOfferFlag = false;
+  }
+
 }
