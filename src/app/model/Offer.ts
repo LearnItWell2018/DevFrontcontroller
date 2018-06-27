@@ -1,6 +1,5 @@
 export class Offer {
 
-
     public offerID: String;
 
     public offerCreator: String;
@@ -19,5 +18,8 @@ export class Offer {
 
     public strategy: String;
 
+    public offerIMG: String;
+
+    public deliveryDates: String[] = [];
 
 }

@@ -85,7 +85,7 @@
 }
 
 .offer:hover .para {
-  font-size: 40px;
+  font-size: 25px;
   font-weight: bolder;
   opacity: 1;
   transition: .5s ease;

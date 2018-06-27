@@ -46,7 +46,9 @@ export class OffersComponent implements OnInit {
           temp.initialPreBookPercentage = element.offerDetails.initialPreBookPercentage;
           temp.preBookPercentageApplicable = element.offerDetails.preBookPercentageApplicable;
           temp.strategy = element.offerDetails.strategy;
-
+          temp.offerIMG = "assets/image/" + element.offerID + ".jpg";
+          temp.deliveryDates = element.offerDetails.deliveryDates;
+          console.log(temp);
           this.offers.push(temp);
         });
       },

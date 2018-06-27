@@ -1,9 +1,8 @@
-<div class="header-row" id="header-row"
-	style="padding: 0px; overflow: hidden; height: 100%;">
+<div class="header-row" id="header-row" style="padding: 0px; overflow: hidden; height: 100%;">
 	<div class="container-fluid" style="padding: 0px;">
 		<div class="row">
 			<div class="col-xs-12">
-				<a class="navbar-brand logo"> 
+				<a class="navbar-brand logo">
 					<img class="imagecart">
 				</a>
 			</div>
@@ -16,11 +15,12 @@
 	<div class="shopping-cart">
 
 		<div class="column-labels">
-			<label class="product-image">Image</label> <label
-				class="product-details">Product</label> <label class="product-price">Price</label>
-			<label class="product-quantity">Quantity</label> <label
-				class="product-removal">Remove</label> <label
-				class="product-line-price">Total</label>
+			<label class="product-image">Image</label>
+			<label class="product-details">Product</label>
+			<label class="product-price">Price</label>
+			<label class="product-quantity">Quantity</label>
+			<label class="product-removal">Remove</label>
+			<label class="product-line-price">Total</label>
 		</div>
 
 		<div class="product" *ngFor="let listItem of myKartList;let i=index">
@@ -31,14 +31,15 @@
 				<div class="product-title">{{listItem.itemName}}</div>
 				<p class="product-description">{{listItem.itemDesc}}</p>
 			</div>
-			<div class="product-price"><i class="fa fa-rupee"></i>{{listItem.itemPrice}}</div>
-		<div class="product-quantity">
-			<div class="flex-box" >
-			<a  class="btn-sm btn-success displayInline" (click)="reduceQuantity(i)">-</a>
-				<input type="number" [(ngModel)]="listItem.itemQuantity" readonly min="1">
-				<a  class="btn-sm btn-success displayInline" (click)="increaseQuantity(i)">+</a>
-			</div>	
-			</div> 
+			<div class="product-price">
+				<i class="fa fa-rupee"></i>{{listItem.itemPrice}}</div>
+			<div class="product-quantity">
+				<div class="flex-box">
+					<a class="btn-sm btn-success displayInline" (click)="reduceQuantity(i)">-</a>
+					<input type="number" [(ngModel)]="listItem.itemQuantity" readonly min="1">
+					<a class="btn-sm btn-success displayInline" (click)="increaseQuantity(i)">+</a>
+				</div>
+			</div>
 			<!-- <form class="form-inline" >
 				<a  class="btn btn-success displayInline" (click)="reduceQuantity(i)">-</a>
 				<input class="displayInline form-control" type="number" [value]='listItem.itemQuantity'/>
@@ -47,14 +48,22 @@
 			<div class="product-removal">
 				<button class="remove-product" (click)="removeThisProduct(i)">Remove</button>
 			</div>
-			<div class="product-line-price"><i class="fa fa-rupee"></i>{{listItem.totalFinalVal}}</div>
+			<div class="product-line-price">
+				<i class="fa fa-rupee"></i>{{listItem.totalFinalVal}}</div>
 		</div>
-
+		<div class="form-group" class="col-md-6">
+			<label>Apply Offer</label>
+			<select class="form-control" [(ngModel)]="selectedOption" (change)="setOffer()">
+				<option *ngFor="let offer of offers; let i = index" [value]="offer.offerID">{{offer.description}}</option>
+			</select>
+			<p> {{offerDetails}} </p>
+		</div>
 
 		<div class="totals">
 			<div class="totals-item">
 				<label>Subtotal</label>
-				<div class="totals-value" id="cart-subtotal"><i class="fa fa-rupee"></i>{{totalValue}}</div>
+				<div class="totals-value" id="cart-subtotal">
+					<i class="fa fa-rupee"></i>{{totalValue}}</div>
 			</div>
 			<!-- <div class="totals-item">
 				<label>Tax (5%)</label>
