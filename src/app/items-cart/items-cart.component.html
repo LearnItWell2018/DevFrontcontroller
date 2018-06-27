@@ -57,6 +57,10 @@
 				<option *ngFor="let offer of offers; let i = index" [value]="offer.offerID">{{offer.description}}</option>
 			</select>
 			<p> {{offerDetails}} </p>
+			<p class="col-md-6">Available Delivery Dates
+			<select class="form-control" [(ngModel)]="selectedDateOption">
+				<option *ngFor="let deliveryDate of deliveryDates;">{{deliveryDate}}</option>
+			</select></p>
 		</div>
 
 		<div class="totals">

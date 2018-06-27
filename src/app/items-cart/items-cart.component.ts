@@ -18,6 +18,7 @@ export class ItemsCartComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
   private serviceProp = environment.serviceURL;
   public offers: Offer[] = [];
+  public deliveryDates: String[] = [];
   public selectedOption: String;
   public offerDetails: String;
 
@@ -122,9 +123,11 @@ export class ItemsCartComponent implements OnInit, OnDestroy {
 
   setOffer() {
     this.offers.forEach(element => {
-      if (element.offerID = this.selectedOption) {
+      if (element.offerID == this.selectedOption) {
         this.offerDetails = element.percentageApplicable + "% Off, with " + 
         element.preBookPercentageApplicable + "% pre-booking charges.";
+        this.deliveryDates = element.deliveryDates;
+        console.log(this.deliveryDates);
       }
     });
   }
