@@ -15,6 +15,7 @@ import { Offer } from '../model/Offer';
 export class ItemsCartComponent implements OnInit, OnDestroy {
   public myKartList: GridItem[];
   public totalValue: number = 0;
+  public subtotalValue: number = 0;
   private subscription: Subscription;
   private serviceProp = environment.serviceURL;
   public offers: Offer[] = [];
@@ -22,6 +23,7 @@ export class ItemsCartComponent implements OnInit, OnDestroy {
   public selectedOption: String;
   public offerDetails: String;
   public applyOfferFlag: Boolean = false;
+  public discountValue: number = 0;
 
   constructor(private route: Router, private activated: ActivatedRoute, private utility: UtilityService, private http: Http) { }
 
@@ -109,11 +111,11 @@ export class ItemsCartComponent implements OnInit, OnDestroy {
   calculateTotal() {
     let totalVal = 0;
     this.myKartList.forEach(function (item) {
-
       totalVal = totalVal + item.totalFinalVal;
     });
     console.log(totalVal);
-    this.totalValue = totalVal;
+    this.subtotalValue = totalVal;
+    this.totalValue = totalVal - this.discountValue;
   }
 
   gotoPlaceOrder() {
@@ -125,12 +127,13 @@ export class ItemsCartComponent implements OnInit, OnDestroy {
   setOffer() {
     this.offers.forEach(element => {
       if (element.offerID == this.selectedOption) {
+        this.discountValue = this.totalValue*(100-Number(element.percentageApplicable))/100;
         this.offerDetails = element.percentageApplicable + "% Off, with " + 
         element.preBookPercentageApplicable + "% pre-booking charges.";
         this.deliveryDates = element.deliveryDates;
-        console.log(this.deliveryDates);
       }
     });
+    this.calculateTotal();
   }
 
   ngOnDestroy() {
