@@ -6,6 +6,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { Http } from '@angular/http';
 import { environment } from '../../environments/environment';
 import { Offer } from '../model/Offer';
+import { PlaceOredrService } from '../services/placeorder-service';
 
 @Component({
   selector: 'app-items-cart',
@@ -25,7 +26,9 @@ export class ItemsCartComponent implements OnInit, OnDestroy {
   public applyOfferFlag: Boolean = false;
   public discountValue: number = 0;
 
-  constructor(private route: Router, private activated: ActivatedRoute, private utility: UtilityService, private http: Http) { }
+  constructor(private route: Router, private activated: ActivatedRoute, private utility: UtilityService, private http: Http, private placeOredrService: PlaceOredrService) {
+    localStorage.setItem("customerOrder", "");
+  }
 
   ngOnInit() {
     let myKart = localStorage.getItem('myKart');
@@ -120,6 +123,7 @@ export class ItemsCartComponent implements OnInit, OnDestroy {
 
   gotoPlaceOrder() {
     if (this.totalValue > 0) {
+      this.placeOredrService.fillCustomerOrderFromCart(this.totalValue.toString());
       this.route.navigate(['../placeorder']);
     }
   }
@@ -134,7 +138,7 @@ export class ItemsCartComponent implements OnInit, OnDestroy {
       }
     });
     this.calculateTotal();
-  }
+   }
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
@@ -142,10 +146,15 @@ export class ItemsCartComponent implements OnInit, OnDestroy {
 
   applyOffer() {
     this.applyOfferFlag = true;
+    this.calculateTotal();
   }
 
   removeOffer() {
     this.applyOfferFlag = false;
+    this.discountValue = 0;
+    this.selectedOption = '';
+    this.offerDetails = '';
+    this.calculateTotal();
   }
 
 }

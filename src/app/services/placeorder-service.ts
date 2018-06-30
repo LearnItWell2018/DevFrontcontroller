@@ -32,7 +32,7 @@ export class PlaceOredrService {
         );
     }
 
-    fillCustomerOrderFromCart () {
+    fillCustomerOrderFromCart (totalVal:String) {
         this.body = new CustomerOrder();
         this.orderDetails  = new OrderDetails();
         this.body.orderDetails = this.orderDetails;
@@ -52,7 +52,7 @@ export class PlaceOredrService {
         }).forEach(item => listOrder.push(item));
 
         this.body.orderDetails.orderList = listOrder;
-        this.body.orderDetails.orderTotal = this.calculateTotal(listOrder);
+        this.body.orderDetails.orderTotal = totalVal;
 
         localStorage.setItem("customerOrder", JSON.stringify(this.body));
     }
@@ -78,14 +78,5 @@ export class PlaceOredrService {
         this.body.customerAddress.push(address);
         localStorage.setItem("customerOrder", JSON.stringify(this.body));
     }
-
-    calculateTotal (listOrder:OrderList[]) : any {
-        let totalVal = 0;
-        listOrder.forEach(function(item) {
-            totalVal = totalVal + (Number.parseInt(item.itemCount.toString()) * Number.parseInt(item.itemPrice.toString()));
-        });
-        return totalVal;
-    }
-
-
+    
 }

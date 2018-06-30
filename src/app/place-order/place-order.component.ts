@@ -15,11 +15,9 @@ export class PlaceOrderComponent implements OnInit {
   customerAddress: CustomerAddress;
 
   constructor(private placeOredrService: PlaceOredrService, private auth: AuthService) {
-    localStorage.setItem("customerOrder", "");
   }
 
   ngOnInit() {
-    this.placeOredrService.fillCustomerOrderFromCart();
   }
 
   onSubmit(customerFrom) {
