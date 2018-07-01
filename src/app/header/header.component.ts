@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   userProfile:UserProfile;
   activeUserPresent:Boolean;
   activeUserName:String;
-
+  animateproductmenu = '';
 
   constructor(private itemMenuService:ItemMenuService,private route:Router,private activated:ActivatedRoute, public auth:AuthService) { }
 
@@ -34,10 +34,12 @@ export class HeaderComponent implements OnInit {
 
   openNav() {
     console.log('iconclicked');
+    this.animateproductmenu = 'open';
     document.getElementById("mySidenav").style.width = "100%";
   }
 
   closeNav() {
+    this.animateproductmenu = '';
     document.getElementById("mySidenav").style.width = "0";
   }
 
@@ -71,5 +73,7 @@ export class HeaderComponent implements OnInit {
       return "Anyone Home ?";
     }
   }
+
+
 
 }

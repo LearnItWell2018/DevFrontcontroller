@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  serviceURL: 'http://localhost:8088/kundalini'
+  serviceURL: 'http://ec2-35-154-31-212.ap-south-1.compute.amazonaws.com/kundalini'
 };

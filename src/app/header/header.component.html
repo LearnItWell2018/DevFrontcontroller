@@ -2,24 +2,24 @@
   <a class="navbox-item nav-logo first-item">
     <img src="assets/brand/kundalini-logo.svg" (click)="routeToHome()" class="d-inline-block" alt="kundalini">
   </a>
-  <div class="navbox-item nav-logo-text second-item push-left-medium">  
-      <a>  Kundalini</a> 
-  </div>  
- <div class="navbox-item wide-item third-item">
- <div class="push-right">   
-    <form class="form-inline">
+  <div class="navbox-item nav-logo-text second-item push-left-medium">
+    <a> Kundalini</a>
+  </div>
+  <div class="navbox-item wide-item third-item">
+    <div class="push-right">
+      <form class="form-inline">
         <ngbd-typeahead-template></ngbd-typeahead-template>
         <button class="btn  my-2 my-sm-0 " type="submit" (click)="routeToBrowse()">Browse</button>
       </form>
-    </div> 
+    </div>
   </div>
   <div class="navbox-item space-around fourth-item">
-  <div class="push-right-large push-right-medium kart">
-   <img src="assets/brand/shop.svg" (click)="routeToKart()" class="d-inline-block" alt="kundalini"/>
-  </div>
+    <div class="push-right-large push-right-medium kart">
+      <img src="assets/brand/shop.svg" (click)="routeToKart()" class="d-inline-block" alt="kundalini" />
+    </div>
   </div>
   <div class="dropdown navbox-item fifth-item">
-    <div class="dropmenu push-right-large push-right-medium"> 
+    <div class="dropmenu push-right-large push-right-medium">
       <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
         {{getactiveUserName()}}
       </button>
@@ -30,35 +30,37 @@
         <a *ngIf="auth.isAuthenticated()" class="dropdown-item" [routerLink]="'myorder'">My Order</a>
       </div>
     </div>
-    <div class="dropdown show menu-border">
-      <a class="btn btn-secondary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <div class="menu"></div>
-        <div class="menu"></div>
-        <div class="menu"></div>
+    <div class="navbox-item space-around last-item mobile">
+      <a id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-user-plus" style="font-size:30px;color:rgb(240, 184, 0)"></i>
       </a>
-    <div id="smalldiv" class="dropdown-menu dropdown-menu-right">
-      <a *ngIf="auth.isAuthenticated()" class="dropdown-item" (click)="logOut()">Log Out</a>
-      <a *ngIf="!auth.isAuthenticated()" class="dropdown-item" (click)="logIn()">Sign In | Log In</a>
-      <a class="dropdown-item" [routerLink]="'whyus'">Why Us</a>
-      <a *ngIf="auth.isAuthenticated()" class="dropdown-item" [routerLink]="'myorder'">My Order</a>
+      <div id="smalldiv" class="dropdown-menu dropdown-menu-right">
+        <a *ngIf="auth.isAuthenticated()" class="dropdown-item" (click)="logOut()">Log Out</a>
+        <a *ngIf="!auth.isAuthenticated()" class="dropdown-item" (click)="logIn()">Sign In | Log In</a>
+        <a class="dropdown-item" [routerLink]="'whyus'">Why Us</a>
+        <a *ngIf="auth.isAuthenticated()" class="dropdown-item" [routerLink]="'myorder'">My Order</a>
+      </div>
     </div>
+  </div>
+  <div class="navbox-item space-around last-item">
+    <div id="product-menu" [class]="animateproductmenu" (click)="openNav()">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-   </div> 
-   <div class="navbox-item space-around last-item">
-    <div class="push-right-large push-right-medium kart">
-     <img src="assets/menu-icons/mobile_item_icon.svg" (click)="openNav()" class="d-inline-block" alt="kundalini">
-    </div>
-    </div>
+  </div>
 </nav>
 
 <div id="mySidenav" class="sidenav">
-    <div href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</div>
-    <div id="listmenuall">
-      <div class="menudesign">
-        <a *ngFor='let itemMenu of itemMenus'(click)="closeNav()" [routerLink]='itemMenu.crackerIconURL'>
-          <div class="imageDiv"><img [src]="itemMenu.crackerIconImagePath" [alt]="itemMenu.crackerTitleText"></div>
-          <div class="iconText">{{itemMenu.crackerTitleText}}</div>
-        </a>
-      </div>
+  <div href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</div>
+  <div id="listmenuall">
+    <div class="menudesign">
+      <a *ngFor='let itemMenu of itemMenus' (click)="closeNav()" [routerLink]='itemMenu.crackerIconURL'>
+        <div class="imageDiv">
+          <img [src]="itemMenu.crackerIconImagePath" [alt]="itemMenu.crackerTitleText">
+        </div>
+        <div class="iconText">{{itemMenu.crackerTitleText}}</div>
+      </a>
     </div>
+  </div>
 </div>
