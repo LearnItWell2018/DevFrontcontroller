@@ -3,12 +3,16 @@
     <countdown [text]="text" units="Month | Days | Hours | Minutes | Seconds" end={{enddate}}></countdown>
   </div>
   <div class="cuddle">
-    <div *ngFor="let offer of offers; let i = index" class="offer">
+    <div *ngFor="let offer of offers; let i = index" class="offer" (click)="setTimer(offer.offerEndTime)">
       <img [src]="offer.offerIMG">
+      <div class="mobile">
+        <countdown [text]="text" units="Month | Days | Hours | Minutes | Seconds" end={{enddate}}></countdown>
+      </div>
       <p class="para">{{offer.description}}</p>
-      <p class="para">{{offer.percentageApplicable}}% Off, with {{offer.preBookPercentageApplicable}}% pre-booking charges.
-              Check the time remains -> 
-      <i class="fa fa-clock-o" style="font-size:48px;color:red" (click)="setTimer(offer.offerEndTime)"></i></p>
+      <p class="para">{{offer.percentageApplicable}}% Off, with {{offer.preBookPercentageApplicable}}% pre-booking charges.</p>
+      <p class="para desktop">Check the time remains ->
+        <i class="fa fa-clock-o" style="font-size:48px;color:red" (click)="setTimer(offer.offerEndTime)"></i>
+      </p>
     </div>
   </div>
 </div>
