@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemMenuService } from '../services/item-menu-service';
 import { ItemMenu } from '../model/item-menu-model';
-import { ActivatedRoute,Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../services/auth-service';
 import { UserProfile } from '../model/user-profile-model';
+import { UtilityService } from '../services/utility-service';
+import { GridItem } from '../model/item-grid-models';
 
 @Component({
   selector: 'app-header',
@@ -11,24 +13,30 @@ import { UserProfile } from '../model/user-profile-model';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  itemMenus:ItemMenu[];
-  userProfile:UserProfile;
-  activeUserPresent:Boolean;
-  activeUserName:String;
+  itemMenus: ItemMenu[];
+  userProfile: UserProfile;
+  activeUserPresent: Boolean;
+  activeUserName: String;
   animateproductmenu = '';
+  kartCount: number = 0;
 
-  constructor(private itemMenuService:ItemMenuService,private route:Router,private activated:ActivatedRoute, public auth:AuthService) { }
+  constructor(private itemMenuService: ItemMenuService, private route: Router, private utility: UtilityService, private activated: ActivatedRoute, public auth: AuthService) { }
 
   ngOnInit() {
-    this.itemMenus=this.itemMenuService.getCrarckerIconsArray();
+    this.itemMenus = this.itemMenuService.getCrarckerIconsArray();
     this.userProfile = this.auth.getProfile();
     if (this.userProfile) {
-       this.activeUserPresent = true;
-       this.activeUserName = this.userProfile.name;
+      this.activeUserPresent = true;
+      this.activeUserName = this.userProfile.name;
     } else {
       this.activeUserPresent = false;
       this.activeUserName = "Anyone Home ?";
     }
+
+    this.utility.itemAdded.subscribe((data: string) => {
+      this.kartCount = this.utility.totalItemCount();
+    })
+
     console.log(this.auth.getProfile());
   }
 
@@ -43,18 +51,18 @@ export class HeaderComponent implements OnInit {
     document.getElementById("mySidenav").style.width = "0";
   }
 
-  routeToKart(){
+  routeToKart() {
     this.route.navigate(['../kart']);
   }
 
-  routeToHome(){
+  routeToHome() {
     this.route.navigate(['../']);
   }
 
   routeToBrowse() {
     this.route.navigate(['../browse']);
   }
-  
+
   logOut() {
     this.auth.logout();
     this.activeUserName = "Anyone Home ?";
@@ -62,12 +70,12 @@ export class HeaderComponent implements OnInit {
   logIn() {
     this.auth.login();
   }
-  
-  getactiveUserName():String{
+
+  getactiveUserName(): String {
     this.userProfile = this.auth.getProfile();
     if (this.userProfile) {
-       this.activeUserPresent = true;
-       return this.userProfile.name;
+      this.activeUserPresent = true;
+      return this.userProfile.name;
     } else {
       this.activeUserPresent = false;
       return "Anyone Home ?";

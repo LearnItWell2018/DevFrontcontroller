@@ -74,10 +74,11 @@
 }
 
 
-.kart>img{
-    width:50px;
-    height:50px;
-    cursor: pointer;
+.kart {
+    background-image: url('../../assets/brand/shop.svg');
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    width: 58px;
 }
 @-webkit-keyframes rotation {
     from {
@@ -168,12 +169,19 @@ display:none;
         color:white;
         font-size: 30px;
     }
-    .kart>img{
-        width:40px;
-        height:40px;
+    .kart {
+        background-image: url('../../assets/brand/shop.svg');
+        background-repeat: no-repeat;
+        background-size: 40px 40px;
+        width: 58px;
     }
     .mobile {
         display: initial;
+    }
+
+    .kartcounttext {
+        color: greenyellow;
+        margin-left: -32px;
     }
 }
 
@@ -208,6 +216,11 @@ display:none;
 
     .mobile {
         display: initial;
+    }
+
+    .kartcounttext {
+        color: greenyellow;
+        margin-left: -32px;
     }
 }
 
@@ -250,6 +263,11 @@ display:none;
 
     .mobile {
         display: initial;
+    }
+
+    .kartcounttext {
+        color: greenyellow;
+        margin-left: -25px;
     }
 }
 
@@ -387,4 +405,8 @@ img{
     -moz-transform: rotate(-135deg);
     -o-transform: rotate(-135deg);
     transform: rotate(-135deg);
+  }
+
+  .kartcounttext {
+    color: greenyellow;
   }
