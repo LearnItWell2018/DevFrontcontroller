@@ -85,7 +85,7 @@ export class ItemsCartComponent implements OnInit, OnDestroy {
       this.syncWithKart();
       this.calculateTotal();
     }
-
+    this.utility.notyifyAll();
   }
 
   increaseQuantity(index) {
@@ -97,13 +97,14 @@ export class ItemsCartComponent implements OnInit, OnDestroy {
       this.syncWithKart();
       this.calculateTotal();
     }
-
+    this.utility.notyifyAll();
   }
 
   removeThisProduct(i) {
     this.myKartList.splice(i, 1);
     this.syncWithKart();
     this.calculateTotal();
+    this.utility.notyifyAll();
   }
 
   syncWithKart() {

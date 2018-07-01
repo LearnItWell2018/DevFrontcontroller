@@ -5,6 +5,7 @@ import { GridItem } from '../model/item-grid-models';
 import { Subscription } from 'rxjs/Subscription';
 import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 import * as $ from 'jquery';
+import { UtilityService } from '../services/utility-service';
 @Component({
   selector: 'app-item-grid',
   templateUrl: './item-grid.component.html',
@@ -15,7 +16,7 @@ export class ItemGridComponent implements OnInit ,OnDestroy{
   subscription:Subscription;
 
   public gridItemArray:GridItem[]=[];
-  constructor(private router:ActivatedRoute,private itemGridService:ItemGridService) { }
+  constructor(private router:ActivatedRoute,private itemGridService:ItemGridService,private utility:UtilityService) { }
 
   ngOnInit() {
     this.itemtype=this.router.snapshot.params['crackers'];
@@ -94,6 +95,7 @@ addProductToWebStore(index:number,inputElem:HTMLFormElement){
       }
     }
   }
+  this.utility.notyifyAll();
 }
 
 quantityGtOne(index:number){

@@ -6,6 +6,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { element } from 'protractor';
 import { ItemMenu } from '../model/item-menu-model';
 import { ItemMenuService } from '../services/item-menu-service';
+import { UtilityService } from '../services/utility-service';
 
 @Component({
   selector: 'app-browse',
@@ -33,7 +34,7 @@ export class BrowseComponent implements OnInit {
 
   public currentElementVal:Number = 0;
 
-  constructor(private itemGridService: ItemGridService, private itemMenuService: ItemMenuService) { }
+  constructor(private itemGridService: ItemGridService, private itemMenuService: ItemMenuService, private utility:UtilityService) { }
 
   ngOnInit() {
     this.itemGridService.getAllData().subscribe(
@@ -124,6 +125,7 @@ export class BrowseComponent implements OnInit {
         }
       }
     }
+    this.utility.notyifyAll();
   }
 
   quantityGtOne(index: number) {
