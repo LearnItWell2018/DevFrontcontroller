@@ -250,7 +250,7 @@ hr {
         margin-top: 20px;
     }
     .padder-margine{
-        margin-top:20px; 
+        margin-top:130px; 
     }
 
     .filterAll {
@@ -259,7 +259,7 @@ hr {
 
     .overlay {
         position: absolute;
-        margin-top: 145px;
+        margin-top: 125px;
         width: 100%;
         height: 150%;
         top: 0;

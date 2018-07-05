@@ -72,14 +72,13 @@
 .space-around{
     margin:0 10px;
 }
-
-
 .kart {
     background-image: url('../../assets/brand/shop.svg');
     background-repeat: no-repeat;
     background-size: 40px 40px;
     width: 58px;
 }
+
 @-webkit-keyframes rotation {
     from {
             -webkit-transform: rotate(0deg);
@@ -113,6 +112,17 @@ display:none;
 }
 
 @media only screen and (max-width: 850px) {
+
+    .filler {
+        height: 20px;
+        background: linear-gradient(to right,black, red , black);
+    }
+
+    .mobilenavstyle {
+        position: fixed;
+        z-index: 2;
+    }
+
     .first-item{
         order:1;
     }
@@ -186,6 +196,17 @@ display:none;
 }
 
 @media only screen and (max-width: 720px) {
+
+    .filler {
+        height: 20px;
+        background: linear-gradient(to right,black, red , black);
+    }
+
+    .mobilenavstyle {
+        position: fixed;
+        z-index: 2;
+    }
+
     .first-item{
         order:1;
     }
@@ -225,6 +246,17 @@ display:none;
 }
 
 @media only screen and (max-width: 570px) {
+
+    .filler {
+        height: 20px;
+        background: linear-gradient(to right,black, red , black);
+    }
+
+    .mobilenavstyle {
+        position: fixed;
+        z-index: 2;
+    }
+
     .form-inline .form-control {
         display: inline-block;
         width: 60%;

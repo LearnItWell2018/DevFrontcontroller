@@ -106,8 +106,8 @@
     .largescreen {
         display: none;
     }
-    .fullwidh {
-        margin-top: 20px;
+    .carousel-inner {
+        margin-top: 125px;
     }
     .padder-margine {
         margin-top:20px; 

@@ -15,6 +15,7 @@ import { GridItem } from '../model/item-grid-models';
 export class HeaderComponent implements OnInit {
   itemMenus: ItemMenu[];
   userProfile: UserProfile;
+  public myKartList: GridItem[];
   activeUserPresent: Boolean;
   activeUserName: String;
   animateproductmenu = '';
@@ -32,6 +33,8 @@ export class HeaderComponent implements OnInit {
       this.activeUserPresent = false;
       this.activeUserName = "Anyone Home ?";
     }
+
+    this.kartCount = this.initialCartItemCount();
 
     this.utility.itemAdded.subscribe((data: string) => {
       this.kartCount = this.utility.totalItemCount();
@@ -80,6 +83,18 @@ export class HeaderComponent implements OnInit {
       this.activeUserPresent = false;
       return "Anyone Home ?";
     }
+  }
+
+  initialCartItemCount(): number {
+    let numberOfitems: number = 0;
+    let myKart = localStorage.getItem('myKart');
+    if (myKart != null) {
+        this.myKartList = JSON.parse('[' + myKart + ']');
+        this.myKartList.forEach(function (item) {
+            numberOfitems = numberOfitems + item.itemQuantity;
+        });
+    }
+    return numberOfitems;
   }
 
 
