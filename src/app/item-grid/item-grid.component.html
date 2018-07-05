@@ -1,5 +1,11 @@
 <app-item-menu (clickEventInner)="navigateAfterClicked()"></app-item-menu>
-
+<go-top-button [animate]="true" [speed]="50" [acceleration]="2" [scrollDistance]="300" [styles]="{
+  'margin-top': '250px',
+  'background-color': 'black',
+  'opacity': '0.7',
+    'line-height': '20px'}">
+  <i class="fa fa-arrow-up" style="color:white;"></i>
+</go-top-button>
 <div class="fullwidh">
   <div class="container">
     <div id="demo" class="carousel slide largescreen" data-ride="carousel">

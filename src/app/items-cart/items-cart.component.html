@@ -1,3 +1,10 @@
+<go-top-button [animate]="true" [speed]="50" [acceleration]="2" [scrollDistance]="300" [styles]="{
+	'margin-top': '250px',
+	'background-color': 'black',
+	'opacity': '0.7',
+    'line-height': '20px'}">
+	<i class="fa fa-arrow-up" style="color:white;"></i>
+</go-top-button>
 <div class="header-row" id="header-row" style="padding: 0px; overflow: hidden; height: 100%;">
 	<div class="container-fluid" style="padding: 0px;">
 		<div class="row">
@@ -76,7 +83,8 @@
 			</div>
 			<div *ngIf="applyOfferFlag" class="totals-item">
 				<label>Discount</label>
-				<div class="totals-value" id="cart-shipping"><i class="fa fa-rupee"></i>-{{discountValue}}</div>
+				<div class="totals-value" id="cart-shipping">
+					<i class="fa fa-rupee"></i>-{{discountValue}}</div>
 			</div>
 
 			<!--<div class="totals-item">
@@ -85,7 +93,8 @@
 			</div> -->
 			<div class="totals-item totals-item-total">
 				<label>Grand Total</label>
-				<div class="totals-value" id="cart-total"><i class="fa fa-rupee"></i>{{totalValue}}</div>
+				<div class="totals-value" id="cart-total">
+					<i class="fa fa-rupee"></i>{{totalValue}}</div>
 			</div>
 		</div>
 		<button class="checkout" (click)="gotoPlaceOrder()">Checkout</button>
