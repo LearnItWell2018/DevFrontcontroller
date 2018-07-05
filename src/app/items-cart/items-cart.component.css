@@ -202,6 +202,7 @@ Side note: I know that this style of nesting in SASS doesn't result in the most 
     .imagecart {
       content: url('../../assets/image/back3_mob.jpg');
       width: 100%;
+      margin-top: 130px;
     }
 
     .shopping-cart {
