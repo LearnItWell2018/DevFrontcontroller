@@ -1,25 +1,42 @@
 <div class="container">
+  <go-top-button [animate]="true" [speed]="50" [acceleration]="2" [scrollDistance]="300" [styles]="{
+      'margin-top': '250px',
+      'background-color': 'black',
+      'opacity': '0.7',
+        'line-height': '20px'}">
+    <i class="fa fa-arrow-up" style="color:white;"></i>
+  </go-top-button>
   <div *ngFor="let orderItem of orderListAll; let i = index" class="orderrow">
     <div class="flex-row">
-      <div class="orderid" data-toggle="collapse" [attr.data-target]="'#' + i"  >{{orderItem.id}}</div>
+      <div class="orderid" data-toggle="collapse" [attr.data-target]="'#' + i">{{orderItem.id}}</div>
       <div class="resend">Order Status : {{orderItem.orderStatus}}</div>
       <div class="orderdate">Order Date : {{orderItem.orderDetails.orderDate}}</div>
     </div>
     <div [attr.id]="i" class="content-order collapse">
       <div *ngFor="let productItem of orderItem.orderDetails.orderList">
         <div class="flex-row">
-          <div><img class="product-image" [src]="productItem.itemImage"></div>
+          <div>
+            <img class="product-image" [src]="productItem.itemImage">
+          </div>
           <div class="details">{{productItem.itemDesc}}</div>
           <div class="quantity">{{productItem.itemCount}} items</div>
-          <div class="price">{{productItem.itemCount}} * {{productItem.itemPrice}} = {{productItem.itemCount * productItem.itemPrice}} <i class="fa fa-rupee"></i></div>
-          <div class="return"><button>Return <i class="fa fa-undo"></i></button></div>
+          <div class="price">{{productItem.itemCount}} * {{productItem.itemPrice}} = {{productItem.itemCount * productItem.itemPrice}}
+            <i class="fa fa-rupee"></i>
+          </div>
+          <div class="return">
+            <button>Return
+              <i class="fa fa-undo"></i>
+            </button>
+          </div>
         </div>
         <hr color="red">
       </div>
       <div class="total">
         <div class="flex-row">
           <div>Total Amount :</div>
-          <div>{{orderItem.orderDetails.orderTotal}} <i class="fa fa-rupee"></i></div>
+          <div>{{orderItem.orderDetails.orderTotal}}
+            <i class="fa fa-rupee"></i>
+          </div>
         </div>
       </div>
     </div>

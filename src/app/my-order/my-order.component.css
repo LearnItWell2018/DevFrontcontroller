@@ -80,3 +80,12 @@
 .orderdate {
     color: #fff;
 }
+
+@media screen and (max-width: 650px) {
+    .container {
+        padding:20px;
+        margin-top:0px;
+        background-image: url('../../assets/image/matt_black.jpg');
+        border-radius: 1%;
+    }
+}
