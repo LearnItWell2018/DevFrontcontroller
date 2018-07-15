@@ -6,6 +6,7 @@ import { OrderList } from '../model/OrderList';
 import { UserProfile } from '../model/user-profile-model';
 import { CustomerAddress } from '../model/CustomerAddress';
 import { environment } from '../../environments/environment';
+import { UtilityService } from './utility-service';
 
 @Injectable()
 export class PlaceOredrService {
@@ -14,7 +15,7 @@ export class PlaceOredrService {
     orderDetails:OrderDetails;
     orderList:OrderList[];
     private serviceProp = environment.serviceURL;
-    constructor(private http:Http) {}
+    constructor(private http:Http, private utility:UtilityService) {}
 
     placeOrder() {
         this.body = JSON.parse(localStorage.getItem("customerOrder"));
@@ -25,6 +26,7 @@ export class PlaceOredrService {
                 console.log(res);
                 localStorage.removeItem("customerOrder");
                 localStorage.removeItem("myKart");
+                this.utility.notyifyAll();
             },
             err => {
                 console.log("Error occured");
