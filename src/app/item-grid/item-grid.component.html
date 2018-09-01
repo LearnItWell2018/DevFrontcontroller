@@ -101,11 +101,11 @@
       <div class="card-body">
         <h5 class="card-title">{{item.itemName}}</h5>
         <p class="card-text">{{item.itemDesc}}</p>
+        <div class="brand-box">{{item.brand}}</div>
         <div class="flexbox-design">
           <div class="price-box"><i class="fa fa-rupee"></i>{{item.originalPrice}}</div>
           <div *ngIf="item.offer > 0" > - {{item.offer}}%</div>
           <div *ngIf="item.offer > 0" class="offered-box"> = <i class="fa fa-rupee"></i>{{item.itemPrice}}</div>
-          <div class="brand-box">{{item.brand}}</div>
         </div>
         <hr>
         <form class="form-inline">

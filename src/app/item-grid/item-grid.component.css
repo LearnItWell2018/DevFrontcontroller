@@ -57,7 +57,7 @@
 }
 
 .card-body{
-    background: linear-gradient( #ffecd2 , #fcb69f);
+    background: linear-gradient( #22b9b500 , #850000);
 }
 
 .price-box{
@@ -75,7 +75,7 @@
 .brand-box{
   
     font-weight: bold;
-    color: rgba(102, 62, 13, 0.932);
+    color: rgba(102, 13, 68, 0.932);
 
 }
 
