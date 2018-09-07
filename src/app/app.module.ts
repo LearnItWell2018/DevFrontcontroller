@@ -27,6 +27,7 @@ import { BrowseComponent } from './browse/browse.component';
 import { OffersComponent } from './offers/offers.component';
 import { CountDown } from 'ng4-date-countdown-timer';
 import { GoTopButtonModule } from 'ng2-go-top-button';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { GoTopButtonModule } from 'ng2-go-top-button';
     MyOrderComponent,
     BrowseComponent,
     OffersComponent,
-    CountDown
+    CountDown,
+    ProductComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, FormsModule, HttpModule, GoTopButtonModule, NgbModule.forRoot()

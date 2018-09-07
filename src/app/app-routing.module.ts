@@ -10,6 +10,7 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { MyOrderComponent } from './my-order/my-order.component';
 import { BrowseComponent } from './browse/browse.component';
 import { OffersComponent } from './offers/offers.component';
+import { ProductComponent } from './product/product.component';
 
 const appRoutes: Routes = [
   { path: '', component: ItemGridComponent },
@@ -21,6 +22,7 @@ const appRoutes: Routes = [
   { path: 'myorder', component: MyOrderComponent},
   { path: 'browse', component: BrowseComponent},
   { path: 'OFFERS', component: OffersComponent},
+  { path: 'product', component: ProductComponent},
   { path: ':crackers', component: ItemGridComponent }
 
 ];
