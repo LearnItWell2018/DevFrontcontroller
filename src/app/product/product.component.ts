@@ -9,8 +9,13 @@ import { GridItem } from '../model/item-grid-models';
 export class ProductComponent implements OnInit {
 
   public selectedProduct:GridItem;
+  public items: GridItem[] = [];
 
-  constructor() { }
+  constructor() {
+    this.items.push(JSON.parse(localStorage.getItem("selectedProduct")));
+    this.items.push(JSON.parse(localStorage.getItem("selectedProduct")));
+    this.items.push(JSON.parse(localStorage.getItem("selectedProduct")));
+  }
 
   ngOnInit() {
     this.selectedProduct = JSON.parse(localStorage.getItem("selectedProduct"));

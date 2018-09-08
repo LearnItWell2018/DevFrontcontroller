@@ -7,7 +7,28 @@
       {{selectedProduct.itemName}}
     </div>
   </div>
-  <div class="productDesc">
+  <div class="verticals">
+    <div class="productDesc">
       {{selectedProduct.itemDesc}}
+    </div>
+    <div id="container" class="slider">
+      <div ng2-carouselamos [width]="500" [items]="items" [$item]="item" [$prev]="prevTemplate" [$next]="nextTemplate">
+      </div>
+      <ng-template #prevTemplate>
+        <div>
+          <i class="fa fa-chevron-left" style="font-size:36px"></i>
+        </div>
+      </ng-template>
+      <ng-template #nextTemplate>
+        <div>
+          <i class="fa fa-chevron-right" style="font-size:36px"></i>
+        </div>
+      </ng-template>
+      <ng-template #item let-item let-i="index">
+        <div>
+          <img src="{{item.itemImage}}" class="carousalContent">
+        </div>
+      </ng-template>
+    </div>
   </div>
 </div>

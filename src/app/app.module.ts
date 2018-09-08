@@ -28,6 +28,7 @@ import { OffersComponent } from './offers/offers.component';
 import { CountDown } from 'ng4-date-countdown-timer';
 import { GoTopButtonModule } from 'ng2-go-top-button';
 import { ProductComponent } from './product/product.component';
+import { Ng2CarouselamosModule } from 'ng2-carouselamos';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,7 @@ import { ProductComponent } from './product/product.component';
     ProductComponent
   ],
   imports: [
-    BrowserModule, AppRoutingModule, FormsModule, HttpModule, GoTopButtonModule, NgbModule.forRoot()
+    BrowserModule, AppRoutingModule, FormsModule, HttpModule, GoTopButtonModule, NgbModule.forRoot(), Ng2CarouselamosModule
   ],
   providers: [ItemMenuService,ItemGridService, AuthService, PlaceOredrService,UtilityService],
   bootstrap: [AppComponent]
