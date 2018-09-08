@@ -21,4 +21,28 @@ export class ProductComponent implements OnInit {
     this.selectedProduct = JSON.parse(localStorage.getItem("selectedProduct"));
   }
 
+
+  reduceQuantity() {
+    if (this.selectedProduct.itemQuantity === 0) {
+      return false;
+    } else {
+      this.selectedProduct.itemQuantity = this.selectedProduct.itemQuantity - 1;
+    }
+  }
+
+  increaseQuantity() {
+    if (this.selectedProduct.itemQuantity === 1000) {
+      return false;
+    } else {
+      this.selectedProduct.itemQuantity = this.selectedProduct.itemQuantity + 1;
+    }
+  }
+
+  quantityGtOne() {
+    if (this.selectedProduct.itemQuantity === 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

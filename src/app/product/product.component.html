@@ -11,6 +11,17 @@
     <div class="productDesc">
       {{selectedProduct.itemDesc}}
     </div>
+    <div class="sell">
+      <a class="btn btn-success displayInline" (click)="reduceQuantity()">-</a>
+      <input class="displayInline" type="text" [value]='selectedProduct.itemQuantity' readonly/>
+      <a class="btn btn-success displayInline" (click)="increaseQuantity()">+</a>
+      <a class="btn btn-success cart"  [ngClass]="{'disabled':quantityGtOne()}">
+        <img src="assets/brand/shop.svg" class="d-inline-block" alt="kundalini" [id]='item.productId' (click)='addProductToWebStore(i,input)'>
+      </a>
+    </div>
+    <div>
+      <span class="products">Similer Products</span>
+    </div>
     <div id="container" class="slider">
       <div ng2-carouselamos [width]="500" [items]="items" [$item]="item" [$prev]="prevTemplate" [$next]="nextTemplate">
       </div>

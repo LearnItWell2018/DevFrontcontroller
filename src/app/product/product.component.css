@@ -39,6 +39,7 @@
 }
 .similerItemsupper > img {
     height: 140px;
+    background-color: white;
 }
 .similerItemslower > a > img {
     width:25px;
@@ -58,4 +59,26 @@
     border-style: solid;
     border-width: 5px;
     border-color: orangered;
+}
+.sell > a > img {
+    width:25px;
+    height:25px;
+}
+.sell > a {
+    margin-right: 2px;
+}
+.sell {
+    display: flex;
+    flex-flow: row;
+    margin-left: 45px;
+}
+.sell > input {
+    width: 40px;
+    margin-right: 2px;
+    text-align: center;
+}
+.products {
+    margin-left: 45px;
+    font-size: 20px;
+    color: #00fdff;
 }
