@@ -25,8 +25,18 @@
         </div>
       </ng-template>
       <ng-template #item let-item let-i="index">
-        <div>
-          <img src="{{item.itemImage}}" class="carousalContent">
+        <div class="similerItem">
+          <div class="similerItemsupper">
+            <img src="{{item.itemImage}}">
+            <span>{{item.itemDesc}}</span>
+          </div>
+          <div class="similerItemslower">
+            <a class="btn btn-success">
+              <span>
+                <i class="fa fa-rupee"></i>{{item.itemPrice}}</span>
+              <img src="assets/brand/shop.svg" class="d-inline-block" alt="kundalini" [id]='item.productId' (click)='addProductToWebStore(i,input)'>
+            </a>
+          </div>
         </div>
       </ng-template>
     </div>
