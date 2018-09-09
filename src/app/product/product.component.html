@@ -15,7 +15,7 @@
       <a class="btn btn-success displayInline" (click)="reduceQuantity()">-</a>
       <input class="displayInline" type="text" [value]='selectedProduct.itemQuantity' readonly/>
       <a class="btn btn-success displayInline" (click)="increaseQuantity()">+</a>
-      <a class="btn btn-success cart"  [ngClass]="{'disabled':quantityGtOne()}">
+      <a class="btn btn-success cart"  [ngClass]="{'disabled':quantityGtOne()}" (Click)="addProductToWebStore()">
         <img src="assets/brand/shop.svg" class="d-inline-block" alt="kundalini" [id]='item.productId' (click)='addProductToWebStore(i,input)'>
       </a>
     </div>
