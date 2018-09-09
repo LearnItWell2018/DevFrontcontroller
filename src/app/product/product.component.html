@@ -15,8 +15,8 @@
       <a class="btn btn-success displayInline" (click)="reduceQuantity()">-</a>
       <input class="displayInline" type="text" [value]='selectedProduct.itemQuantity' readonly/>
       <a class="btn btn-success displayInline" (click)="increaseQuantity()">+</a>
-      <a class="btn btn-success cart"  [ngClass]="{'disabled':quantityGtOne()}" (Click)="addProductToWebStore()">
-        <img src="assets/brand/shop.svg" class="d-inline-block" alt="kundalini" [id]='item.productId' (click)='addProductToWebStore(i,input)'>
+      <a class="btn btn-success cart"  [ngClass]="{'disabled':quantityGtOne()}" (click)='addProductToWebStore()'>
+        <img src="assets/brand/shop.svg" class="d-inline-block" alt="kundalini" [id]='item.productId' (click)='addProductToWebStore()'>
       </a>
     </div>
     <div>
@@ -45,7 +45,7 @@
             <a class="btn btn-success">
               <span>
                 <i class="fa fa-rupee"></i>{{item.itemPrice}}</span>
-              <img src="assets/brand/shop.svg" class="d-inline-block" alt="kundalini" [id]='item.productId' (click)='addProductToWebStore(i,input)'>
+              <img src="assets/brand/shop.svg" class="d-inline-block" alt="kundalini" [id]='item.productId' (click)='addProductToWebStore()'>
             </a>
           </div>
         </div>
