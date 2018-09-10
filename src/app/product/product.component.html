@@ -30,7 +30,7 @@
         <img src="assets/brand/shop.svg" class="d-inline-block" alt="kundalini" [id]='item.productId'>
       </a>
     </div>
-    <div>
+    <div class="space">
       <span class="products">Similar Products</span>
     </div>
     <div id="container" class="slider">
@@ -50,7 +50,7 @@
         <div class="similerItem">
           <div class="similerItemsupper">
             <img src="{{item.itemImage}}">
-            <span>{{item.itemDesc}}</span>
+            <span>{{item.itemName}}</span>
           </div>
           <div class="similerItemslower">
             <a class="btn btn-success" (click)='addSimilarProductToWebStore(item)'>
