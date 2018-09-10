@@ -8,19 +8,30 @@
     </div>
   </div>
   <div class="verticals">
+    <div class="brand">
+      <span>Brand : </span>
+      <img [src]="brandLogoImg">
+    </div>
     <div class="productDesc">
       {{selectedProduct.itemDesc}}
+    </div>
+    <div class="price">
+      <div *ngIf="selectedProduct.offer > 0" class="actualPrice">
+        <i class="fa fa-rupee"></i>{{selectedProduct.itemPrice}}</div>
+      <div class="originalPrice">
+        <i class="fa fa-rupee"></i>{{selectedProduct.originalPrice}}</div>
+      <div *ngIf="selectedProduct.offer > 0" class="offer">{{selectedProduct.offer}}% Off</div>
     </div>
     <div class="sell">
       <a class="btn btn-success displayInline" (click)="reduceQuantity()">-</a>
       <input class="displayInline" type="text" [value]='selectedProduct.itemQuantity' readonly/>
       <a class="btn btn-success displayInline" (click)="increaseQuantity()">+</a>
-      <a class="btn btn-success cart"  [ngClass]="{'disabled':quantityGtOne()}" (click)='addProductToWebStore()'>
-        <img src="assets/brand/shop.svg" class="d-inline-block" alt="kundalini" [id]='item.productId' (click)='addProductToWebStore()'>
+      <a class="btn btn-success cart" [ngClass]="{'disabled':quantityGtOne()}" (click)='addProductToWebStore()'>
+        <img src="assets/brand/shop.svg" class="d-inline-block" alt="kundalini" [id]='item.productId'>
       </a>
     </div>
     <div>
-      <span class="products">Similer Products</span>
+      <span class="products">Similar Products</span>
     </div>
     <div id="container" class="slider">
       <div ng2-carouselamos [width]="500" [items]="items" [$item]="item" [$prev]="prevTemplate" [$next]="nextTemplate">
@@ -42,10 +53,10 @@
             <span>{{item.itemDesc}}</span>
           </div>
           <div class="similerItemslower">
-            <a class="btn btn-success">
+            <a class="btn btn-success" (click)='addSimilarProductToWebStore(item)'>
               <span>
                 <i class="fa fa-rupee"></i>{{item.itemPrice}}</span>
-              <img src="assets/brand/shop.svg" class="d-inline-block" alt="kundalini" [id]='item.productId' (click)='addProductToWebStore()'>
+              <img src="assets/brand/shop.svg" class="d-inline-block" alt="kundalini" [id]='item.productId' (click)='addSimilarProductToWebStore(item)'>
             </a>
           </div>
         </div>

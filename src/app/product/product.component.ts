@@ -9,8 +9,9 @@ import { UtilityService } from '../services/utility-service';
 })
 export class ProductComponent implements OnInit {
 
-  public selectedProduct:GridItem;
+  public selectedProduct: GridItem;
   public items: GridItem[] = [];
+  public brandLogoImg: String;
 
   constructor(private utility: UtilityService) {
     this.items.push(JSON.parse(localStorage.getItem("selectedProduct")));
@@ -20,6 +21,7 @@ export class ProductComponent implements OnInit {
 
   ngOnInit() {
     this.selectedProduct = JSON.parse(localStorage.getItem("selectedProduct"));
+    this.brandLogoImg = "assets/brand/" + this.selectedProduct.brand + ".png";
   }
 
 
@@ -74,6 +76,34 @@ export class ProductComponent implements OnInit {
           localStorage.setItem('myKart', myKart);
           this.selectedProduct.itemQuantity = 0;
         }
+      }
+    }
+    this.utility.notyifyAll();
+  }
+
+  addSimilarProductToWebStore(similarSelectedItem: GridItem) {
+    if (!localStorage.getItem('myKart')) {
+      localStorage.setItem('myKart', JSON.stringify(similarSelectedItem));
+      similarSelectedItem.itemQuantity = 0;
+    } else {
+      let myKart = localStorage.getItem('myKart');
+      let presentItem = similarSelectedItem;
+      if (myKart.indexOf(similarSelectedItem.productId) >= 0) {
+        let myObject = JSON.parse('[' + myKart + ']');
+        myObject.forEach(function (item) {
+          if (item.productId === presentItem.productId) {
+            item.itemQuantity = item.itemQuantity + 1;
+            let stripObj = JSON.stringify(myObject).split('[')[1].split(']')[0];
+            localStorage.setItem('myKart', stripObj);
+            presentItem.itemQuantity = 0;
+            return;
+          }
+        });
+      }
+      else {
+        myKart = myKart + "," + JSON.stringify(similarSelectedItem);
+        localStorage.setItem('myKart', myKart);
+        similarSelectedItem.itemQuantity = 0;
       }
     }
     this.utility.notyifyAll();

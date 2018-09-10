@@ -82,3 +82,36 @@
     font-size: 20px;
     color: #00fdff;
 }
+.brand {
+    color: rgb(190, 55, 55);
+    margin-left: 45px;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.brand > img {
+    height: 70px;
+}
+
+.price {
+    display: flex;
+    flex-flow: row;
+    margin-left: 45px;
+    padding: 20px;
+}
+.actualPrice {
+    color: #31f7ef;
+    font-size: 35px;
+}
+
+.originalPrice {
+    color: rgb(235, 125, 161);
+    font-size: 25px;
+    vertical-align: middle;
+    text-decoration: line-through;
+}
+
+.offer {
+    color: #3aff18;
+    font-size: 40px;
+}
