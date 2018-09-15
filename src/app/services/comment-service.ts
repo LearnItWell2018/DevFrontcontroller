@@ -27,5 +27,17 @@ export class CommentsService {
             (error) => { console.log(error) });
     }
 
+    public saveComment(comment: Comments) {
+
+        this.http.post(this.comments, comment).subscribe(
+            res => {
+                console.log(res);
+            },
+            err => {
+                console.log("Error occured");
+            }
+        );
+    }
+
 
 }

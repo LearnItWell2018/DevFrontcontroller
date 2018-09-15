@@ -13,20 +13,22 @@
       <p class="textplain">Our company logo contains 16 spokes, Which is the representation of the chakkra Vishuddha. This chakra resides on our
         throat. Mahadev believed to live in 16th dimention. We are the followers of Mahadev</p>
     </div>
-    <div class="row">
+    <div class="coloum">
       <div *ngFor="let comment of comments">
         <div class="header">
           <span>{{comment.customerName}}</span> said on
           <span>{{comment.comment.date}}</span>
         </div>
         <div class="commented">
-            {{comment.comment.text}}
+          {{comment.comment.text}}
         </div>
       </div>
-      <div class="arrow_box">
-        <textarea></textarea>
-      </div>
-      <button>POST</button>
+      <form (submit)="post($event)" *ngIf="auth.isAuthenticated()">
+        <div class="arrow_box">
+          <input type="text">
+        </div>
+        <button type="submit">POST</button>
+      </form>
     </div>
   </div>
 </div>
