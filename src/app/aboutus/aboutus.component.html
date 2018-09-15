@@ -14,13 +14,14 @@
         throat. Mahadev believed to live in 16th dimention. We are the followers of Mahadev</p>
     </div>
     <div class="row">
-      <div class="header">
-        <span>Suparna</span> said on
-        <span>21 August 2018</span>
-      </div>
-      <div class="commented">
-        Our company logo contains 16 spokes, Which is the representation of the chakkra Vishuddha. This chakra resides on our throat.
-        Mahadev believed to live in 16th dimention. We are the followers of Mahadev
+      <div *ngFor="let comment of comments">
+        <div class="header">
+          <span>{{comment.customerName}}</span> said on
+          <span>{{comment.comment.date}}</span>
+        </div>
+        <div class="commented">
+            {{comment.comment.text}}
+        </div>
       </div>
       <div class="arrow_box">
         <textarea></textarea>

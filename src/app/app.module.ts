@@ -29,6 +29,7 @@ import { CountDown } from 'ng4-date-countdown-timer';
 import { GoTopButtonModule } from 'ng2-go-top-button';
 import { ProductComponent } from './product/product.component';
 import { Ng2CarouselamosModule } from 'ng2-carouselamos';
+import { CommentsService } from './services/comment-service';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,7 @@ import { Ng2CarouselamosModule } from 'ng2-carouselamos';
   imports: [
     BrowserModule, AppRoutingModule, FormsModule, HttpModule, GoTopButtonModule, NgbModule.forRoot(), Ng2CarouselamosModule
   ],
-  providers: [ItemMenuService,ItemGridService, AuthService, PlaceOredrService,UtilityService],
+  providers: [ItemMenuService,ItemGridService, AuthService, PlaceOredrService, UtilityService, CommentsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
