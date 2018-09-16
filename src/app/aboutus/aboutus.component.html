@@ -14,6 +14,12 @@
         throat. Mahadev believed to live in 16th dimention. We are the followers of Mahadev</p>
     </div>
     <div class="coloum">
+      <form (submit)="post($event)" *ngIf="auth.isAuthenticated()">
+        <div class="arrow_box">
+          <input type="text">
+        </div>
+        <button type="submit">POST</button>
+      </form>
       <div *ngFor="let comment of comments">
         <div class="header">
           <span>{{comment.customerName}}</span> said on
@@ -23,12 +29,6 @@
           {{comment.comment.text}}
         </div>
       </div>
-      <form (submit)="post($event)" *ngIf="auth.isAuthenticated()">
-        <div class="arrow_box">
-          <input type="text">
-        </div>
-        <button type="submit">POST</button>
-      </form>
     </div>
   </div>
 </div>

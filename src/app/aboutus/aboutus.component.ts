@@ -21,13 +21,16 @@ export class AboutusComponent implements OnInit {
   }
 
   post(e) {
-    console.log(e.target.elements[0].value);
     let comment = new Comment();
     comment.text = e.target.elements[0].value;
-    comment.date = "13/12/1980";
+    let dateFormat = require('dateformat');
+    let now = new Date();
+    comment.date = dateFormat(now, "dddd, mmmm dS, yyyy, h:MM:ss TT");
     let profile: UserProfile = this.auth.getProfile();
-    let comments = new Comments(profile.name.toString(), profile.name.toString(), profile.name.toString(), comment);
-    this.commentsService.saveComment(comments);
+    let commentS = new Comments(profile.nickname.toString() + "@gmail.com", profile.name.toString(), profile.name.toString(), comment);
+    this.commentsService.saveComment(commentS);
+    e.target.elements[0].value = "";
+    this.comments.push(commentS);
   }
 
 

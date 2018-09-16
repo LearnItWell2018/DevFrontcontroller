@@ -14,6 +14,9 @@ export class ProductComponent implements OnInit {
   public brandLogoImg: String;
 
   constructor(private utility: UtilityService) {
+
+    let similerItems:string[] = JSON.parse(localStorage.getItem("selectedProduct")).similarProduct;
+    console.log(similerItems);
     this.items.push(JSON.parse(localStorage.getItem("selectedProduct")));
     this.items.push(JSON.parse(localStorage.getItem("selectedProduct")));
     this.items.push(JSON.parse(localStorage.getItem("selectedProduct")));
