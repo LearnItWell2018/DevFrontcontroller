@@ -15,8 +15,8 @@ export class ProductComponent implements OnInit {
 
   constructor(private utility: UtilityService) {
 
-    let similerItems:string[] = JSON.parse(localStorage.getItem("selectedProduct")).similarProduct;
-    console.log(similerItems);
+    //let similerItems:string[] = JSON.parse(localStorage.getItem("selectedProduct")).similarProduct;
+    //console.log(similerItems);
     this.items.push(JSON.parse(localStorage.getItem("selectedProduct")));
     this.items.push(JSON.parse(localStorage.getItem("selectedProduct")));
     this.items.push(JSON.parse(localStorage.getItem("selectedProduct")));
@@ -24,6 +24,8 @@ export class ProductComponent implements OnInit {
 
   ngOnInit() {
     this.selectedProduct = JSON.parse(localStorage.getItem("selectedProduct"));
+    console.log(this.selectedProduct.itemDesc);
+    console.log(this.selectedProduct.itemImage);
     this.brandLogoImg = "assets/brand/" + this.selectedProduct.brand + ".png";
   }
 

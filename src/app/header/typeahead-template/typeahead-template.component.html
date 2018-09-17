@@ -1,5 +1,5 @@
 <ng-template #rt let-r="result" let-t="term">
-  <div class="Row">
+  <div class="Row" (click)="redirectToProduct(r)">
     <img [src]="r['productImgPath']" width="45" class="Column">
     <div class="Column"><p class="textcontent">{{ r.itemName}}</p></div>
     <div class="Column price"><i class="fa fa-rupee"></i>{{ r.itemPrice * (100 - r.offer)/100}}</div>

@@ -8,6 +8,7 @@ import { GridItem } from '../../model/item-grid-models';
 import { Subject } from 'rxjs/Subject';
 import { UtilityService } from '../../services/utility-service';									   
 import { environment } from '../../../environments/environment';
+import { Router } from '@angular/router';
 
 let itemsInList;
 let itemSelected;
@@ -22,7 +23,7 @@ export class TypeaheadTemplateComponent implements OnInit {
   public gridItem: GridItem;
   private serviceProp = environment.serviceURL;
 
-  constructor(private http: Http,private utility:UtilityService) { }
+  constructor(private http: Http,private utility:UtilityService, private route: Router) { }
   ngOnInit() {
     this.http.get(this.serviceProp + '/rs/items/list').subscribe(
       (response) => {
@@ -80,5 +81,14 @@ export class TypeaheadTemplateComponent implements OnInit {
     }
 	 this.utility.notyifyAll();						  
   }
+
+  redirectToProduct(r:any) {
+    let grid:GridItem = new GridItem(r.productId, r.productImgPath, r.brand, r.itemName, r.itemDesc,
+      r.itemPrice, r.itemStock, r.itemActive, r.itemDetails, r.offer, r.similarProduc);
+    localStorage.setItem("selectedProduct", JSON.stringify(grid));
+    this.route.navigate(['../product']);
+  }
+
+
 }
 
