@@ -46,7 +46,7 @@ export class BrowseComponent implements OnInit {
         JSONdata.forEach(element => {
 
           let filteredItem = new GridItem(element.productId, element.productImgPath, element.brand, element.itemName, element.itemDesc,
-            element.itemPrice, element.itemStock, element.itemActive, element.itemDetails, element.offer, element.similarProduct);
+            element.itemPrice, element.itemStock, element.itemActive, element.itemDetails, element.offer);
 
           if (this.brands.lastIndexOf(element.brand) < 0) {
             this.brands.push(element.brand);

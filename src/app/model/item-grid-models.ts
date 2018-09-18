@@ -13,10 +13,9 @@ export class GridItem{
 						totalFinalVal:number;
 						offer: number;
 						originalPrice: number;
-						similarProduct: string[];
 
                         constructor(  productId : string,productImgPath : string,brand : string,itemName: string, itemDesc: string,
-						itemPrice: number,itemStock: string,itemActive: boolean,itemDetails:string, offer: number, similarProduct: string[]){
+						itemPrice: number,itemStock: string,itemActive: boolean,itemDetails:string, offer: number){
                         this.productId =productId;
 						this.itemImage =productImgPath;
 						this.brand =brand;
@@ -31,6 +30,5 @@ export class GridItem{
 						this.totalFinalVal=0;
 						this.offer = offer;
 						this.itemPrice = itemPrice * (100 - this.offer)/100;
-						this.similarProduct = similarProduct;
                         }
                     }                        

@@ -50,7 +50,7 @@ export class TypeaheadTemplateComponent implements OnInit {
       (response) => {
         itemSelected = response.json();
         this.gridItem  = new GridItem(itemSelected.productId,itemSelected.productImgPath,itemSelected.brand,itemSelected.itemName, itemSelected.itemDesc,
-          itemSelected.itemPrice,itemSelected.itemStock,itemSelected.itemActive,itemSelected.itemDetails, itemSelected.offer, itemSelected.similarProduct);
+          itemSelected.itemPrice,itemSelected.itemStock,itemSelected.itemActive,itemSelected.itemDetails, itemSelected.offer);
           this.gridItem.itemQuantity = 1;
           this.addProductToWebStore(this.gridItem);
       },
@@ -84,7 +84,7 @@ export class TypeaheadTemplateComponent implements OnInit {
 
   redirectToProduct(r:any) {
     let grid:GridItem = new GridItem(r.productId, r.productImgPath, r.brand, r.itemName, r.itemDesc,
-      r.itemPrice, r.itemStock, r.itemActive, r.itemDetails, r.offer, r.similarProduc);
+      r.itemPrice, r.itemStock, r.itemActive, r.itemDetails, r.offer);
     localStorage.setItem("selectedProduct", JSON.stringify(grid));
     this.route.navigate(['../product']);
   }
