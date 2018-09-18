@@ -3,6 +3,8 @@ import { PlaceOredrService } from '../services/placeorder-service';
 import { AuthService } from '../services/auth-service';
 import { CustomerAddress } from '../model/CustomerAddress';
 import { NgForm } from '@angular/forms';
+import {GoTopButtonModule} from 'ng2-go-top-button';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'; 
 
 @Component({
   selector: 'app-place-order',

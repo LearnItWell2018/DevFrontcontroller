@@ -7,6 +7,8 @@ import { element } from 'protractor';
 import { ItemMenu } from '../model/item-menu-model';
 import { ItemMenuService } from '../services/item-menu-service';
 import { UtilityService } from '../services/utility-service';
+import {GoTopButtonModule} from 'ng2-go-top-button';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'; 
 
 @Component({
   selector: 'app-browse',

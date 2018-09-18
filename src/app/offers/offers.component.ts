@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { environment } from '../../environments/environment';
 import { Offer } from '../model/Offer';
+import {GoTopButtonModule} from 'ng2-go-top-button';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'; 
 
 @Component({
   selector: 'app-offers',

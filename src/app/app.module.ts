@@ -30,6 +30,7 @@ import { GoTopButtonModule } from 'ng2-go-top-button';
 import { ProductComponent } from './product/product.component';
 import { Ng2CarouselamosModule } from 'ng2-carouselamos';
 import { CommentsService } from './services/comment-service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,7 @@ import { CommentsService } from './services/comment-service';
     ProductComponent
   ],
   imports: [
-    BrowserModule, AppRoutingModule, FormsModule, HttpModule, GoTopButtonModule, NgbModule.forRoot(), Ng2CarouselamosModule
+    BrowserModule, AppRoutingModule, FormsModule, HttpModule, GoTopButtonModule, BrowserAnimationsModule, NgbModule.forRoot(), Ng2CarouselamosModule
   ],
   providers: [ItemMenuService,ItemGridService, AuthService, PlaceOredrService, UtilityService, CommentsService],
   bootstrap: [AppComponent]

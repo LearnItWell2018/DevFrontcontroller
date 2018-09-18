@@ -1,7 +1,8 @@
 import { AuthService } from '../services/auth-service';
 import { CustomerOrder } from '../model/customer-order-model';
 import { environment } from '../../environments/environment';
-
+import {GoTopButtonModule} from 'ng2-go-top-button';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'; 
 import { OnInit, Component } from '@angular/core';
 import { Http } from '@angular/http';
 

@@ -6,6 +6,8 @@ import { Subscription } from 'rxjs/Subscription';
 import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
 import * as $ from 'jquery';
 import { UtilityService } from '../services/utility-service';
+import {GoTopButtonModule} from 'ng2-go-top-button';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'; 
 
 @Component({
   selector: 'app-item-grid',

@@ -7,6 +7,8 @@ import { Http } from '@angular/http';
 import { environment } from '../../environments/environment';
 import { Offer } from '../model/Offer';
 import { PlaceOredrService } from '../services/placeorder-service';
+import {GoTopButtonModule} from 'ng2-go-top-button';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'; 
 
 @Component({
   selector: 'app-items-cart',
