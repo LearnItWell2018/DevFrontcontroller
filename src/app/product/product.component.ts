@@ -23,6 +23,7 @@ export class ProductComponent implements OnInit {
     this.selectedProduct = JSON.parse(localStorage.getItem("selectedProduct"));
     this.utility.itemAdded.subscribe((data: string) => {
       this.selectedProduct = this.utility.getSelectedProduct();
+      this.brandLogoImg = "assets/brand/" + this.selectedProduct.brand + ".png";
     })
     console.log(this.selectedProduct.itemDesc);
     console.log(this.selectedProduct.itemImage);
