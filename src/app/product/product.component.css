@@ -31,6 +31,7 @@
 }
 .slider {
     padding-left: 45px;
+    display: none;
 }
 .similarlower {
     background-color: greenyellow;
@@ -115,6 +116,7 @@
 .space {
     margin-top: 20px;
     margin-bottom: 20px;
+    display: none;
 }
 
 .similarprice {
