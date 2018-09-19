@@ -50,14 +50,11 @@
         <div class="similerItem">
           <div class="similerItemsupper">
             <img src="{{item.itemImage}}">
-            <span>{{item.itemName}}</span>
-          </div>
-          <div class="similerItemslower">
-            <a class="btn btn-success" (click)='addSimilarProductToWebStore(item)'>
-              <span>
+            <div class="similarlower">
+              <span>{{item.itemName}}</span>
+              <span class="similarprice">
                 <i class="fa fa-rupee"></i>{{item.itemPrice}}</span>
-              <img src="assets/brand/shop.svg" class="d-inline-block" alt="kundalini" [id]='item.productId' (click)='addSimilarProductToWebStore(item)'>
-            </a>
+            </div>
           </div>
         </div>
       </ng-template>

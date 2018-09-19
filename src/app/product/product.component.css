@@ -32,6 +32,9 @@
 .slider {
     padding-left: 45px;
 }
+.similarlower {
+    background-color: greenyellow;
+}
 
 .similerItemsupper {
     display: flex;
@@ -40,14 +43,6 @@
 .similerItemsupper > img {
     height: 140px;
     background-color: white;
-}
-.similerItemslower > a > img {
-    width:25px;
-    height:25px;
-}
-.similerItemslower > a {
-    width: 100%;
-    height: 40px;
 }
 .similerItemsupper > span {
     color: black;
@@ -120,6 +115,11 @@
 .space {
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.similarprice {
+    font-size: 25px;
+    font-weight: bolder;
 }
 
 @media screen and (max-width: 650px) {

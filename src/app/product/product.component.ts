@@ -85,32 +85,4 @@ export class ProductComponent implements OnInit {
     }
     this.utility.notyifyAll();
   }
-
-  addSimilarProductToWebStore(similarSelectedItem: GridItem) {
-    if (!localStorage.getItem('myKart')) {
-      localStorage.setItem('myKart', JSON.stringify(similarSelectedItem));
-      similarSelectedItem.itemQuantity = 0;
-    } else {
-      let myKart = localStorage.getItem('myKart');
-      let presentItem = similarSelectedItem;
-      if (myKart.indexOf(similarSelectedItem.productId) >= 0) {
-        let myObject = JSON.parse('[' + myKart + ']');
-        myObject.forEach(function (item) {
-          if (item.productId === presentItem.productId) {
-            item.itemQuantity = item.itemQuantity + 1;
-            let stripObj = JSON.stringify(myObject).split('[')[1].split(']')[0];
-            localStorage.setItem('myKart', stripObj);
-            presentItem.itemQuantity = 0;
-            return;
-          }
-        });
-      }
-      else {
-        myKart = myKart + "," + JSON.stringify(similarSelectedItem);
-        localStorage.setItem('myKart', myKart);
-        similarSelectedItem.itemQuantity = 0;
-      }
-    }
-    this.utility.notyifyAll();
-  }
 }
