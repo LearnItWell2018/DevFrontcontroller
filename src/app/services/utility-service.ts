@@ -24,4 +24,8 @@ export class UtilityService {
         return numberOfitems;
     }
 
+    getSelectedProduct(): GridItem {
+        return JSON.parse(localStorage.getItem("selectedProduct"));
+    }
+
 }

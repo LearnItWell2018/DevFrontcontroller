@@ -86,6 +86,7 @@ export class TypeaheadTemplateComponent implements OnInit {
     let grid:GridItem = new GridItem(r.productId, r.productImgPath, r.brand, r.itemName, r.itemDesc,
       r.itemPrice, r.itemStock, r.itemActive, r.itemDetails, r.offer);
     localStorage.setItem("selectedProduct", JSON.stringify(grid));
+    this.utility.notyifyAll();
     this.route.navigate(['../product']);
   }
 
