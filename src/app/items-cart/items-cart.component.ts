@@ -132,9 +132,11 @@ export class ItemsCartComponent implements OnInit, OnDestroy {
   }
 
   setOffer() {
+    this.discountValue = 0;
+    this.totalValue = this.subtotalValue;
     this.offers.forEach(element => {
       if (element.offerID == this.selectedOption) {
-        this.discountValue = this.totalValue*(100-Number(element.percentageApplicable))/100;
+        this.discountValue = this.totalValue*(Number(element.percentageApplicable))/100;
         this.offerDetails = element.percentageApplicable + "% Off, with " + 
         element.preBookPercentageApplicable + "% pre-booking charges.";
         this.deliveryDates = element.deliveryDates;
