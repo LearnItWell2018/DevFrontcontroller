@@ -53,8 +53,11 @@
 			<div class="product-line-price">
 				<i class="fa fa-rupee"></i>{{listItem.totalFinalVal}}</div>
 		</div>
-		<div class="form-group" class="col-md-6">
+		<div *ngIf="!applyOfferFlag" class="form-group" class="col-md-6">
 			Product will be delivered on the coming weekend.
+		</div>
+		<div class="form-group" class="col-md-6 minorder">
+			** Minimum order should be more than <i class="fa fa-rupee"></i>500.
 		</div>
 		<div class="form-group" class="col-md-6">
 			<label class="applyoffer" *ngIf="!applyOfferFlag" (click)="applyOffer()">Apply Offer</label>

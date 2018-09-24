@@ -196,6 +196,11 @@ Side note: I know that this style of nesting in SASS doesn't result in the most 
     content: url('../../assets/image/back3.jpg');
     width: 100%;
   }
+
+  .minorder {
+    color: mediumblue;
+    padding: 20px;
+  }
   
   /* Make adjustments for tablet */
   @media screen and (max-width: 650px) {
