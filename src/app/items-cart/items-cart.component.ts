@@ -125,7 +125,7 @@ export class ItemsCartComponent implements OnInit, OnDestroy {
   }
 
   gotoPlaceOrder() {
-    if (this.totalValue > 0) {
+    if (this.totalValue > 500) {
       this.placeOredrService.fillCustomerOrderFromCart(this.totalValue.toString());
       this.route.navigate(['../placeorder']);
     }
