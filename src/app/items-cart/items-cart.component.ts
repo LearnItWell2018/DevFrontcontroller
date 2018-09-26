@@ -7,8 +7,8 @@ import { Http } from '@angular/http';
 import { environment } from '../../environments/environment';
 import { Offer } from '../model/Offer';
 import { PlaceOredrService } from '../services/placeorder-service';
-import {GoTopButtonModule} from 'ng2-go-top-button';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations'; 
+import { GoTopButtonModule } from 'ng2-go-top-button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-items-cart',
@@ -16,6 +16,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   styleUrls: ['./items-cart.component.css']
 })
 export class ItemsCartComponent implements OnInit, OnDestroy {
+
   public myKartList: GridItem[];
   public totalValue: number = 0;
   public subtotalValue: number = 0;
@@ -27,6 +28,7 @@ export class ItemsCartComponent implements OnInit, OnDestroy {
   public offerDetails: String;
   public applyOfferFlag: Boolean = false;
   public discountValue: number = 0;
+  public selectedDateOption: String;
 
   constructor(private route: Router, private activated: ActivatedRoute, private utility: UtilityService, private http: Http, private placeOredrService: PlaceOredrService) {
     localStorage.setItem("customerOrder", "");
@@ -121,29 +123,28 @@ export class ItemsCartComponent implements OnInit, OnDestroy {
     });
     console.log(totalVal);
     this.subtotalValue = totalVal;
+    this.calculateOffer();
     this.totalValue = totalVal - this.discountValue;
   }
 
   gotoPlaceOrder() {
     if (this.totalValue > 500) {
-      this.placeOredrService.fillCustomerOrderFromCart(this.totalValue.toString());
-      this.route.navigate(['../placeorder']);
+      if (this.applyOfferFlag) {
+        if (this.selectedDateOption != null) {
+          this.placeOredrService.fillCustomerOrderFromCart(this.totalValue.toString());
+          this.route.navigate(['../placeorder']);
+        }
+      } else {
+        this.placeOredrService.fillCustomerOrderFromCart(this.totalValue.toString());
+        this.route.navigate(['../placeorder']);
+      }
+
     }
   }
 
   setOffer() {
-    this.discountValue = 0;
-    this.totalValue = this.subtotalValue;
-    this.offers.forEach(element => {
-      if (element.offerID == this.selectedOption) {
-        this.discountValue = this.totalValue*(Number(element.percentageApplicable))/100;
-        this.offerDetails = element.percentageApplicable + "% Off, with " + 
-        element.preBookPercentageApplicable + "% pre-booking charges.";
-        this.deliveryDates = element.deliveryDates;
-      }
-    });
     this.calculateTotal();
-   }
+  }
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
@@ -160,6 +161,20 @@ export class ItemsCartComponent implements OnInit, OnDestroy {
     this.selectedOption = '';
     this.offerDetails = '';
     this.calculateTotal();
+  }
+
+  calculateOffer() {
+    console.log("Value of date" + this.selectedDateOption);
+    this.discountValue = 0;
+    this.totalValue = this.subtotalValue;
+    this.offers.forEach(element => {
+      if (element.offerID == this.selectedOption) {
+        this.discountValue = this.totalValue * (Number(element.percentageApplicable)) / 100;
+        this.offerDetails = element.percentageApplicable + "% Off, with " +
+          element.preBookPercentageApplicable + "% pre-booking charges.";
+        this.deliveryDates = element.deliveryDates;
+      }
+    });
   }
 
 }
