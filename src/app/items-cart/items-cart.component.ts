@@ -131,11 +131,11 @@ export class ItemsCartComponent implements OnInit, OnDestroy {
     if (this.totalValue > 500) {
       if (this.applyOfferFlag) {
         if (this.selectedDateOption != null) {
-          this.placeOredrService.fillCustomerOrderFromCart(this.totalValue.toString());
+          this.placeOredrService.fillCustomerOrderFromCart(this.totalValue.toString(), this.selectedDateOption);
           this.route.navigate(['../placeorder']);
         }
       } else {
-        this.placeOredrService.fillCustomerOrderFromCart(this.totalValue.toString());
+        this.placeOredrService.fillCustomerOrderFromCart(this.totalValue.toString(), "");
         this.route.navigate(['../placeorder']);
       }
 

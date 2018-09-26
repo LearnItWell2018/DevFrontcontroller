@@ -34,7 +34,7 @@ export class PlaceOredrService {
         );
     }
 
-    fillCustomerOrderFromCart (totalVal:String) {
+    fillCustomerOrderFromCart (totalVal:String, deliveryDate:String) {
         this.body = new CustomerOrder();
         this.orderDetails  = new OrderDetails();
         this.body.orderDetails = this.orderDetails;
@@ -55,6 +55,7 @@ export class PlaceOredrService {
 
         this.body.orderDetails.orderList = listOrder;
         this.body.orderDetails.orderTotal = totalVal;
+        this.body.orderDetails.deliveryDate = deliveryDate;
 
         localStorage.setItem("customerOrder", JSON.stringify(this.body));
     }
