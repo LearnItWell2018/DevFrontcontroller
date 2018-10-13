@@ -34,7 +34,7 @@ export class OffersComponent implements OnInit {
   ngOnInit() {
     this.http.get(this.serviceProp + '/rs/offer').subscribe(
       (response) => {
-        console.log(response.json());
+        //console.log(response.json());
         let JSONdata = response.json();
         JSONdata.forEach(element => {
           let temp = new Offer();
@@ -50,7 +50,7 @@ export class OffersComponent implements OnInit {
           temp.strategy = element.offerDetails.strategy;
           temp.offerIMG = "assets/image/" + element.offerID + ".jpg";
           temp.deliveryDates = element.offerDetails.deliveryDates;
-          console.log(temp);
+          //console.log(temp);
           this.offers.push(temp);
         });
       },
@@ -58,7 +58,7 @@ export class OffersComponent implements OnInit {
   }
 
   public setTimer (endTime:any) {
-    console.log(endTime);
+    //console.log(endTime);
     this.enddate = endTime;
   }
 

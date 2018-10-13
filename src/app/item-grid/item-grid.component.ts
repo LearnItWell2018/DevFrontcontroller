@@ -44,7 +44,7 @@ export class ItemGridComponent implements OnInit, OnDestroy {
             this.itemGridService.gridItemArray.push(crakerItm);
           });
           this.gridItemArray = this.itemGridService.getCrarckerIconsArray();
-          console.log(this.gridItemArray);
+          //console.log(this.gridItemArray);
         },
         (error) => { console.log(error) });
     });

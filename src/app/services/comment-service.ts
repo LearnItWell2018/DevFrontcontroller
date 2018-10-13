@@ -31,7 +31,7 @@ export class CommentsService {
 
         this.http.post(this.comments, comment).subscribe(
             res => {
-                console.log(res);
+                //console.log(res);
             },
             err => {
                 console.log("Error occured");

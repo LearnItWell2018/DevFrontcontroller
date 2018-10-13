@@ -17,7 +17,7 @@ export class WhyusComponent {
     this.intervals = setInterval(() => {
       this.quotesVal = this.allQuotes[this.elems]
       if (this.elems === 2) { this.elems = 0; } else { this.elems++; }
-      console.log(this.myObject.nativeElement);
+      //console.log(this.myObject.nativeElement);
       this.myObject.nativeElement.classList.add("animated", "infinite", "fadeInRight");
     }, 1999);
   };

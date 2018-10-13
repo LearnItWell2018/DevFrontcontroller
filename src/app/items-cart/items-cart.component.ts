@@ -45,10 +45,9 @@ export class ItemsCartComponent implements OnInit, OnDestroy {
       this.calculateTotal();
     }
     this.subscription = this.utility.itemAdded.subscribe((data: string) => {
-      console.log(data + '...........');
       myKart = localStorage.getItem('myKart');
       this.myKartList = JSON.parse('[' + myKart + ']');
-      console.log(this.myKartList);
+      //console.log(this.myKartList);
       this.myKartList.forEach(function (item) {
         item["totalFinalVal"] = item.itemQuantity * item.itemPrice;
       });
@@ -58,7 +57,7 @@ export class ItemsCartComponent implements OnInit, OnDestroy {
 
     this.http.get(this.serviceProp + '/rs/offer').subscribe(
       (response) => {
-        console.log(response.json());
+        //console.log(response.json());
         let JSONdata = response.json();
         JSONdata.forEach(element => {
           let temp = new Offer();
@@ -121,7 +120,7 @@ export class ItemsCartComponent implements OnInit, OnDestroy {
     this.myKartList.forEach(function (item) {
       totalVal = totalVal + item.totalFinalVal;
     });
-    console.log(totalVal);
+    //console.log(totalVal);
     this.subtotalValue = totalVal;
     this.calculateOffer();
     this.totalValue = totalVal - this.discountValue;
@@ -164,7 +163,7 @@ export class ItemsCartComponent implements OnInit, OnDestroy {
   }
 
   calculateOffer() {
-    console.log("Value of date" + this.selectedDateOption);
+    //console.log("Value of date" + this.selectedDateOption);
     this.discountValue = 0;
     this.totalValue = this.subtotalValue;
     this.offers.forEach(element => {

@@ -24,7 +24,7 @@ export class MyOrderComponent implements OnInit {
     this.http.get(this.serviceProp + '/rs/order/' + this.getUserEmail()).subscribe(
       (response) => {
         this.orderListAll = response.json();
-        console.log('orderList : ' + JSON.stringify(this.orderListAll));
+        //console.log('orderList : ' + JSON.stringify(this.orderListAll));
       },
       (error) => { console.log(error) })
   }

@@ -19,7 +19,7 @@ export class CustomerComponent implements OnInit {
   }
 
   onSubmit(value: any) {
-    console.log(this.profile);
+    //console.log(this.profile);
   }
 
   callOAuth () {

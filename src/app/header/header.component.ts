@@ -40,11 +40,10 @@ export class HeaderComponent implements OnInit {
       this.kartCount = this.utility.totalItemCount();
     })
 
-    console.log(this.auth.getProfile());
+    //console.log(this.auth.getProfile());
   }
 
   openNav() {
-    console.log('iconclicked');
     this.animateproductmenu = 'open';
     document.getElementById("mySidenav").style.width = "100%";
   }

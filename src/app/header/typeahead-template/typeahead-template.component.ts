@@ -41,7 +41,6 @@ export class TypeaheadTemplateComponent implements OnInit {
   formatter = (x: { itemName: string }) => x.itemName;
 
   addItemOnClicked(object) {
-    console.log(object.target.id);
     this.findItemDetails(object.target.id);
   }
 
@@ -58,7 +57,7 @@ export class TypeaheadTemplateComponent implements OnInit {
   }
 
   addProductToWebStore(presentItem: GridItem) {
-    console.log(presentItem);
+    //console.log(presentItem);
     if (!localStorage.getItem('myKart')) {
       localStorage.setItem('myKart', JSON.stringify(presentItem));
     } else {

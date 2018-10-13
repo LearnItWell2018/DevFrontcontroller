@@ -25,8 +25,8 @@ export class ProductComponent implements OnInit {
       this.selectedProduct = this.utility.getSelectedProduct();
       this.brandLogoImg = "assets/brand/" + this.selectedProduct.brand + ".png";
     })
-    console.log(this.selectedProduct.itemDesc);
-    console.log(this.selectedProduct.itemImage);
+    //console.log(this.selectedProduct.itemDesc);
+    //console.log(this.selectedProduct.itemImage);
     this.brandLogoImg = "assets/brand/" + this.selectedProduct.brand + ".png";
   }
 

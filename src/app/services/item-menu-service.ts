@@ -12,7 +12,7 @@ export class ItemMenuService{
     constructor(private http:Http){
 
         this.getIcons().subscribe(
-            (response)=>{console.log(response);
+            (response)=>{//console.log(response);
              let JSONdata=response.json();
              JSONdata.items.forEach(element => {
                 let icon=new ItemMenu(element.itemIMGPath,element.itemName,element.itemURL);

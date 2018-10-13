@@ -20,10 +20,10 @@ export class PlaceOredrService {
     placeOrder() {
         this.body = JSON.parse(localStorage.getItem("customerOrder"));
         this.body.orderDetails.orderDate =   new Date().toDateString();
-        console.log(this.body);
+        //console.log(this.body);
         this.http.post(this.serviceProp + '/rs/order', this.body).subscribe(
             res => {
-                console.log(res);
+                //console.log(res);
                 localStorage.removeItem("customerOrder");
                 localStorage.removeItem("myKart");
                 this.utility.notyifyAll();

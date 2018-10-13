@@ -23,7 +23,7 @@ export class PlaceOrderComponent implements OnInit {
   }
 
   onSubmit(customerFrom) {
-    console.log(customerFrom);
+    //console.log(customerFrom);
     if (this.auth.isAuthenticated()) {
       this.placeOredrService.fillCustomerDetails(this.auth.getProfile(), customerFrom.mobile);
     } else {

@@ -188,12 +188,10 @@ export class BrowseComponent implements OnInit {
     } else if (flag === 'open') {
       this.mobileFilterFlag = true;
     }
-    console.log(flag);
   }
 
   changedVal(object) {
     this.currentElementVal = object * this.maxPrice.valueOf() / 100;
-    console.log(this.currentElementVal);
     this.applyFilter(this.filteredBrand, this.filtereditemMenus, this.currentElementVal);
   }
 }
