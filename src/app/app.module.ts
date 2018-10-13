@@ -25,7 +25,7 @@ import { MyOrderComponent } from './my-order/my-order.component';
 import { UtilityService } from './services/utility-service';
 import { BrowseComponent } from './browse/browse.component';
 import { OffersComponent } from './offers/offers.component';
-import { CountDown } from 'ng4-date-countdown-timer';
+//import { CountDown } from 'ng4-date-countdown-timer';
 import { GoTopButtonModule } from 'ng2-go-top-button';
 import { ProductComponent } from './product/product.component';
 import { Ng2CarouselamosModule } from 'ng2-carouselamos';
@@ -50,7 +50,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MyOrderComponent,
     BrowseComponent,
     OffersComponent,
-    CountDown,
     ProductComponent
   ],
   imports: [

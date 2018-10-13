@@ -14,7 +14,7 @@ export class AboutusComponent implements OnInit {
 
   public comments: Comments[] = [];
 
-  constructor(private commentsService: CommentsService, private auth: AuthService) { }
+  constructor(private commentsService: CommentsService, public auth: AuthService) { }
 
   ngOnInit() {
     this.commentsService.getAllComments(this.comments);
