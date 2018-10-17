@@ -11,6 +11,7 @@ import { MyOrderComponent } from './my-order/my-order.component';
 import { BrowseComponent } from './browse/browse.component';
 import { OffersComponent } from './offers/offers.component';
 import { ProductComponent } from './product/product.component';
+import { AdvertisementComponent } from './advertisement/advertisement.component';
 
 const appRoutes: Routes = [
   { path: '', component: ItemGridComponent },
@@ -23,6 +24,7 @@ const appRoutes: Routes = [
   { path: 'browse', component: BrowseComponent},
   { path: 'OFFERS', component: OffersComponent},
   { path: 'product', component: ProductComponent},
+  { path: 'advertisement', component: AdvertisementComponent},
   { path: ':crackers', component: ItemGridComponent }
 
 ];

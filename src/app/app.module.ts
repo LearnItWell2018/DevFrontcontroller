@@ -31,6 +31,7 @@ import { ProductComponent } from './product/product.component';
 import { Ng2CarouselamosModule } from 'ng2-carouselamos';
 import { CommentsService } from './services/comment-service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AdvertisementComponent } from './advertisement/advertisement.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MyOrderComponent,
     BrowseComponent,
     OffersComponent,
-    ProductComponent
+    ProductComponent,
+    AdvertisementComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, FormsModule, HttpModule, GoTopButtonModule, BrowserAnimationsModule, NgbModule.forRoot(), Ng2CarouselamosModule

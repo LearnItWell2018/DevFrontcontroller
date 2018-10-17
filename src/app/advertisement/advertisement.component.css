@@ -1,0 +1,22 @@
+.mainbody {
+    display: flex;
+    flex-direction : column; 
+}
+.container {
+    padding:20px;
+    margin-top:0px;
+    background-image: url('../../assets/image/matt_black.jpg');
+    border-radius: 1%;
+}
+
+@media screen and (max-width: 650px) {
+
+    .message {
+        margin-top: 125px;
+        color: gold;
+        background-color: blue;
+        text-align: center;
+        width: 100%;
+    }
+
+}
