@@ -127,7 +127,7 @@ export class ItemsCartComponent implements OnInit, OnDestroy {
   }
 
   gotoPlaceOrder() {
-    if (this.totalValue > 500) {
+    if (this.totalValue >= 500) {
       if (this.applyOfferFlag) {
         if (this.selectedDateOption != null) {
           this.placeOredrService.fillCustomerOrderFromCart(this.totalValue.toString(), this.selectedDateOption);
