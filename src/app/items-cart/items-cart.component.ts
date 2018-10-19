@@ -123,6 +123,11 @@ export class ItemsCartComponent implements OnInit, OnDestroy {
     //console.log(totalVal);
     this.subtotalValue = totalVal;
     this.calculateOffer();
+    this.myKartList.forEach(item => {
+      if(item.offer==0){
+        this.discountValue = 0;
+      }
+    });
     this.totalValue = totalVal - this.discountValue;
   }
 
