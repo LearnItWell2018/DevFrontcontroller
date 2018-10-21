@@ -29,6 +29,7 @@
         <a *ngIf="!auth.isAuthenticated()" class="dropdown-item" (click)="logIn()">Sign In | Log In</a>
         <!-- <a class="dropdown-item" [routerLink]="'whyus'">Why Us</a> -->
         <a *ngIf="auth.isAuthenticated()" class="dropdown-item" [routerLink]="'myorder'">My Order</a>
+        <a *ngIf="auth.isAuthenticated()" class="dropdown-item" [routerLink]="'refer'">Refer a Friend</a>
       </div>
     </div>
     <div class="navbox-item space-around last-item mobile">

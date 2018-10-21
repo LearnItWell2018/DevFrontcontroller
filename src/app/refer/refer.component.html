@@ -1,0 +1,45 @@
+<div class="container">
+  <go-top-button [animate]="true" [speed]="50" [acceleration]="2" [scrollDistance]="300" [styles]="{
+      'margin-top': '250px',
+      'background-color': 'black',
+      'opacity': '0.7',
+        'line-height': '20px'}">
+    <i class="fa fa-arrow-up" style="color:white;"></i>
+  </go-top-button>
+  <form #customerFrom="ngForm" (ngSubmit)="onSubmit(customerFrom.value)" class="formrefer">
+    <div class="row">
+      <div class="col-md-6">
+        <label>Friend's Email</label>
+        <input type="text" #emailRef="ngModel" required class="form-control" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+          ngModel>
+        <div [hidden]="emailRef.valid || emailRef.pristine" class="alert alert-danger">
+          Please enter a valid email id
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label>Friend's Mobile No</label>
+        <input type="text" #mobileRefOriginal="ngModel" class="form-control" required name="mobileref" pattern="[789][0-9]{9}" ngModel>
+        <div [hidden]="mobileRefOriginal.valid || mobileRefOriginal.pristine" class="alert alert-danger">
+          Please enter a valid Mobile No
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label>Your Mobile No</label>
+        <input type="text" #mobileRef="ngModel" class="form-control" required name="mobile" pattern="[789][0-9]{9}" ngModel>
+        <div [hidden]="mobileRef.valid || mobileRef.pristine" class="alert alert-danger">
+          Please enter a valid Mobile No
+        </div>
+      </div>
+    </div>
+    <div class="row displayCenter">
+      <button type="submit" [disabled]="!customerFrom.valid" class="btn btn-success col-md-6">Refer</button>
+    </div>
+  </form>
+  <div *ngFor="let refer of referList; let i = index" class="orderrow">
+    <div class="flex-row">
+      <div class="orderid" data-toggle="collapse" [attr.data-target]="'#' + i">{{refer.id}}</div>
+      <div class="resend">Order Status : {{refer.customerReferMail}}</div>
+      <div class="orderdate">Order Date : {{refer.customerReferMobile}}</div>
+    </div>
+  </div>
+</div>

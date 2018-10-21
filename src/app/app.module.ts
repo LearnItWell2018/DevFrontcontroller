@@ -32,6 +32,7 @@ import { Ng2CarouselamosModule } from 'ng2-carouselamos';
 import { CommentsService } from './services/comment-service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdvertisementComponent } from './advertisement/advertisement.component';
+import { ReferComponent } from './refer/refer.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { AdvertisementComponent } from './advertisement/advertisement.component'
     BrowseComponent,
     OffersComponent,
     ProductComponent,
-    AdvertisementComponent
+    AdvertisementComponent,
+    ReferComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, FormsModule, HttpModule, GoTopButtonModule, BrowserAnimationsModule, NgbModule.forRoot(), Ng2CarouselamosModule
