@@ -67,6 +67,12 @@
             <input type="text" class="form-control" required name="street" ngModel>
           </div>
         </div>
+        <div class="row">
+          <div class="col-md-12">
+            <label>Do you have a reference id ?</label>
+            <input type="text" class="form-control" name="reference" ngModel>
+          </div>
+        </div>
       </div>
       <div class="row displayCenter">
         <button type="submit" [disabled]="!customerFrom.valid" class="btn btn-success col-md-6">Submit</button>

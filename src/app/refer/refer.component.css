@@ -31,9 +31,7 @@ input.ng-valid{border-left:5px solid green;}
     width: 240px;
 }
 .resend {
-    background: #29a1be;
     white-space: nowrap;
-    padding: 6px 0;
     width: 260px;
     text-align: center;
     color: #e0d420;

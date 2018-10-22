@@ -5,4 +5,5 @@ export class Refer {
     public customerReferMobile:string;
     public orderID:string;
     public orderStatus:string;
+    public price:string;
 }
