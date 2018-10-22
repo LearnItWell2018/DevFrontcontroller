@@ -31,17 +31,17 @@ export class ReferComponent implements OnInit {
     refer.customerMail = this.auth.getProfile().nickname + "@gmail.com";
     refer.customerMobile = customerFrom.mobile;
     this.placeOredrService.referFriend(refer);
-    this.fetchReferList();
+    this.referList.push(refer);
   }
 
   fetchReferList() {
     this.http.get(this.serviceProp + '/rs/refer/' + this.auth.getProfile().nickname + "@gmail.com").subscribe(
-        (response) => {
-           // console.log('orderList : ' + JSON.stringify(response.json()));
-           this.referList =  response.json();
-        },
-        (error) => { console.log(error); return "error"; })
-        
-}
+      (response) => {
+        // console.log('orderList : ' + JSON.stringify(response.json()));
+        this.referList = response.json();
+      },
+      (error) => { console.log(error); return "error"; })
+
+  }
 
 }

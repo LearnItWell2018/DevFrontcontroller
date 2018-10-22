@@ -37,9 +37,8 @@
   </form>
   <div *ngFor="let refer of referList; let i = index" class="orderrow">
     <div class="flex-row">
-      <div class="orderid" data-toggle="collapse" [attr.data-target]="'#' + i">{{refer.id}}</div>
-      <div class="resend">Order Status : {{refer.customerReferMail}}</div>
-      <div class="orderdate">Order Date : {{refer.customerReferMobile}}</div>
+      <div class="resend">Refferd to Email : {{refer.customerReferMail}}</div>
+      <div class="orderdate">Refferd to Mobile : {{refer.customerReferMobile}}</div>
     </div>
   </div>
 </div>
